@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --mainColor: #92c7cf;
+  --SecondColor: #aad7d9;
+  --thirdColor: #fbf9f1;
+  --forthColor: #e5e1da;
+}
+body {
+  min-height: 100vh;
+  background-color: white;
+  font-family: Oswald;
+  font-weight: 400;
+}
+main {
+  height: 10000px;
+}
+#productDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgsBox {
+  height: 600px;
+  width: 750px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
+
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  padding: 25px;
+}
+
+.minorImgs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  user-select: none;
+}
+.minor {
+  height: 138px;
+  width: 160px;
+  min-width: 150px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--mainColor);
+}
+.minor:hover {
+  background-color: var(--SecondColor);
+}
+.minor img {
+  width: 100%;
+  height: auto;
+}
+
+.mainImg {
+  height: 600px;
+  width: 500px;
+  min-width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  user-select: none;
+
+  box-shadow: 0 0 20px var(--mainColor);
+}
+
+.mainImg img {
+  width: 100%;
+  height: auto;
+}
+
+.txtDetails {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-width: 350px;
+}
+.productName {
+  font-size: 35px;
+}
+.generalInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.txtDetails span.line {
+  border: 1px solid lightgray;
+  margin: 18px 0px;
+}
+.review {
+  display: flex;
+  width: 68%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0px;
+}
+.raiting img {
+  height: 20px;
+}
+.raiting {
+  display: flex;
+  align-items: center;
+}
+.numberOfReviews {
+  color: grey;
+}
+.productAvailability {
+  color: #00ff66;
+  font-size: large;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: 400;
+}
+.productPara {
+  font-size: 1.2rem;
+}
+
+/*Size section*/
+.productRequest {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-self: flex-start;
+}
+.SizeSelection {
+  display: flex;
+  height: 50px;
+  width: 80%;
+  gap: 10px;
+  padding: 10px 0px;
+  justify-content: flex-start;
+  align-self: center;
+}
+.SizePara {
+  width: 50px;
+  font-size: 1.8rem;
+  padding-right: 55px;
+}
+.SizeSelection input[type="radio"] {
+  display: none;
+}
+.SizeSelection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.SizeSelection label {
+  width: 36px;
+  height: 36px;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.SizeSelection label:hover {
+  background-color: var(--forthColor);
+  transform: scale(1.05);
+}
+.SizeSelection input[type="radio"]:checked + label {
+  background-color: var(--mainColor);
+  color: var(--thirdColor);
+}
+
+/*quantity*/
+.quantityBuy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.quantity {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 230px;
+  border-radius: 8px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.minus,
+.plus {
+  font-size: 50px;
+  font-weight: 200;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minus {
+  border-right: 1px solid black;
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.plus {
+  border-left: 1px solid black;
+  background-color: var(--mainColor);
+  color: var(--thirdColor);
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.minus:hover {
+  color: white;
+  background-color: var(--forthColor);
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.plus:hover {
+  color: var(--forthColor); /* For example, change text color on hover */
+  transform: scale(1.04); /* Slightly scale the element */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  cursor: pointer;
+}
+
+.productQuantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 35%;
+  text-align: center;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.buyBtnBox button {
+  width: 152px;
+  min-width: 140px;
+  height: 44px;
+  background-color: var(--mainColor);
+  font-size: 1.1rem;
+  color: var(--thirdColor);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 5px var(--mainColor);
+  user-select: none;
+  transition: background-color 0.3s, transform 0.5s;
+}
+
+.Buy-btn:hover {
+  background-color: var(--SecondColor);
+  transform: scale(1.01);
+}
+
+.whichList {
+  border: 2px solid grey;
+  height: 44px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.whichList:hover {
+  background-color: var(--forthColor); /*there is a problem it works once*/
+  color: white;
+}
+
+/*shipping*/
+.shippingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 180px;
+  width: 100%;
+}
+
+.deliveryStatus {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  height: 50%;
+  border-bottom: 1px solid black;
+}
+.deliveryIcon {
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.deliveryReturn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  height: 50%;
+  border-bottom: 1px solid black;
+}
+.deliveryReturnIcon {
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+@media (max-width: 1098px) {
+  .container {
+    flex-direction: column;
+    /* background-color: red;  */
+    width: 97%;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgsBox {
+    /* background-color: #aad7d9; */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .txtDetails {
+    /* background-color: #00ff66; */
+    width: 100%;
+  }
+  .review {
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .quantityBuy {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 750px) {
+  .imgsBox {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  .mainImg {
+    width: 100%;
+    height: 400px;
+  }
+
+  .minorImgs {
+    flex-direction: row;
+    gap: 6px;
+    height: auto;
+    width: 100%;
+  }
+  .minor {
+    min-width: 70px;
+    height: auto;
+    padding: 10px;
+  }
+  .minorImgs img {
+    min-width: 10px;
+  }
+}
