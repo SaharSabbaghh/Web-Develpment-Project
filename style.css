@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins";
+    padding-top: 100px;
+  }
+  
+  :root {
+    --main-color: #7ab8c4;
+    --second-color: #f9fbfc;
+    --third-color: #686d76;
+  }
+  
+  header {
+    display: flex;
+    background-color: var(--second-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    font-family: "Oswald", serif;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--third-color);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .navbar .logo {
+    width: 170px;
+  }
+  
+  .navbar .ul1 {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .ul1 li a:hover,
+  .foot-ul .foot-ul-content li a:hover,
+  .sidebar a:hover {
+    color: var(--main-color);
+  }
+  
+  .navbar a:is(:link, :active, :visited).active {
+    color: var(--main-color);
+  }
+  
+  .ul2 .ham {
+    display: none;
+  }
+  
+  .ul2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .uls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  .ul2-cnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .cart-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .ham-icon i {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .ul2 .ul2-cnt a[href="login.html"]:hover {
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  
+  .ul2 .ul2-cnt a[href="login.html"]:hover,
+  .cart-icon:hover,
+  .ham-icon i:hover {
+    transform: scale(1.1);
+  }
+  
+    .navbar {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .ul2 .ham {
+      display: flex;
+    }
+  
+    .ul2 .ham-icon {
+      margin-right: 20px;
+      margin-top: 10px;
+      padding: 5px;
+    }
+  
+    .uls {
+      width: 100%;
+    }
+  
+    .ul2 {
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  
+    .ul2-cnt {
+      margin-left: 20px;
+      flex-direction: row-reverse;
+    }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .headphone,
+  .earbuds,
+  .phones,
+  .laptops {
+    margin: 20px;
+    padding: 10px;
+    max-height: auto;
+    width: 200px;
+  }
+  
+  .products img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  .container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container h4 {
+    color: rgb(40, 40, 40);
+    font-weight: 700;
+  }
+  
+  .container p {
+    color: #555;
+  }
+  h1 {
+    margin: 30px;
+    font-weight: 750;
+    text-align: center;
+    color: #555;
+  }
+  
+  .categories {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .categories button {
+    background: none;
+    border: none;
+    color: #989292;
+    font-size: 18px;
+    position: relative;
+  
+    &:hover {
+      color: #555;
+    }
+  
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -0.4em;
+      left: 50%;
+      right: 50%;
+      height: 1px;
+      background: currentColor;
+      transition: all ease 0.3s;
+    }
+  
+    &:hover:after {
+      left: 0;
+      right: 0;
+      height: 2px;
+      color: #a2e5e0;
+    }
+  
+    &:before {
+      position: absolute;
+      transform: translateX(-100%);
+      left: -10px;
+      opacity: 0.3;
+      font-weight: 100;
+      font-size: 0.8em;
+    }
+  }
+  
