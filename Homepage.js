@@ -16,6 +16,7 @@ document.querySelector(".sidebar-text i").addEventListener("click", function(){
     document.querySelector(".sidebar").classList.add("hidden");
 })
 
+// footer
 document.querySelector(".subscribe-btn button").addEventListener("click", function() {
     let emailInput = document.querySelector(".subscribe-input input");
     let errorMessage = document.querySelector(".errorMessage");
@@ -58,3 +59,16 @@ imageContainer.addEventListener('mousemove', (event) => {
 imageContainer.addEventListener('mouseleave', () => {
   hoverImage.style.transform = 'translate(0, 0)'; 
 });
+
+// Image Changing
+// const images = [
+//   './images/headphones.png',
+//   './images/laptop.png' 
+// ];
+// let currentIndex = 0;
+// function changeImage() {
+//   const imgElement = document.getElementById('slideshow');
+//   currentIndex = (currentIndex + 1) % images.length; 
+//   imgElement.src = images[currentIndex];
+// }
+// setInterval(changeImage, 3000);

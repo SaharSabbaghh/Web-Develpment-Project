@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Tech</title>
-    <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e4580308de.js" crossorigin="anonymous"></script>
-    <script src="Homepage.js" defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
             <ul class="ul1">
                 <li><a href="homepage.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#">SHOP</a></li>
                 <li><a href="contactus.html">CONTACT US</a></li>
             </ul>
             <ul class="ul2">
@@ -42,7 +42,7 @@
                 </div>
                 <li><a href="homepage.html"><i class="fa-solid fa-house" style="font-size: 20px;"></i>HOME</a></li>
                 <li><a href="about.html"><i class="fa-solid fa-address-card" style="font-size: 20px;"></i>ABOUT</a></li>
-                <li><a href="#services"><i class="fa-solid fa-server" style="font-size: 20px;"></i>SERVICES</a></li>
+                <li><a href="#services"><i class="fa-solid fa-basket-shopping" style="font-size: 20px;"></i>SHOP</a></li>
                 <li><a href="contactus.html"><i class="fa-solid fa-address-book" style=" font-size: 20px;"></i>CONTACT US</a></li>
             </ul>
         </div>
@@ -52,20 +52,62 @@
         <div class="home">
             <div class="home-content">
             <div class="home-text">
-                <h1>WELCOME TO NOVATECH</h1>
-                <p>"Discover the latest in cutting-edge technology, designed to elevate your everyday life."</p>
+                <h1><span id="welcome">WELCOME TO</span> <br> <span id="nova">NOVA</span><span id="tech">TECH</span></h1>
+                <p id="desc">Discover the latest in cutting-edge technology, <br>designed to elevate your everyday life.</p>
             </div>
             <div class="home-btn">
-                <button>SHOP NOW</button>
+                <button><a href="">SHOP NOW</a></button>
             </div>
         </div>
+        
             <div class="home-img">
-                <img src="./images/headphones.png" alt="headphones" width="600px">
+                <img src="./images/headphones.png" alt="headphones" id="slideshow">
             </div>
         </div>
 
         <div class="categories">
-
+            <div class="categ-txt">
+                <h1>BROWSE</h1>
+                <h1> BY CATEGORIES</h1>
+            </div>
+            <div class="categ-content">
+                <div class="categ-text">
+            <div class="categ">
+                <a href=""><img src="./images/laptop.png" alt="laptop"></a>
+            </div>
+            <p>Laptop</p>
+            </div>
+            <div class="categ-text">
+            <div class="categ">
+                <a href=""><img src="./images/ipad.png" alt="ipad"></a>
+            </div>
+            <p>Ipad</p>
+             </div>
+             <div class="categ-text">
+            <div class="categ">
+                <a href=""><img src="./images/iphone.png" alt="iphone"></a>
+            </div>
+            <p>Phone</p>
+             </div>
+             <div class="categ-text">
+            <div class="categ">
+                <a href=""><img src="./images/earphones.png" alt="earphones"></a>
+            </div>
+            <p>Headphone</p>
+            </div>
+            <div class="categ-text">
+            <div class="categ">
+                <a href=""><img src="./images/airpods.png" alt="airpods"></a>
+            </div>
+            <p>Airpods</p>
+            </div>
+            <div class="categ-text">
+            <div class="categ">
+                <a href="#"><img src="./images/smartwatch.png" alt="smartwatch"></a>
+            </div>
+            <p>Smartwatch</p>
+        </div>
+        </div>
         </div>
 
 
