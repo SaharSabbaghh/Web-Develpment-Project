@@ -888,7 +888,8 @@ footer {
   .imgsBox {
     /* background-color: #aad7d9; */
     width: 100%;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
     margin-bottom: 20px;
   }
   .txtDetails {
@@ -948,6 +949,7 @@ footer {
   .imgsBox {
     height: auto;
     flex-direction: column-reverse;
+    justify-content: center;
     gap: 10px;
   }
 
