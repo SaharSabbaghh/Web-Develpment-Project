@@ -8,6 +8,7 @@
 body{
     height: 100vh;
     width: 100%;
+    font-family: "Poppins", serif; ;
 }
 
 :root{
@@ -33,7 +34,6 @@ header{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-
 }
 
  li {
@@ -119,9 +119,8 @@ header{
 
 /* footer */
 footer{
-    background-color: var(--second-color);
-    font-family: "Poppins", serif;
-
+    background-color: var(--main-color);
+    color: white;
 }
 
 .foot{
@@ -283,10 +282,9 @@ footer{
 .home{
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 150px;
     align-items: center;
     flex-wrap: wrap;
-    font-family: "Poppins", serif;
     background-color: var(--second-color);
     width: 100%;
     min-height:100vh;
@@ -436,20 +434,19 @@ p{
     background-color:  #E1F3F5;
     width: 100%;
     height: auto;
-    font-family:"Poppins", serif ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    padding:70px 50px ;
+    padding:100px 50px 120px 50px;
 }
 
 .categ-content{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:60px ;
+    gap:80px ;
     flex-wrap: wrap;
 }
 
@@ -467,8 +464,8 @@ p{
 .categ{
     background-color: white;
     border-radius: 50%;
-    width:130px;
-    height: 130px;
+    width:140px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -485,8 +482,13 @@ p{
     gap: 9px;
 }
 
+.categ-txt h1{
+    font-size: 40px;
+}
+
 .categ-text p{
     color: black;
+    font-family:"Poppins", serif ;
 }
 
 .categ:hover{
@@ -510,6 +512,282 @@ p{
     display: none; 
 }
 
+/* Boy with headphones */
+.boy-body{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 650px;
+    align-items: center;
+}
+
+.boy{
+    display: flex;
+    flex-direction: row;
+    width: 73%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 2px
+}
+
+.boy-text{
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    gap: 25px;
+    width: 43%;
+}
+
+.boy-text h1{
+    font-size: 50px;
+    font-family: "Oswald", serif;
+}
+
+.boy-text h2{
+    font-size: 40px;
+    font-family: "Oswald", serif;
+}
+
+.boy-text p{
+    color: white;
+}
+
+.boy-text button{
+    width: 100%;
+    padding: 20px;
+    border-radius: 35px;
+    border: none;
+    background-color: white;
+    margin-top: 25px;
+}
+
+.boy-text button a{
+    color: var(--main-color);
+}
+
+.boy-img{
+    width: 57%;
+    background-color: #E1F3F5;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.boy-img img{
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Best Sellers */
+.card-front{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 20px;
+    gap: 70px;
+}
+
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+    flex-wrap: wrap;
+}
+
+.card-article{
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 420px;
+}
+
+.container h1{
+    font-size: 45px;
+}
+
+.wrong-price{
+    text-decoration: line-through;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--third-color);
+}
+
+.card-img{
+    width: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front span{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: var(--main-color);
+    padding: 5px;
+    color: white;
+    width:70px;
+    text-align: center;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.card-head{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-head h2{
+    font-size: 25px;
+    position: absolute;
+    bottom: 60px;
+    font-weight: 600;
+}
+
+.card-img img{
+    width: 100%;
+    height: auto;
+}
+
+.card-data{
+    width: 290px;
+    background-color:white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15 );
+    border-radius: 20px;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto ;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-desc{
+    display: block;
+    font-size:1.5rem ;
+    color: var(--third-color);
+    font-weight: 600;
+    color: #313338;
+}
+
+.card-data-content{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 100%;
+    justify-content: center;
+    gap: 7px;
+}
+
+.rating-img{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-img img{
+    width: 100%;
+    height: auto;
+}
+
+.card-btn{
+    font-size:.915rem ;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.card-btn:hover{
+    text-decoration: underline;
+}
+
+.card-article:hover .card-data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.card-article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card-article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data{
+    animation: remove-data 1s forwards;
+}
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);;
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
 
 @media screen and (max-width: 767px){
     .navbar .ul1{
@@ -588,6 +866,45 @@ p{
         flex-direction: column;
         gap: 0;
     }
+
+    .boy{
+        flex-direction: column;
+        width: 90%
+    }
+
+    .boy-text{
+        height: 50%;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .boy-img{
+        width: 100%;
+        height: 50%;
+    }
+
+    .boy-text h1{
+        font-size: 35px;
+    }
+
+    .boy-text h2{
+        font-size: 30px;
+    }
+
+    .boy-text button{
+        margin-top: 0;
+    }
+
+    .home-text{
+        padding-top: 30px;
+    }
+    
+    .container{
+        margin-bottom: 50px;
+    }
+    .card-container{
+        gap:55px;
+    }
 }
 
 @media screen and (max-width:320px){
@@ -604,9 +921,42 @@ p{
     }
 }
 
-@media screen and (min-width: 767px) and (max-width:1023px){
+@media screen and (min-width: 767px) and (max-width:1024px){
     .navbar{
         flex-direction: column;
         gap: 15px;
+    }
+
+    .boy-text{
+        padding: 30px;
+    }
+
+    .boy{
+       height: 73%;
+       width: 90%;
+    }
+
+    .boy-text h1{
+        font-size: 35px;
+    }
+
+    .boy-text h2{
+        font-size: 30px;
+    }
+
+    .boy-text button{
+        margin-top: 0;
+    }
+
+    .best-sellers{
+        margin-bottom: 0;
+    }
+
+    .home{
+        gap:80px;
+    }
+
+    .container{
+        margin-bottom: 30px;
     }
 }
