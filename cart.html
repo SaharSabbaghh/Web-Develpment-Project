@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaTech</title>
+    <script src="cart.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/1d547ca294.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <!--Header================-->
+
+    <header>
+      <div class="navbar">
+        <img src="./images/logo.png" alt="Nova Tech Logo" class="logo" />
+        <div class="uls">
+          <ul class="ul1">
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+          </ul>
+          <ul class="ul2">
+            <div class="ham-icon">
+              <li>
+                <i
+                  class="fa-solid fa-bars ham this"
+                  style="color: #686d76; font-size: 20px"
+                ></i>
+              </li>
+            </div>
+            <div class="ul2-cnt">
+              <li><a href="login.html">LOGIN</a></li>
+              <div class="cart-icon">
+                <li>
+                  <a href="cart.html"
+                    ><i
+                      class="fa-solid fa-cart-shopping"
+                      style="color: white; font-size: 17px"
+                    ></i
+                  ></a>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+
+        <ul class="sidebar hidden">
+          <div class="sidebar-text">
+            <h1>Nova<span>Tech</span></h1>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: #000000; font-size: 25px"
+            ></i>
+          </div>
+          <li>
+            <a href="homepage.html"
+              ><i class="fa-solid fa-house" style="font-size: 20px"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="about.html"
+              ><i class="fa-solid fa-address-card" style="font-size: 20px"></i
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a href="#services"
+              ><i
+                class="fa-solid fa-basket-shopping"
+                style="font-size: 20px"
+              ></i
+              >SHOP</a
+            >
+          </li>
+          <li>
+            <a href="contactus.html"
+              ><i class="fa-solid fa-address-book" style="font-size: 20px"></i
+              >CONTACT US</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!--Main section================-->
+
+    <main>
+      <div class="cartMainContainer">
+        <div class="cartProducts">
+          <div class="ProductsContainer">
+            <div class="mainCartRow">
+              <div class="ProductSec">
+                <p>Product</p>
+              </div>
+              <div class="PriceSec">
+                <p>Price</p>
+              </div>
+              <div class="QuantitySec">
+                <p>Quantity</p>
+              </div>
+              <div class="SubtotalSec">
+                <p>Subtotal</p>
+              </div>
+            </div>
+            <!-- Products rows======================== -->
+            <div class="productRow">
+              <div class="product">
+                <div class="productimgBox">
+                  <img
+                    src="./images/ps5_controller-removebg-preview.png"
+                    alt="productImg"
+                  />
+                </div>
+                <div class="productName">Ps5 Controller</div>
+              </div>
+
+              <div class="productPrice">
+                <span>150$</span>
+              </div>
+              <div class="productQuanityBox">
+                <div class="productquantitySBox">
+                  <p class="productQuantity">01</p>
+                  <div class="quantityArrows">
+                    <img
+                      src="./images/next_prev/arrowUP.png"
+                      alt="arrowUp"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                    <img
+                      src="./images/next_prev/arrowDown .png"
+                      alt="arrowDown"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="productSubtotal">
+                <span>150$</span>
+              </div>
+            </div>
+
+            <!-- Products adition starts -->
+
+            <div class="productRow">
+              <div class="product">
+                <div class="productimgBox">
+                  <img
+                    src="./images/ps5_controller-removebg-preview.png"
+                    alt="productImg"
+                  />
+                </div>
+                <div class="productName">Ps5 Controller</div>
+              </div>
+
+              <div class="productPrice">
+                <span>150$</span>
+              </div>
+              <div class="productQuanityBox">
+                <div class="productquantitySBox">
+                  <p class="productQuantity">01</p>
+                  <div class="quantityArrows">
+                    <img
+                      src="./images/next_prev/arrowUP.png"
+                      alt="arrowUp"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                    <img
+                      src="./images/next_prev/arrowDown .png"
+                      alt="arrowDown"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="productSubtotal">
+                <span>150$</span>
+              </div>
+            </div>
+
+            <div class="productRow">
+              <div class="product">
+                <div class="productimgBox">
+                  <img
+                    src="./images/ps5_controller-removebg-preview.png"
+                    alt="productImg"
+                  />
+                </div>
+                <div class="productName">Ps5 Controller</div>
+              </div>
+
+              <div class="productPrice">
+                <span>150$</span>
+              </div>
+              <div class="productQuanityBox">
+                <div class="productquantitySBox">
+                  <p class="productQuantity">01</p>
+                  <div class="quantityArrows">
+                    <img
+                      src="./images/next_prev/arrowUP.png"
+                      alt="arrowUp"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                    <img
+                      src="./images/next_prev/arrowDown .png"
+                      alt="arrowDown"
+                      style="width: 14px; height: auto; cursor: pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="productSubtotal">
+                <span>150$</span>
+              </div>
+            </div>
+            <!-- Products adition ends -->
+
+            <!-- Products end================= -->
+          </div>
+          <div class="cart-Btns">
+            <button class="return-Btn">Return To Shop</button>
+            <button class="update-Btn">Update Cart</button>
+          </div>
+        </div>
+        <div class="CartProductPrices">
+          <div class="couponds">
+            <input type="text" class="CopundText" placeholder="Coupon Code" />
+            <button>Apply Coupon</button>
+          </div>
+          <div class="cartTotal">
+            <h3 class="cartTotalHeader">Cart Total</h3>
+            <p class="Subtotal">Subtotal: <span>$150</span></p>
+            <span class="Total-line"></span>
+            <p class="Shipping">Shipping: <span>Free</span></p>
+            <span class="Total-line"></span>
+            <p class="Total">Total: <span>$150</span></p>
+            <button>Proceed to checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Footer================-->
+    <footer>
+      <div class="foot">
+        <div class="foot-ul">
+          <div class="foot-ul-header">
+            <h3>USEFUL LINKS</h3>
+          </div>
+          <div class="foot-ul-content">
+            <ul>
+              <li><a href="homepage.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="#services">SERVICES</a></li>
+              <li><a href="contactus.html">CONTACT US</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subscribe">
+          <div class="subscribe-text">
+            <h3>NEWSLETTER</h3>
+            <p>Subscribe to get the latest updates and notifications!</p>
+          </div>
+          <div class="subscribe-input">
+            <input type="email" placeholder="Your Email Address" required />
+          </div>
+          <p class="errorMessage"></p>
+          <div class="subscribe-btn">
+            <button>Subscribe Now!</button>
+          </div>
+        </div>
+
+        <div class="foot-contact">
+          <div class="foot-contact-text">
+            <h3>FOLLOW US</h3>
+          </div>
+
+          <div class="foot-contact-icons">
+            <i class="fa-brands fa-facebook" style="font-size: 20px"></i>
+            <i class="fa-brands fa-instagram" style="font-size: 20px"></i>
+            <i class="fa-brands fa-whatsapp" style="font-size: 20px"></i>
+            <i class="fa-brands fa-twitter" style="font-size: 20px"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
