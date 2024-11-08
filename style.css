@@ -8,17 +8,15 @@
 
 :root {
   --main-color: #7ab8c4;
-  --bodyBg: #303841;
-  --formBg: #343f4b;
-  --textColor: #fff;
-  --paraColor: #5e6c79;
-  --paraColor: #74828f;
+  --second-color: #F9FBFC;
+  --third-color: #343f4b;
+
 }
 
 body {
   font-family: "Roboto Serif", serif;
-  color: var(--textColor);
-  background: var(--bodyBg);
+  color: var(--third-color);
+  background: var(--second-color);
   padding-bottom: 5em;
 }
 
@@ -48,10 +46,12 @@ section {
 
 .heading {
   font-size: 2.5em;
+  color: black;
 }
 
 .sub-heading {
   text-align: left;
+  color: black;
 }
 
 .contactForm {
@@ -65,7 +65,7 @@ form {
 }
 
 .para {
-  color: var(--paraColor);
+  color: var(--third-color);
   font-size: 1.1rem;
   line-height: 1.5em;
   margin-bottom: 1em;
@@ -73,6 +73,7 @@ form {
 
 .para2 {
   text-align: left;
+  color: var(--third-color);
 }
 
 .input {
@@ -82,8 +83,8 @@ form {
   font-size: 0.9rem;
   padding: 1em;
   outline: none;
-  background-color: var(--formBg);
-  color: var(--paraColor);
+  background-color: var(--second-color);
+  color: var(--third-color);
   border-radius: 10px;
   border: 1px solid rgb(53, 53, 53);
   margin-bottom: 1em;
