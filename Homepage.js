@@ -16,23 +16,6 @@ document.querySelector(".sidebar-text i").addEventListener("click", function(){
     document.querySelector(".sidebar").classList.add("hidden");
 })
 
-// footer
-document.querySelector(".subscribe-btn button").addEventListener("click", function() {
-    let emailInput = document.querySelector(".subscribe-input input");
-    let errorMessage = document.querySelector(".errorMessage");
-
-    if (emailInput.value === "") {
-        errorMessage.textContent = "Please enter your email address.";
-        errorMessage.style.display = "block";
-    } else if (!emailInput.value.includes("@")) {
-        errorMessage.textContent = "Please enter a valid email address.";
-        errorMessage.style.display = "block";
-    } else{
-        errorMessage.style.display = "none";
-        emailInput.value = "";
-    }
-});
-
 // Home Image
 const imageContainer = document.querySelector(".home-img");
 const hoverImage = document.querySelector(".home-img img");
@@ -72,3 +55,83 @@ imageContainer.addEventListener('mouseleave', () => {
 //   imgElement.src = images[currentIndex];
 // }
 // setInterval(changeImage, 3000);
+
+// Boy With Headphones
+const boyBody = document.querySelector(".boy-body");
+const boyBody2 = document.querySelector(".boy-body2");
+let isBoyBodyVisible = true;
+
+function toggleDisplay() {
+    if (isBoyBodyVisible) {
+        boyBody.classList.add("hidden");
+        boyBody.classList.remove("visible");
+        boyBody2.classList.add("visible");
+        boyBody2.classList.remove("hidden");
+    } else {
+        boyBody.classList.add("visible");
+        boyBody.classList.remove("hidden");
+        boyBody2.classList.add("hidden");
+        boyBody2.classList.remove("visible");
+    }
+    isBoyBodyVisible = !isBoyBodyVisible;
+}
+
+setInterval(toggleDisplay, 3000);
+
+// Animation on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const categElements = document.querySelectorAll(".categ");
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("fadeIn");
+              observer.unobserve(entry.target);
+          }
+      });
+  }, {
+      threshold: 0.5 
+  });
+
+  categElements.forEach(categ => {
+      observer.observe(categ);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cardArticles = document.querySelectorAll(".card-article");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); 
+          }
+      });
+  }, {
+      threshold: 0.1 
+  });
+
+  cardArticles.forEach(card => {
+      observer.observe(card);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const boyContainer = document.querySelector(".boy-container");
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+              boyContainer.classList.add("fade-out");
+          } else {
+              boyContainer.classList.remove("fade-out");
+          }
+      });
+  }, {
+      threshold: 0.2 
+  });
+
+  observer.observe(boyContainer);
+});
+
