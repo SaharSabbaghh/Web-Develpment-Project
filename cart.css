@@ -395,6 +395,9 @@ footer {
   border-radius: 5px;
   padding: 10px;
   height: 80px;
+  position: relative;
+  background-color: white;
+  transition: all 0.7s ease-in-out;
 }
 
 .productQuanityBox {
@@ -492,8 +495,21 @@ footer {
   top: 8px;
   cursor: pointer;
   left: 0px;
+  display: none;
+  animation: shiftbtn 0.3s ease-in-out;
 }
 
+
+@keyframes shiftbtn {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 
 .removeIcon:hover ~ .productImg {
   animation: shake 0.6s ease-in-out infinite alternate 0.01s;
 }
@@ -505,6 +521,34 @@ footer {
   100% {
     transform: translateX(4px);
   }
+} */
+
+.shiftleft {
+  transform: translateX(-8%);
+}
+.shiftright {
+  opacity: 1;
+  transform: translateX(90%);
+  transition: all 0.6s;
+}
+.opacityremover {
+  opacity: 0;
+}
+.productRow button {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 9%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: red;
+  color: white;
+  border: 0;
+  border-radius: 0 30px 30px 0;
+  z-index: -5;
+  cursor: pointer;
+  transition: all 0.45s ease-in-out;
+ 
 }
 
 .productimgBox :nth-child(2) {
