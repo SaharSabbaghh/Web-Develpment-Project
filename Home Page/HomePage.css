@@ -527,6 +527,7 @@ p{
 
 .categ-txt h1{
     font-size: 40px;
+    text-align: center;
 }
 
 .categ-text p{
@@ -891,6 +892,7 @@ p{
 
 .container-new h1{
     font-size: 45px;
+    text-align: center;
 }
 
 /* Services */
@@ -1062,7 +1064,11 @@ p{
     }
 
     .boy-text h1{
-        font-size: 35px;
+        font-size: 30px;
+    }
+
+    .boy-text p{
+        font-size: 14px;
     }
 
     .boy-text h2{
