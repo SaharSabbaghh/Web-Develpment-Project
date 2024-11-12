@@ -17,13 +17,13 @@ document.querySelector(".sidebar-text i").addEventListener("click", function(){
 })
 
 // Home Image
-const imageContainer = document.querySelector(".home-img");
-const hoverImage = document.querySelector(".home-img img");
+let imageContainer = document.querySelector(".home-img");
+let hoverImage = document.querySelector(".home-img img");
 function moveInDirection(event, element) {
-  const { offsetX, offsetY, target } = event;
-  const width = target.offsetWidth;
-  const height = target.offsetHeight;
-  const moveDistance = 15; 
+  let { offsetX, offsetY, target } = event;
+  let width = target.offsetWidth;
+  let height = target.offsetHeight;
+  let moveDistance = 15; 
   if (offsetX < width / 3) {
     element.style.transform = `translateX(-${moveDistance}px)`;
   } else if (offsetX > (2 * width) / 3) {
@@ -57,8 +57,8 @@ imageContainer.addEventListener('mouseleave', () => {
 // setInterval(changeImage, 3000);
 
 // Boy With Headphones
-const boyBody = document.querySelector(".boy-body");
-const boyBody2 = document.querySelector(".boy-body2");
+let boyBody = document.querySelector(".boy-body");
+let boyBody2 = document.querySelector(".boy-body2");
 let isBoyBodyVisible = true;
 
 function toggleDisplay() {
@@ -75,14 +75,13 @@ function toggleDisplay() {
     }
     isBoyBodyVisible = !isBoyBodyVisible;
 }
-
 setInterval(toggleDisplay, 3000);
 
 // Animation on scroll
 document.addEventListener("DOMContentLoaded", () => {
-  const categElements = document.querySelectorAll(".categ");
+  let categElements = document.querySelectorAll(".categ");
 
-  const observer = new IntersectionObserver((entries) => {
+  let observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
               entry.target.classList.add("fadeIn");
@@ -99,9 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cardArticles = document.querySelectorAll(".card-article");
+  let cardArticles = document.querySelectorAll(".card-article");
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
               entry.target.classList.add("visible");
@@ -118,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const boyContainer = document.querySelector(".boy-container");
+  let boyContainer = document.querySelector(".boy-container");
 
-  const observer = new IntersectionObserver((entries) => {
+  let observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           if (!entry.isIntersecting) {
               boyContainer.classList.add("fade-out");
