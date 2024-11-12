@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Oswald";
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    margin-left: 1rem;
+    color: rgb(187, 186, 186);
+}
+a:hover{
+color: rgb(211, 226, 226);
+}
+.login-button button{
+    margin-left: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    border: 0;
+    background-color:rgb(211, 226, 226) ;
+}
+button:hover{
+    background-color: rgb(233, 229, 229);
+    transition: 0.5s;
+    height: auto;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.shop-page{
+    height: 10rem;
+    background-color: rgb(240, 247, 247) ;
+    text-align: center;
+}
+.shop-page h1{
+    padding-top: 3rem;
+    color: rgb(83, 82, 82);
+}
