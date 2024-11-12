@@ -996,20 +996,8 @@ p{
     }
 
     .foot{
-        gap:80px;
-    }
-
-    .subscribe-text{
-        margin-top:0;
-    }
-
-    .foot-contact{
-        margin-bottom: 0;
-    }
-
-    .foot{
-        padding-bottom: 50px;
-        padding-top: 40px;
+        padding: 40px 15px 50px 15px;
+        gap:50px;
     }
 
     .home-img img{
