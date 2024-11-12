@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products details</title>
+    <link rel="stylesheet" href="ProductDetails.css" />
+    <script
+      src="https://kit.fontawesome.com/1d547ca294.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="ProductDetails.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <img src="./images/logo.png" alt="Nova Tech Logo" class="logo" />
+        <div class="uls">
+          <ul class="ul1">
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+          </ul>
+          <ul class="ul2">
+            <div class="ham-icon">
+              <li>
+                <i
+                  class="fa-solid fa-bars ham this"
+                  style="color: #686d76; font-size: 20px"
+                ></i>
+              </li>
+            </div>
+            <div class="ul2-cnt">
+              <li><a href="login.html">LOGIN</a></li>
+              <div class="cart-icon">
+                <li>
+                  <a href="cart.html"
+                    ><i
+                      class="fa-solid fa-cart-shopping"
+                      style="color: white; font-size: 17px"
+                    ></i
+                  ></a>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+
+        <ul class="sidebar hidden">
+          <div class="sidebar-text">
+            <h1>Nova<span>Tech</span></h1>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: #000000; font-size: 25px"
+            ></i>
+          </div>
+          <li>
+            <a href="homepage.html"
+              ><i class="fa-solid fa-house" style="font-size: 20px"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="about.html"
+              ><i class="fa-solid fa-address-card" style="font-size: 20px"></i
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a href="#services"
+              ><i
+                class="fa-solid fa-basket-shopping"
+                style="font-size: 20px"
+              ></i
+              >SHOP</a
+            >
+          </li>
+          <li>
+            <a href="contactus.html"
+              ><i class="fa-solid fa-address-book" style="font-size: 20px"></i
+              >CONTACT US</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section id="productDetails">
+        <div class="container">
+          <div class="imgsBox">
+            <div class="minorImgs">
+              <div class="minor img1">
+                <img
+                  src="images/Screenshot_2024-10-24_202531-removebg-preview.png"
+                  alt="minor image"
+                />
+              </div>
+              <div class="minor img2">
+                <img
+                  src="images/Screenshot_2024-10-24_202551-removebg-preview.png"
+                  alt="minor image"
+                />
+              </div>
+              <div class="minor img4">
+                <img
+                  src="images/Screenshot_2024-10-24_202700-removebg-preview.png"
+                  alt="minor image"
+                />
+              </div>
+              <div class="minor img3">
+                <img
+                  src="images/Screenshot_2024-10-24_202613-removebg-preview.png"
+                  alt="minor image"
+                />
+              </div>
+            </div>
+            <div class="mainImg">
+              <img
+                src="images/ps5_controller-removebg-preview.png"
+                alt="Main image"
+              />
+            </div>
+          </div>
+          <div class="txtDetails">
+            <div class="generalInfo">
+              <h2 class="productName">Havic HV G-92 Gamepad</h2>
+              <div class="review">
+                <div class="raiting">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <p class="numberOfReviews">(150 Reviews)</p>
+                </div>
+                <span>|</span>
+                <p class="productAvailability">In Stock</p>
+              </div>
+              <h3 class="price">$192.00</h3>
+              <p class="productPara">
+                PlayStation 5 Controller Skin High quality vinyl with air
+                channel adhesive for easy bubble free install & mess free
+                removal Pressure sensitive.
+              </p>
+            </div>
+            <span class="line"></span>
+
+            <div class="productRequest">
+              <div class="SizeChoose">
+                <form class="SizeSelection">
+                  <p class="SizePara">Size:</p>
+                  <input type="radio" name="size" id="xs" />
+                  <label for="xs">XS</label>
+                  <input type="radio" name="size" id="s" />
+                  <label for="s">S</label>
+                  <input type="radio" name="size" id="m" />
+                  <label for="m">M</label>
+                  <input type="radio" name="size" id="L" />
+                  <label for="L">L</label>
+                  <input type="radio" name="size" id="XL" />
+                  <label for="XL">XL</label>
+                </form>
+              </div>
+              <div class="quantityBuy">
+                <div class="quantity">
+                  <span class="minus">−</span>
+                  <span class="productQuantity">01</span>
+                  <span class="plus">+</span>
+                </div>
+                <div class="buyBtnBox">
+                  <button class="Buy-btn">Buy Now</button>
+                </div>
+                <div class="whichList"><i class="fa-regular fa-heart"></i></div>
+              </div>
+              <div class="shippingInfo">
+                <div class="deliveryStatus">
+                  <div class="deliveryIcon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                  <div class="deliveryTxt">
+                    <h2 class="deliveryHeader">Free Delivery</h2>
+                    <p class="deliveryPara">
+                      Enter your postal code for Delivery Availability
+                    </p>
+                  </div>
+                </div>
+                <div class="deliveryReturn">
+                  <div class="deliveryReturnIcon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </div>
+                  <div class="deliveryReturnTxt">
+                    <h2 class="deliveryReturnHeader">Return Delivery</h2>
+                    <p class="deliveryReturnPara">
+                      Free 30 Days Delivery Returns. Details
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="RelatedItems">
+        <div class="relatedItemsHeaderBox">
+          <span class="colored-Box"> </span>
+          <h3 class="relatedItemsHeader">Related Item</h3>
+        </div>
+
+        <div class="related-P-Container">
+          <div class="prev_btn">
+            <img src="images/next_prev/prev.png" alt="previous" />
+          </div>
+          <div class="cards-Box">
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- items add starts -->
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related"> −40%</span>
+
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist"
+                      ><i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View"
+                      ><i class="fa-regular fa-eye"></i
+                    ></span>
+                  </div>
+                </div>
+                <img
+                  src="images/ps5_controller-removebg-preview.png"
+                  alt="product image"
+                />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h3 class="Product-Name-Related">Havic HV G-92 Gamepad</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">$120</span>
+                  <span
+                    class="old-Price"
+                    style="
+                      text-decoration: 1.5px line-through grey;
+                      color: grey;
+                      margin-left: 10px;
+                      font-weight: 380;
+                    "
+                    >$150</span
+                  >
+                </p>
+                <p class="product-raiting-related">
+                  <img
+                    src="images/raitings/4starsRaiting-removebg-preview.png"
+                    alt="raiting"
+                  />
+                  <span
+                    class="review-Number"
+                    style="color: grey; font-weight: 380; font-size: 0.99rem"
+                    >(85)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- itemss addition ends -->
+          </div>
+          <div class="next_btn">
+            <img src="images/next_prev/next.png" alt="next button" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="foot">
+        <div class="exclusive">
+          <h2>Exclusive</h2>
+          <h3>Subscribe</h3>
+          <p>Get 10% off your first order</p>
+          <div class="foot-email">
+            <input type="email" placeholder="Enter your email" />
+            <i class="fa fa-paper-plane"></i>
+          </div>
+        </div>
+
+        <div class="support">
+          <h3>Support</h3>
+          <p>
+            Bliss Street, Hamra, <br />
+            Beirut, Lebanon
+          </p>
+          <p>novatech@gmail.com</p>
+          <p>+961 3 456 789</p>
+        </div>
+
+        <div class="account">
+          <h3>Account</h3>
+          <div class="account-content">
+            <a href="">My Account</a>
+            <a href="">Login/Register</a>
+            <a href="">Cart</a>
+            <a href="">Shop</a>
+          </div>
+        </div>
+
+        <div class="account">
+          <h3>Quik Link</h3>
+          <div class="account-content">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">Blog</a>
+          </div>
+        </div>
+
+        <div class="app">
+          <h3>Download App</h3>
+          <div class="app-content">
+            <p>Save $3 with App New User Only</p>
+            <img src="./images/app.png" alt="App store" />
+          </div>
+          <div class="app-icons">
+            <i class="fa-brands fa-facebook-f" style="font-size: 20px"></i>
+            <i class="fa-brands fa-instagram" style="font-size: 20px"></i>
+            <i class="fa-brands fa-twitter" style="font-size: 20px"></i>
+            <i class="fa-brands fa-linkedin-in" style="font-size: 20px"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
