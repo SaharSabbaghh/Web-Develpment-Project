@@ -13,26 +13,10 @@ document.querySelector(".ham-icon i").addEventListener("click", function () {
   document.querySelector(".sidebar").classList.remove("hidden");
 });
 
-document.querySelector(".sidebar-text i").addEventListener("click", function () {
-    document.querySelector(".sidebar").classList.add("hidden");
-  });
-
-// footer
-document.querySelector(".subscribe-btn button")
+document
+  .querySelector(".sidebar-text i")
   .addEventListener("click", function () {
-    let emailInput = document.querySelector(".subscribe-input input");
-    let errorMessage = document.querySelector(".errorMessage");
-
-    if (emailInput.value === "") {
-      errorMessage.textContent = "Please enter your email address.";
-      errorMessage.style.display = "block";
-    } else if (!emailInput.value.includes("@")) {
-      errorMessage.textContent = "Please enter a valid email address.";
-      errorMessage.style.display = "block";
-    } else {
-      errorMessage.style.display = "none";
-      emailInput.value = "";
-    }
+    document.querySelector(".sidebar").classList.add("hidden");
   });
 
 //nav and footer js ends
@@ -102,28 +86,6 @@ for (let i = 0; i < products.length; i++) {
 
 //Remove btn starts
 
-/*
-for (let k = 0; k < products.length; k++) {
-  removeBtn[k].addEventListener("click", () => {
-    if (removeClickCounter[k] === 0) {
-      DeleteBtn[k].classList.remove("opacityremover");
-      products[k].classList.add("shiftleft");
-      DeleteBtn[k].classList.add("shiftright");
-      removeClickCounter[k]++;
-    } else {
-      DeleteBtn[k].classList.add("opacityremover");
-      products[k].classList.remove("shiftleft");
-      DeleteBtn[k].classList.remove("shiftright");
-
-      removeClickCounter[k]--;
-    }
-  });
-}*/
-
-//remover btn ends
-
-//delete btn starts
-
 let removeBtn = document.getElementsByClassName("removeIcon");
 let DeleteBtn = document.querySelectorAll(".productRow button");
 let removeClickCounter = Array(products.length).fill(0);
@@ -133,48 +95,74 @@ for (let k = 0; k < products.length; k++) {
       DeleteBtn[k].classList.remove("opacityremover");
       products[k].classList.add("shiftleft");
       DeleteBtn[k].classList.add("shiftright");
-      console.log(k);
       removeClickCounter[k]++;
-
-      removeBtn = document.getElementsByClassName("removeIcon");
-      DeleteBtn = document.querySelectorAll(".productRow button");
-      removeClickCounter = Array(products.length).fill(0);
     } else {
       DeleteBtn[k].classList.add("opacityremover");
       products[k].classList.remove("shiftleft");
       DeleteBtn[k].classList.remove("shiftright");
-      console.log(k);
-      removeClickCounter[k]--;
 
-      removeBtn = document.getElementsByClassName("removeIcon");
-      DeleteBtn = document.querySelectorAll(".productRow button");
-      removeClickCounter = Array(products.length).fill(0);
+      removeClickCounter[k]--;
     }
   });
 }
+
+//remover btn ends
+
+//delete btn starts
+
+// function addDeleteEventListeners() {
+//   DeleteBtn = document.querySelectorAll(".productRow button");
+//   products = document.querySelectorAll(".productRow");
+
+//   // Iterate over the updated DeleteBtn and products list
+//   for (let i = 0; i < products.length; i++) {
+//     DeleteBtn[i].addEventListener("click", () => {
+//       products[i].remove();
+
+//       // Update the total by removing the product subtotal value
+//       TotalAdder -= parseInt(productSubtotal[i].textContent);
+//       subtotal.innerHTML = TotalAdder.toString();
+//       Total.innerHTML = subtotal.innerHTML;
+
+//       // Re-run the function to reattach event listeners after an item is removed
+//       addDeleteEventListeners();
+//     });
+//   }
+// }
+
+// // Initial call to set up event listeners
+// addDeleteEventListeners();
+
 for (let k = 0; k < products.length; k++) {
   DeleteBtn[k].addEventListener("click", () => {
-    if (k === products.length - 1) {
-      console.log(k);
-      TotalAdder = TotalAdder - parseInt(productSubtotal[k].textContent);
-      subtotal.innerHTML = TotalAdder.toString();
-      Total.innerHTML = subtotal.innerHTML;
-      products[k].remove();
-    } else if (k === 0) {
-      TotalAdder = TotalAdder - parseInt(productSubtotal[k].textContent);
-      subtotal.innerHTML = TotalAdder.toString();
-      Total.innerHTML = subtotal.innerHTML;
-      console.log(k);
-      products[k].remove();
-      k--;
-    } else {
-      console.log(k);
-      products[k].remove();
-    }
+    /*
+      if(k===0){
+
+      }
+      else if(k>0 && k!=products.length-1){
+
+
+
+
+
+      }
+      else{
+
+
+
+
+      }*/
+    products[k].remove();
+    TotalAdder = TotalAdder - parseInt(productSubtotal[k].textContent);
+    subtotal.innerHTML = TotalAdder.toString();
+    Total.innerHTML = subtotal.innerHTML;
 
     DeleteBtn = document.querySelectorAll(".productRow button");
     products = document.querySelectorAll(".productRow");
     products.length = products.length;
+    if (k != 0) {
+      k = k - 1;
+    }
   });
 }
 
