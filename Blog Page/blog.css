@@ -12,11 +12,9 @@
   --second-color: #F9FBFC;
   --third-color: #686D76;
   --container-color: #1a1e21;
-  --second-color: #7ab8c4;
   --text-color: #172317;
   --bg-color: #fff;
 }
-
 
 /* Navbar */
 header{
@@ -41,7 +39,7 @@ li {
    list-style: none;
 }
 
-a {
+.navbar a {
   text-decoration: none;
   color: var(--third-color);
   font-family: "Hanken Grotesk", sans-serif;
@@ -350,7 +348,7 @@ a {
 .home {
   width: 100%;
   min-height: 440px;
-  background-color: var(--second-color);
+  background-color: var(--main-color);
   display: grid;
   justify-content: center;
   align-items: center;

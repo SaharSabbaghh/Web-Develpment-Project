@@ -7,7 +7,6 @@
 }
 :root {
   --main-color: #7ab8c4;
-
   --second-color: #f9fbfc;
   --third-color: #686d76;
   --forth-color: #e1f3f5;
@@ -15,10 +14,11 @@
 
 body {
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--second-color);
   font-family: "poppins", serif;
   font-weight: 400;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }

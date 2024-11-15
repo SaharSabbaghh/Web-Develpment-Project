@@ -16,7 +16,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--fifth-color);
   font-family: "poppins", serif;
   font-weight: 400;
   display: flex;
@@ -381,7 +381,7 @@ footer{
 }
 
 .cardBox {
-  background-color: white;
+  background-color: var(--fifth-color);
   height: 350px;
   overflow: hidden;
   width: 270px;
