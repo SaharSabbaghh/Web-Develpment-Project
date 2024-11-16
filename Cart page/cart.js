@@ -18,8 +18,7 @@ document
   .addEventListener("click", function () {
     document.querySelector(".sidebar").classList.add("hidden");
   });
-
-
+  
 //nav and footer js ends
 
 //product Row starts
@@ -83,92 +82,60 @@ for (let i = 0; i < products.length; i++) {
     }
   });
 }
-//product quantity ends
 
-//Remove btn starts
-
+// Select all delete buttons and product rows initially
+// Function to handle the "Remove" icon click
 let removeBtn = document.getElementsByClassName("removeIcon");
-let DeleteBtn = document.querySelectorAll(".productRow button");
-let removeClickCounter = Array(products.length).fill(0);
-for (let k = 0; k < products.length; k++) {
-  removeBtn[k].addEventListener("click", () => {
-    if (removeClickCounter[k] === 0) {
-      DeleteBtn[k].classList.remove("opacityremover");
-      products[k].classList.add("shiftleft");
-      DeleteBtn[k].classList.add("shiftright");
-      removeClickCounter[k]++;
-    } else {
-      DeleteBtn[k].classList.add("opacityremover");
-      products[k].classList.remove("shiftleft");
-      DeleteBtn[k].classList.remove("shiftright");
+// Function to handle the "Remove" icon click
+function handleRemoveClick() {
+  let deleteButton = this.closest(".productRow").querySelector("button");
+  let productRow = this.closest(".productRow");
 
-      removeClickCounter[k]--;
-    }
-  });
+  // Toggle a single class to control both shift and opacity effects
+  if (deleteButton.classList.contains("activated")) {
+    deleteButton.classList.remove("activated");
+    deleteButton.classList.add("opacityremover");
+    productRow.classList.remove("shiftleft");
+    deleteButton.classList.remove("shiftright");
+  } else {
+    deleteButton.classList.remove("opacityremover");
+    deleteButton.classList.add("activated");
+    productRow.classList.add("shiftleft");
+    deleteButton.classList.add("shiftright");
+  }
 }
 
-//remover btn ends
+// Attach event listeners to "Remove" icons
+document.querySelectorAll(".removeIcon").forEach((icon) => {
+  icon.addEventListener("click", handleRemoveClick);
+});
 
-//delete btn starts
+// Function to handle the "Delete" button click
+function handleDeleteClick() {
+  let productRow = this.closest(".productRow");
+  let subtotalValue = parseInt(
+    productRow.querySelector(".productSubtotal span").textContent
+  );
 
-// function addDeleteEventListeners() {
-//   DeleteBtn = document.querySelectorAll(".productRow button");
-//   products = document.querySelectorAll(".productRow");
+  // Update the total amount
+  TotalAdder -= subtotalValue;
+  subtotal.innerHTML = TotalAdder.toString();
+  Total.innerHTML = subtotal.innerHTML;
 
-//   // Iterate over the updated DeleteBtn and products list
-//   for (let i = 0; i < products.length; i++) {
-//     DeleteBtn[i].addEventListener("click", () => {
-//       products[i].remove();
-
-//       // Update the total by removing the product subtotal value
-//       TotalAdder -= parseInt(productSubtotal[i].textContent);
-//       subtotal.innerHTML = TotalAdder.toString();
-//       Total.innerHTML = subtotal.innerHTML;
-
-//       // Re-run the function to reattach event listeners after an item is removed
-//       addDeleteEventListeners();
-//     });
-//   }
-// }
-
-// // Initial call to set up event listeners
-// addDeleteEventListeners();
-
-for (let k = 0; k < products.length; k++) {
-  DeleteBtn[k].addEventListener("click", () => {
-    /*
-      if(k===0){
-
-      }
-      else if(k>0 && k!=products.length-1){
-
-
-
-
-
-      }
-      else{
-
-
-
-
-      }*/
-    products[k].remove();
-    TotalAdder = TotalAdder - parseInt(productSubtotal[k].textContent);
-    subtotal.innerHTML = TotalAdder.toString();
-    Total.innerHTML = subtotal.innerHTML;
-
-    DeleteBtn = document.querySelectorAll(".productRow button");
-    products = document.querySelectorAll(".productRow");
-    products.length = products.length;
-    if (k != 0) {
-      k = k - 1;
-    }
-  });
+  // Remove the specific product row
+  productRow.remove();
 }
+
+// Attach event listeners to "Remove" icons and "Delete" buttons
+document.querySelectorAll(".removeIcon").forEach((icon) => {
+  icon.addEventListener("click", handleRemoveClick);
+});
+
+document.querySelectorAll(".productRow button").forEach((button) => {
+  button.addEventListener("click", handleDeleteClick);
+});
 
 //delete btn ends
-
 //update btn starts
 
 let updatebtn = document.querySelector(".update-Btn");
@@ -181,6 +148,7 @@ updatebtn.addEventListener("click", () => {
     }
   } else {
     updatebtn.innerHTML = "Update Cart";
+    let DeleteBtn = document.querySelectorAll(".productRow button");
     for (let k = 0; k < products.length; k++) {
       removeBtn[k].style.display = "none";
       DeleteBtn[k].classList.add("opacityremover");
