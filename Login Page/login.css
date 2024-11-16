@@ -20,6 +20,19 @@ body{
     flex-direction: column;
 }
 
+.error-message {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    height: 1em; /* Reserve space to prevent layout shifting */
+    display: none;
+    align-items: center;
+    color: red; /* Default color for error messages */
+}
+
+.success-message {
+    color: green; /* Green color for success messages */
+}
+
 .wrapper span{
     position: fixed;
     bottom: -180px;
