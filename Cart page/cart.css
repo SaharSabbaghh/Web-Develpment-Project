@@ -668,6 +668,12 @@ footer {
   border: none;
   border-radius: 4px;
 }
+
+.cartTotal button a{
+  color: white;
+  font-weight: 400 ;
+}
+
 /*product section ends*/
 
 /* Media querries section */

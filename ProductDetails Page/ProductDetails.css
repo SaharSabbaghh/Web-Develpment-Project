@@ -712,7 +712,7 @@ footer {
   display: none;
 }
 .cardBox {
-  background-color: white;
+  background-color: var(--second-color);
   height: 350px;
   overflow: hidden;
   min-width: 270px;
