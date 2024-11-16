@@ -19,7 +19,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--second-color);
   font-family: "poppins", serif;
   font-weight: 400;
 }
@@ -33,10 +33,7 @@ main {
 /* Navbar */
 header {
   display: flex;
-
-  /* background-color: #f9fbfc; */
-  background-color: white;
-  border-bottom: 1px solid #686d763a;
+  background-color: #f9fbfc;
   position: fixed;
   top: 0;
   width: 100%;
@@ -126,14 +123,12 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover {
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover {
   transition: transform 0.3s ease;
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover,
-.cart-icon:hover,
-.ham-icon i:hover {
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover, .cart-icon:hover, .ham-icon i:hover{
   transform: scale(1.1);
 }
 

@@ -7,7 +7,6 @@
 }
 :root {
   --main-color: #7ab8c4;
-
   --second-color: #f9fbfc;
   --third-color: #686d76;
   --forth-color: #e1f3f5;
@@ -18,6 +17,7 @@ body {
   background-color: white;
   font-family: "poppins", serif;
   font-weight: 400;
+  background-color: var(--second-color);
 }
 ::-webkit-scrollbar {
   display: none;
@@ -120,31 +120,26 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover {
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover {
   transition: transform 0.3s ease;
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover,
-.cart-icon:hover,
-.ham-icon i:hover {
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover, .cart-icon:hover, .ham-icon i:hover{
   transform: scale(1.1);
 }
 
 /* footer */
-
-/* footer */
-footer {
+footer{
   background-color: var(--main-color);
   color: white;
   width: 100%;
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
-  margin-top: 35px;
 }
 
-.foot {
+.foot{
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -154,7 +149,7 @@ footer {
   padding: 40px 12px 35px 12px;
 }
 
-.exclusive {
+.exclusive{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,22 +157,22 @@ footer {
   gap: 12px;
 }
 
-.exclusive h2 {
+.exclusive h2{
   font-size: 25px;
   font-weight: 450;
 }
 
-.foot h3 {
+.foot h3{
   font-weight: 450;
 }
 
-.foot p {
+.foot p{
   font-size: 14px;
   font-weight: 370;
   color: white;
 }
 
-.exclusive input {
+footer .exclusive input{
   width: 200px;
   padding: 12px;
   background-color: transparent;
@@ -188,7 +183,7 @@ footer {
   border-radius: 4px;
 }
 
-.foot-email {
+.foot-email{
   position: relative;
 }
 
@@ -201,7 +196,7 @@ footer {
   cursor: pointer;
 }
 
-.support {
+.support{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,7 +204,7 @@ footer {
   gap: 15px;
 }
 
-.account {
+.account{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -217,21 +212,21 @@ footer {
   gap: 17px;
 }
 
-.account a {
+.account a{
   font-size: 16px;
   font-weight: 370;
   color: white;
 }
 
-.account-content {
+.account-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 8px;
+  gap:8px
 }
 
-.app {
+.app{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,17 +234,17 @@ footer {
   gap: 15px;
 }
 
-.app img {
+.app img{
   width: 100%;
   cursor: pointer;
 }
 
-.app p {
+.app p{
   color: var(--third-color);
   font-size: 13px;
 }
 
-.app-content {
+.app-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -257,18 +252,18 @@ footer {
   gap: 5px;
 }
 
-.app-icons {
+.app-icons{
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
-.app-icons i {
+.app-icons i{
   cursor: pointer;
 }
 
-.app {
+.app{
   width: 205px;
 }
 
@@ -358,7 +353,7 @@ footer {
   opacity: 0.45;
 }
 .customerinfoContainer .customerinfo div input[type="text"],
-input[type="email"] {
+.customerinfo input[type="email"] {
   border: none;
   background-color: #f5f5f5;
   min-width: 320px;
@@ -735,5 +730,15 @@ input[type="radio"]:checked::after {
   .foot {
     padding: 40px 15px 50px 15px;
     gap: 50px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width:1024px){
+  .navbar{
+      flex-direction: column;
+      gap: 15px;
+  }
+  .foot{
+      gap: 80px
   }
 }

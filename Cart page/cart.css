@@ -120,12 +120,12 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover {
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover {
   transition: transform 0.3s ease;
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="login.html"]:hover,
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover,
 .cart-icon:hover,
 .ham-icon i:hover {
   transform: scale(1.1);
