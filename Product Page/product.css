@@ -576,7 +576,6 @@ footer{
   font-weight: 380;
 }
 .headings{
-  font-size: 3rem;
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -588,8 +587,11 @@ footer{
   opacity: 0;
   
 }
+.main-heading{
+  font-size: 3rem;
+}
 .sub-heading{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--main-color);
   font-style: oblique;
 }
