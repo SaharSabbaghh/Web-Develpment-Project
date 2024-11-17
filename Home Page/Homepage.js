@@ -134,3 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(boyContainer);
 });
 
+function setCategory(category) {
+  localStorage.setItem("selectedCategory", category);
+}
