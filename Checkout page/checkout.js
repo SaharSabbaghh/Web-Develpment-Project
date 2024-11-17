@@ -23,24 +23,41 @@ document
 
 //nav and footer js ends
 
-//bank radio starts
+///bank radio starts
 let bankradio = document.getElementById("Bank");
 let cashradio = document.getElementById("cash");
 let cardCode = document.getElementById("cardCode");
-
+let bankclick = 0;
 bankradio.addEventListener("change", () => {
   if (bankradio.checked) {
     cardCode.style.display = "block";
+    cardCode.classList.add("shiftDown");
+
+    cardCode.classList.remove("shiftUP");
+    bankclick++;
   } else {
-    cardCode.style.display = "none";
+    cardCode.style.display = "block";
+    cardCode.classList.remove("shiftDown");
+
+    cardCode.classList.add("shiftUP");
   }
+  cardCode.value = "";
 });
 cashradio.addEventListener("change", () => {
   if (cashradio.checked) {
-    cardCode.style.display = "none";
+    if (bankclick > 0) {
+      cardCode.style.display = "block";
+
+      cardCode.classList.remove("shiftDown");
+      cardCode.classList.add("shiftUP");
+    }
   } else {
     cardCode.style.display = "block";
+
+    cardCode.classList.add("shiftDown");
+    cardCode.classList.remove("shiftUP");
   }
+  cardCode.value = "";
 });
 let carcodeClick = 0;
 cardCode.addEventListener("focus", () => {

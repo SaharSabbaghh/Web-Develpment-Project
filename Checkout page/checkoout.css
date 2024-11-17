@@ -125,21 +125,24 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover, .cart-icon:hover, .ham-icon i:hover{
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover,
+.cart-icon:hover,
+.ham-icon i:hover {
   transform: scale(1.1);
 }
 
 /* footer */
-footer{
+footer {
   background-color: var(--main-color);
   color: white;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
-.foot{
+.foot {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -149,7 +152,7 @@ footer{
   padding: 40px 12px 35px 12px;
 }
 
-.exclusive{
+.exclusive {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,22 +160,22 @@ footer{
   gap: 12px;
 }
 
-.exclusive h2{
+.exclusive h2 {
   font-size: 25px;
   font-weight: 450;
 }
 
-.foot h3{
+.foot h3 {
   font-weight: 450;
 }
 
-.foot p{
+.foot p {
   font-size: 14px;
   font-weight: 370;
   color: white;
 }
 
-footer .exclusive input{
+footer .exclusive input {
   width: 200px;
   padding: 12px;
   background-color: transparent;
@@ -183,7 +186,7 @@ footer .exclusive input{
   border-radius: 4px;
 }
 
-.foot-email{
+.foot-email {
   position: relative;
 }
 
@@ -196,7 +199,7 @@ footer .exclusive input{
   cursor: pointer;
 }
 
-.support{
+.support {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,7 +207,7 @@ footer .exclusive input{
   gap: 15px;
 }
 
-.account{
+.account {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -212,21 +215,21 @@ footer .exclusive input{
   gap: 17px;
 }
 
-.account a{
+.account a {
   font-size: 16px;
   font-weight: 370;
   color: white;
 }
 
-.account-content{
+.account-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap:8px
+  gap: 8px;
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,17 +237,17 @@ footer .exclusive input{
   gap: 15px;
 }
 
-.app img{
+.app img {
   width: 100%;
   cursor: pointer;
 }
 
-.app p{
+.app p {
   color: var(--third-color);
   font-size: 13px;
 }
 
-.app-content{
+.app-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,18 +255,18 @@ footer .exclusive input{
   gap: 5px;
 }
 
-.app-icons{
+.app-icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
-.app-icons i{
+.app-icons i {
   cursor: pointer;
 }
 
-.app{
+.app {
   width: 205px;
 }
 
@@ -533,14 +536,16 @@ input[type="radio"]:checked::after {
   border-radius: 10px;
 }
 #cardCode {
-  padding: 10px;
   border: none;
   background-color: var(--forth-color);
   border-radius: 7px;
   width: 300px;
   display: none;
-
+  transition: all 0.6s ease-in-out;
   margin: 10px 0;
+
+  height: 0;
+  padding: 0;
 }
 
 #cardCode:focus {
@@ -548,8 +553,44 @@ input[type="radio"]:checked::after {
   outline: none;
 }
 
-#Bank:checked ~ #cardCode {
-  display: flex;
+#cardCode.shiftDown {
+  height: 35px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.shiftDown {
+  animation: shiftDown 0.56s ease-in-out;
+}
+
+@keyframes shiftDown {
+  0% {
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    height: 35px;
+    padding: 10px;
+  }
+}
+
+#cardCode.shiftUP {
+  display: none;
+  height: 0px;
+  padding: 0px;
+  margin-top: 0px;
+}
+.shiftUP {
+  animation: shiftup 0.56s ease-in-out;
+}
+@keyframes shiftup {
+  0% {
+    height: 35px;
+    padding: 10px;
+  }
+  100% {
+    height: 0px;
+    padding: 0px;
+  }
 }
 
 .couponds {
@@ -733,12 +774,12 @@ input[type="radio"]:checked::after {
   }
 }
 
-@media screen and (min-width: 767px) and (max-width:1024px){
-  .navbar{
-      flex-direction: column;
-      gap: 15px;
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
   }
-  .foot{
-      gap: 80px
+  .foot {
+    gap: 80px;
   }
 }
