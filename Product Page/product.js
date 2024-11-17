@@ -1,99 +1,98 @@
 // NavBar
-let activePage = window.location.pathname.split('/').pop(); 
-document.querySelectorAll('ul.ul1 li a').forEach(link => {
-    let linkPage = link.href.split('/').pop(); 
-    if (linkPage === activePage) {
-        link.classList.add('active'); 
-    }
+let activePage = window.location.pathname.split("/").pop();
+document.querySelectorAll("ul.ul1 li a").forEach((link) => {
+  let linkPage = link.href.split("/").pop();
+  if (linkPage === activePage) {
+    link.classList.add("active");
+  }
 });
 
 // SideBar
-document.querySelector(".ham-icon i").addEventListener("click", function(){
-    document.querySelector(".sidebar").classList.remove("hidden");
-})
+document.querySelector(".ham-icon i").addEventListener("click", function () {
+  document.querySelector(".sidebar").classList.remove("hidden");
+});
 
-document.querySelector(".sidebar-text i").addEventListener("click", function(){
+document
+  .querySelector(".sidebar-text i")
+  .addEventListener("click", function () {
     document.querySelector(".sidebar").classList.add("hidden");
-})
-
-
-
+  });
 
 const products = [
-    {
-      title: "Logitech G Pro Wireless Gaming Mouse",
-      filter: "Laptops",
-      newPrice: "$120",
-      oldPrice: "$150",
-      sale: "-20%",
-      rating: "90",
-      image: "images/ps.png",
-    },
-    {
-      title: "Sony WH-1000XM5 Noise Cancelling Headphones",
-      filter: "Phones",
-      newPrice: "$350",
-      oldPrice: "$500",
-      sale: "-30%",
-      rating: "95",
-      image: "images/ps.png",
-    },
-    {
-      title: "Samsung 27-inch Curved Monitor",
-      filter: "Headphones",
-      newPrice: "$250",
-      oldPrice: "$350",
-      sale: "-29%",
-      rating: "88",
-      image: "images/ps.png",
-    },
-    {
-      title: "Razer BlackWidow V3 Mechanical Keyboard",
-      filter: "Smartwatch",
-      newPrice: "$180",
-      oldPrice: "$230",
-      sale: "-22%",
-      rating: "85",
-      image: "images/ps.png",
-    },
-    {
-      title: "Apple AirPods Pro (2nd Gen)",
-      filter: "Airpods",
-      newPrice: "$199",
-      oldPrice: "$249",
-      sale: "-20%",
-      rating: "92",
-      image: "images/ps.png",
-    },
-    {
-      title: "Anker PowerCore 20000mAh Power Bank",
-      filter: "Laptops",
-      newPrice: "$60",
-      oldPrice: "$80",
-      sale: "-25%",
-      rating: "87",
-      image: "images/ps.png",
-    },
-    {
-      title: "Amazon Echo Dot (5th Gen)",
-      filter: "Laptops",
-      newPrice: "$40",
-      oldPrice: "$60",
-      sale: "-33%",
-      rating: "90",
-      image: "images/ps.png",
-    },
-    {
-      title: "Canon EOS M50 Mirrorless Camera",
-      filter: "Ipads",
-      newPrice: "$600",
-      oldPrice: "$750",
-      sale: "-20%",
-      rating: "93",
-      image: "images/ps.png",
-    },
-  ];
-  
+  {
+    title: "Logitech G Pro Wireless Gaming Mouse",
+    filter: "Laptops",
+    newPrice: "$120",
+    oldPrice: "$150",
+    sale: "-20%",
+    rating: "90",
+    image: "images/ps.png",
+  },
+  {
+    title: "Sony WH-1000XM5 Noise Cancelling Headphones",
+    filter: "Phones",
+    newPrice: "$350",
+    oldPrice: "$500",
+    sale: "-30%",
+    rating: "95",
+    image: "images/ps.png",
+  },
+  {
+    title: "Samsung 27-inch Curved Monitor",
+    filter: "Headphones",
+    newPrice: "$250",
+    oldPrice: "$350",
+    sale: "-29%",
+    rating: "88",
+    image: "images/ps.png",
+  },
+  {
+    title: "Razer BlackWidow V3 Mechanical Keyboard",
+    filter: "Smartwatch",
+    newPrice: "$180",
+    oldPrice: "$230",
+    sale: "-22%",
+    rating: "85",
+    image: "images/ps.png",
+  },
+  {
+    title: "Apple AirPods Pro (2nd Gen)",
+    filter: "Airpods",
+    newPrice: "$199",
+    oldPrice: "$249",
+    sale: "-20%",
+    rating: "92",
+    image: "images/ps.png",
+  },
+  {
+    title: "Anker PowerCore 20000mAh Power Bank",
+    filter: "Laptops",
+    newPrice: "$60",
+    oldPrice: "$80",
+    sale: "-25%",
+    rating: "87",
+    image: "images/ps.png",
+  },
+  {
+    title: "Amazon Echo Dot (5th Gen)",
+    filter: "Laptops",
+    newPrice: "$40",
+    oldPrice: "$60",
+    sale: "-33%",
+    rating: "90",
+    image: "images/ps.png",
+  },
+  {
+    title: "Canon EOS M50 Mirrorless Camera",
+    filter: "Ipads",
+    newPrice: "$600",
+    oldPrice: "$750",
+    sale: "-20%",
+    rating: "93",
+    image: "images/ps.png",
+  },
+];
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const searchButton = document.getElementById("search");
@@ -130,14 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function () {
-  const selectedCategory = localStorage.getItem("selectedCategory") || "all"; 
+  const selectedCategory = localStorage.getItem("selectedCategory") || "all";
   const cardsContainer = $("#cards");
   const sortDropdown = $("#sort-dropdown");
 
   console.log("Selected category from localStorage:", selectedCategory);
 
   function generateProductCards(productsList) {
-    cardsContainer.html(""); 
+    cardsContainer.html("");
 
     productsList.forEach((product) => {
       const cardHTML = `
@@ -175,6 +174,49 @@ $(document).ready(function () {
     });
   }
 
+  //////////////////charaf
+
+  function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []; // Get cart from localStorage or initialize as empty array
+
+    // Check if product already exists in the cart
+    let existingProductIndex = cart.findIndex(
+      (item) => item.title === product.title
+    );
+
+    if (existingProductIndex !== -1) {
+      // If the product is already in the cart, update quantity
+      cart[existingProductIndex].quantity += 1;
+    } else {
+      // Add the product with quantity of 1
+      product.quantity = 1;
+      cart.push(product);
+    }
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${product.title} added to cart!`);
+  }
+
+  // Event listener for Add to Cart buttons
+  $(document).on("click", ".Add-to-Cart", function () {
+    let cardBox = $(this).closest(".cardBox");
+    let productTitle = cardBox.find(".Product-Name-Related").text();
+    let productNewPrice = cardBox.find(".newPrice").text();
+    let productImage = cardBox.find("img").attr("src");
+
+    // Find the clicked product details
+    let product = {
+      title: productTitle,
+      newPrice: productNewPrice,
+      image: productImage,
+    };
+
+    // Add the product to the cart
+    addToCart(product);
+  });
+
+  //////////////////charaf
   function filterProducts(filter, isCategoryFilter = true) {
     console.log("Filtering by:", filter);
 
@@ -203,7 +245,7 @@ $(document).ready(function () {
       return priceA - priceB;
     });
     generateProductCards(sortedProducts);
-    filterProducts($(".active-filter").data("filter"), false); 
+    filterProducts($(".active-filter").data("filter"), false);
   }
 
   function sortHighToLow() {
@@ -213,7 +255,7 @@ $(document).ready(function () {
       return priceB - priceA;
     });
     generateProductCards(sortedProducts);
-    filterProducts($(".active-filter").data("filter"), false); 
+    filterProducts($(".active-filter").data("filter"), false);
   }
 
   generateProductCards(products);
@@ -221,7 +263,7 @@ $(document).ready(function () {
 
   $(".filter-item").on("click", function () {
     const filter = $(this).data("filter");
-    filterProducts(filter); 
+    filterProducts(filter);
   });
 
   sortDropdown.on("change", function () {
