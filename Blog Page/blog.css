@@ -422,7 +422,7 @@ a {
 }
 
 .btn2:hover {
-  background-color: var(--second-color);
+  background-color: var(--main-color);
   border: none;
   color: #fff;
 }
@@ -442,7 +442,7 @@ a {
 }
 
 .active-filter {
-  background: var(--second-color);
+  background: var(--main-color);
   color: var(--bg-color);
   padding: 4px 10px;
   border-radius: 4px;
@@ -482,7 +482,7 @@ a {
   font-weight: 600;
   color: var(--text-color);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+ 
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -500,7 +500,7 @@ a {
   line-height: 1.5rem;
   margin: 5px 0 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+ 
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

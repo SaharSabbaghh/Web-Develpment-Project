@@ -22,6 +22,7 @@ document.querySelector(".sidebar-text i").addEventListener("click", function(){
 const products = [
     {
       title: "Logitech G Pro Wireless Gaming Mouse",
+      filter: "Laptops",
       newPrice: "$120",
       oldPrice: "$150",
       sale: "-20%",
@@ -30,6 +31,7 @@ const products = [
     },
     {
       title: "Sony WH-1000XM5 Noise Cancelling Headphones",
+      filter: "Phones",
       newPrice: "$350",
       oldPrice: "$500",
       sale: "-30%",
@@ -38,6 +40,7 @@ const products = [
     },
     {
       title: "Samsung 27-inch Curved Monitor",
+      filter: "Headphones",
       newPrice: "$250",
       oldPrice: "$350",
       sale: "-29%",
@@ -46,6 +49,7 @@ const products = [
     },
     {
       title: "Razer BlackWidow V3 Mechanical Keyboard",
+      filter: "Smartwatch",
       newPrice: "$180",
       oldPrice: "$230",
       sale: "-22%",
@@ -54,6 +58,7 @@ const products = [
     },
     {
       title: "Apple AirPods Pro (2nd Gen)",
+      filter: "Airpods",
       newPrice: "$199",
       oldPrice: "$249",
       sale: "-20%",
@@ -62,6 +67,7 @@ const products = [
     },
     {
       title: "Anker PowerCore 20000mAh Power Bank",
+      filter: "Laptops",
       newPrice: "$60",
       oldPrice: "$80",
       sale: "-25%",
@@ -70,6 +76,7 @@ const products = [
     },
     {
       title: "Amazon Echo Dot (5th Gen)",
+      filter: "Laptops",
       newPrice: "$40",
       oldPrice: "$60",
       sale: "-33%",
@@ -78,6 +85,7 @@ const products = [
     },
     {
       title: "Canon EOS M50 Mirrorless Camera",
+      filter: "Laptops",
       newPrice: "$600",
       oldPrice: "$750",
       sale: "-20%",
@@ -121,6 +129,22 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", performSearch);
 });
 
+$(document).ready(function () {
+  $(".filter-item").on("click", function () {
+    const value = $(this).data("filter");
+
+    if (value === "all") {
+      $(".cardBox").show(600);
+    } else {
+      $(".cardBox").hide(600).filter(`.${value}`).show(600);
+    }
+
+    $(this).addClass("active-filter").siblings().removeClass("active-filter");
+  });
+});
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const sortDropdown = document.getElementById("sort-dropdown");
   const cardsContainer = document.getElementById("cards");
@@ -128,10 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function generateProductCards(productsList) {
     cardsContainer.innerHTML = ""; 
-
+  
     productsList.forEach((product) => {
       const cardHTML = `
-          <div class="cardBox">
+          <div class="cardBox ${product.filter}">
             <div class="imgBox">
               <div class="productSpecifications">
                 <span class="sale-Product-related">${product.sale}</span>
@@ -148,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="Add-to-Cart">Add To Cart</div>
             </div>
             <div class="CardInfo">
+              <h4 class="filter">${product.filter}</h4>
               <h3 class="Product-Name-Related">${product.title}</h3>
               <p class="Product-Price-related">
                 <span class="newPrice">${product.newPrice}</span>
@@ -163,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsContainer.innerHTML += cardHTML;
     });
   }
-
+  
   function sortLowToHigh() {
     const sortedProducts = products.slice().sort((a, b) => {
       const priceA = parseFloat(a.newPrice.replace("$", ""));
