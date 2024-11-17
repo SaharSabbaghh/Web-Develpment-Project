@@ -85,7 +85,7 @@ const products = [
     },
     {
       title: "Canon EOS M50 Mirrorless Camera",
-      filter: "Laptops",
+      filter: "Ipads",
       newPrice: "$600",
       oldPrice: "$750",
       sale: "-20%",
