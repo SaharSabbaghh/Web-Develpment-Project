@@ -130,65 +130,72 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function () {
-  $(".filter-item").on("click", function () {
-    const value = $(this).data("filter");
+  const selectedCategory = localStorage.getItem("selectedCategory") || "all"; 
+  const cardsContainer = $("#cards");
+  const sortDropdown = $("#sort-dropdown");
 
-    if (value === "all") {
-      $(".cardBox").show(600);
-    } else {
-      $(".cardBox").hide(600).filter(`.${value}`).show(600);
-    }
-
-    $(this).addClass("active-filter").siblings().removeClass("active-filter");
-  });
-});
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const sortDropdown = document.getElementById("sort-dropdown");
-  const cardsContainer = document.getElementById("cards");
-
+  console.log("Selected category from localStorage:", selectedCategory);
 
   function generateProductCards(productsList) {
-    cardsContainer.innerHTML = ""; 
-  
+    cardsContainer.html(""); 
+
     productsList.forEach((product) => {
       const cardHTML = `
-          <div class="cardBox ${product.filter}">
-            <div class="imgBox">
-              <div class="productSpecifications">
-                <span class="sale-Product-related">${product.sale}</span>
-                <div class="productSpecifications-icons">
-                  <span id="productSpecifications-Whishlist">
-                    <i class="fa-regular fa-heart"></i>
-                  </span>
-                  <span id="productSpecifications-View">
-                    <i class="fa-regular fa-eye"></i>
-                  </span>
-                </div>
+        <div class="cardBox ${product.filter}">
+          <div class="imgBox">
+            <div class="productSpecifications">
+              <span class="sale-Product-related">${product.sale}</span>
+              <div class="productSpecifications-icons">
+                <span id="productSpecifications-Whishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </span>
+                <span id="productSpecifications-View">
+                  <i class="fa-regular fa-eye"></i>
+                </span>
               </div>
-              <img src="${product.image}" alt="product image" />
-              <div class="Add-to-Cart">Add To Cart</div>
             </div>
-            <div class="CardInfo">
-              <h4 class="filter">${product.filter}</h4>
-              <h3 class="Product-Name-Related">${product.title}</h3>
-              <p class="Product-Price-related">
-                <span class="newPrice">${product.newPrice}</span>
-                <span class="old-Price">${product.oldPrice}</span>
-              </p>
-              <p class="product-raiting-related">
-                <img src="images/raitings/4starsRaiting-removebg-preview.png" />
-                <span>(${product.rating})</span>
-              </p>
-            </div>
+            <img src="${product.image}" alt="product image" />
+            <div class="Add-to-Cart">Add To Cart</div>
           </div>
-        `;
-      cardsContainer.innerHTML += cardHTML;
+          <div class="CardInfo">
+            <h4 class="filter">${product.filter}</h4>
+            <h3 class="Product-Name-Related">${product.title}</h3>
+            <p class="Product-Price-related">
+              <span class="newPrice">${product.newPrice}</span>
+              <span class="old-Price">${product.oldPrice}</span>
+            </p>
+            <p class="product-raiting-related">
+              <img src="images/raitings/4starsRaiting-removebg-preview.png" />
+              <span>(${product.rating})</span>
+            </p>
+          </div>
+        </div>
+      `;
+      cardsContainer.append(cardHTML);
     });
   }
-  
+
+  function filterProducts(filter, isCategoryFilter = true) {
+    console.log("Filtering by:", filter);
+
+    if (isCategoryFilter) {
+      if (filter === "all") {
+        $(".cardBox").show(600);
+      } else {
+        $(".cardBox").hide(600).filter(`.${filter}`).show(600);
+      }
+    } else {
+      if (filter === "all") {
+        $(".cardBox").show();
+      } else {
+        $(".cardBox").hide().filter(`.${filter}`).show();
+      }
+    }
+
+    $(".filter-item").removeClass("active-filter");
+    $(`.filter-item[data-filter="${filter}"]`).addClass("active-filter");
+  }
+
   function sortLowToHigh() {
     const sortedProducts = products.slice().sort((a, b) => {
       const priceA = parseFloat(a.newPrice.replace("$", ""));
@@ -196,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return priceA - priceB;
     });
     generateProductCards(sortedProducts);
+    filterProducts($(".active-filter").data("filter"), false); 
   }
 
   function sortHighToLow() {
@@ -205,10 +213,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return priceB - priceA;
     });
     generateProductCards(sortedProducts);
+    filterProducts($(".active-filter").data("filter"), false); 
   }
 
-  sortDropdown.addEventListener("change", () => {
-    const selectedOption = sortDropdown.value;
+  generateProductCards(products);
+  filterProducts(selectedCategory);
+
+  $(".filter-item").on("click", function () {
+    const filter = $(this).data("filter");
+    filterProducts(filter); 
+  });
+
+  sortDropdown.on("change", function () {
+    const selectedOption = $(this).val();
 
     if (selectedOption === "low-to-high") {
       sortLowToHigh();
@@ -216,6 +233,4 @@ document.addEventListener("DOMContentLoaded", () => {
       sortHighToLow();
     }
   });
-
-  generateProductCards(products);
 });
