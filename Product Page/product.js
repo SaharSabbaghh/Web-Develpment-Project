@@ -186,7 +186,7 @@ $(document).ready(function () {
 
     if (existingProductIndex !== -1) {
       // If the product is already in the cart, update quantity
-      cart[existingProductIndex].quantity += 1;
+      alert(`${product.title} Already exists in the cart!`);
     } else {
       // Add the product with quantity of 1
       product.quantity = 1;
