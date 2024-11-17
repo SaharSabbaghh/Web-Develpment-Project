@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartContainer.innerHTML = ""; // Clear the cart container before appending new items
 
     cart.forEach((product) => {
-      const productHTML = `
+      let productHTML = `
 <div class="productRow">
                 <div class="product">
                   <div class="productimgBox">
@@ -83,10 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       cartContainer.innerHTML += productHTML;
     });
-
-
   }
-      displayCart();
+  displayCart();
 });
 
 /////////////////////////charaf
