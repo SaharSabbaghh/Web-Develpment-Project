@@ -1,0 +1,74 @@
+[
+    {
+      "title": "Logitech G Pro Wireless Gaming Mouse",
+      "filter": "Laptops",
+      "newPrice": "$120",
+      "oldPrice": "$150",
+      "sale": "-20%",
+      "rating": "90",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Sony WH-1000XM5 Noise Cancelling Headphones",
+      "filter": "Phones",
+      "newPrice": "$350",
+      "oldPrice": "$500",
+      "sale": "-30%",
+      "rating": "95",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Samsung 27-inch Curved Monitor",
+      "filter": "Headphones",
+      "newPrice": "$250",
+      "oldPrice": "$350",
+      "sale": "-29%",
+      "rating": "88",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Razer BlackWidow V3 Mechanical Keyboard",
+      "filter": "Smartwatch",
+      "newPrice": "$180",
+      "oldPrice": "$230",
+      "sale": "-22%",
+      "rating": "85",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Apple AirPods Pro (2nd Gen)",
+      "filter": "Airpods",
+      "newPrice": "$199",
+      "oldPrice": "$249",
+      "sale": "-20%",
+      "rating": "92",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Anker PowerCore 20000mAh Power Bank",
+      "filter": "Laptops",
+      "newPrice": "$60",
+      "oldPrice": "$80",
+      "sale": "-25%",
+      "rating": "87",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Amazon Echo Dot (5th Gen)",
+      "filter": "Laptops",
+      "newPrice": "$40",
+      "oldPrice": "$60",
+      "sale": "-33%",
+      "rating": "90",
+      "image": "images/ps.png"
+    },
+    {
+      "title": "Canon EOS M50 Mirrorless Camera",
+      "filter": "Ipads",
+      "newPrice": "$600",
+      "oldPrice": "$750",
+      "sale": "-20%",
+      "rating": "93",
+      "image": "images/ps.png"
+    }
+  ]
