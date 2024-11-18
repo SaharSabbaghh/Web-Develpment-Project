@@ -19,7 +19,7 @@ document.querySelector(".sidebar-text i").addEventListener("click", function () 
 // Product Data
 const products = [
   {
-    "title": "Logitech G Pro Wireless Gaming Mouse",
+    "title": "Logitech ",
     "filter": "Laptops",
     "newPrice": "$120",
     "oldPrice": "$150",
@@ -28,7 +28,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Sony WH-1000XM5 Noise Cancelling Headphones",
+    "title": "Iphone 15 Pro",
     "filter": "Phones",
     "newPrice": "$350",
     "oldPrice": "$500",
@@ -37,7 +37,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Samsung 27-inch Curved Monitor",
+    "title": "Sony Noise Cancelling",
     "filter": "Headphones",
     "newPrice": "$250",
     "oldPrice": "$350",
@@ -46,7 +46,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Razer BlackWidow V3 Mechanical Keyboard",
+    "title": "BlackWidow V3 ",
     "filter": "Smartwatch",
     "newPrice": "$180",
     "oldPrice": "$230",
@@ -55,7 +55,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Apple AirPods Pro (2nd Gen)",
+    "title": "Apple AirPods Pro ",
     "filter": "Airpods",
     "newPrice": "$199",
     "oldPrice": "$249",
@@ -64,7 +64,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Anker PowerCore 20000mAh Power Bank",
+    "title": "Anker PowerCore ",
     "filter": "Laptops",
     "newPrice": "$60",
     "oldPrice": "$80",
@@ -73,7 +73,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Amazon Echo Dot (5th Gen)",
+    "title": " Echo Dot ",
     "filter": "Laptops",
     "newPrice": "$40",
     "oldPrice": "$60",
@@ -82,7 +82,7 @@ const products = [
     "image": "images/ps.png"
   },
   {
-    "title": "Canon EOS M50 Mirrorless Camera",
+    "title": "Ipad Pro",
     "filter": "Ipads",
     "newPrice": "$600",
     "oldPrice": "$750",
