@@ -422,6 +422,11 @@ footer {
   background-color: white;
   transition: all 0.7s ease-in-out;
 }
+.cartitems{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
 .productQuanityBox {
   display: flex;

@@ -18,10 +18,76 @@ document
   .addEventListener("click", function () {
     document.querySelector(".sidebar").classList.add("hidden");
   });
-  
+
 //nav and footer js ends
 
 //product Row starts
+
+/////////////////////////charaf
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get the cart from localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartContainer = document.querySelector(".cartitems"); // Assume you have a container with id 'cart-container'
+
+  // Function to display the cart items
+  function displayCart() {
+    cartContainer.innerHTML = ""; // Clear the cart container before appending new items
+
+    cart.forEach((product) => {
+      let productHTML = `
+<div class="productRow">
+                <div class="product">
+                  <div class="productimgBox">
+                    <img
+                      class="removeIcon"
+                      src="./images/remove.png"
+                      alt="remove icon"
+                    />
+
+                    <img
+                      class="productImg"
+                      src="${product.image}"
+                      alt="${product.title}"
+                    />
+                  </div>
+                  <div class="productName">${product.title}</div>
+                </div>
+
+                <div class="productPrice">${product.newPrice}</div>
+
+                <div class="productQuanityBox">
+                  <div class="productquantitySBox">
+                    <p class="productQuantity">01</p>
+                    <div class="quantityArrows">
+                      <img
+                        class="increment"
+                        src="./images/next_prev/arrowUP.png"
+                        alt="arrowUp"
+                        style="width: 14px; height: auto; cursor: pointer"
+                      />
+                      <img
+                        class="decrement"
+                        src="./images/next_prev/arrowDown .png"
+                        alt="arrowDown"
+                        style="width: 14px; height: auto; cursor: pointer"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="productSubtotal">$<span></span></div>
+                <button>Delete</button>
+              </div>
+      
+            
+      `;
+      cartContainer.innerHTML += productHTML;
+    });
+  }
+  displayCart();
+});
+
+/////////////////////////charaf
 
 //product quantity starts
 let products = document.getElementsByClassName("productRow");
