@@ -11,8 +11,8 @@
   --SecondColor: #aad7d9;
   --thirdColor: #fbf9f1;
   --forthColor: #e5e1da;
-  --fifth-color: #F9FBFC;
-  --sixth-color: #686D76;
+  --fifth-color: #f9fbfc;
+  --sixth-color: #686d76;
 }
 body {
   min-height: 100vh;
@@ -25,16 +25,16 @@ body {
   align-items: center;
 }
 
-main{
+main {
   margin-top: 70px;
   margin-bottom: 150px;
   margin-left: 90px;
   margin-right: 90px;
 }
 /* Navbar */
-header{
+header {
   display: flex;
-  background-color:  var(--fifth-color) ;
+  background-color: var(--fifth-color);
   position: fixed;
   top: 0;
   width: 100%;
@@ -51,7 +51,7 @@ header{
 }
 
 li {
-   list-style: none;
+  list-style: none;
 }
 
 a {
@@ -62,49 +62,51 @@ a {
   font-weight: 700;
 }
 
-.navbar .logo{
+.navbar .logo {
   width: 170px;
 }
 
-.navbar .ul1{
+.navbar .ul1 {
   display: flex;
   gap: 3rem;
 }
 
-.ul1 li a:hover, .foot-ul .foot-ul-content li a:hover, .sidebar a:hover{
-  color: var(--main-color);                
-}
-
-.navbar a:is(:link, :active, :visited).active{
+.ul1 li a:hover,
+.foot-ul .foot-ul-content li a:hover,
+.sidebar a:hover {
   color: var(--main-color);
 }
 
-.ul2 .ham{
+.navbar a:is(:link, :active, :visited).active {
+  color: var(--main-color);
+}
+
+.ul2 .ham {
   display: none;
 }
 
-.ul2{
+.ul2 {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
 
-.uls{
+.uls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 100px;
 }
 
-.ul2-cnt{
+.ul2-cnt {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:30px;
+  gap: 30px;
 }
 
-.cart-icon{
+.cart-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,21 +129,23 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover, .cart-icon:hover, .ham-icon i:hover{
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover,
+.cart-icon:hover,
+.ham-icon i:hover {
   transform: scale(1.1);
 }
 
 /* footer */
-footer{
+footer {
   background-color: var(--main-color);
   color: white;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.foot{
+.foot {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -151,7 +155,7 @@ footer{
   padding: 40px 12px 35px 12px;
 }
 
-.exclusive{
+.exclusive {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,22 +163,22 @@ footer{
   gap: 12px;
 }
 
-.exclusive h2{
+.exclusive h2 {
   font-size: 25px;
   font-weight: 450;
 }
 
-.foot h3{
+.foot h3 {
   font-weight: 450;
 }
 
-.foot p{
+.foot p {
   font-size: 14px;
   font-weight: 370;
   color: white;
 }
 
-.exclusive input{
+.exclusive input {
   width: 200px;
   padding: 12px;
   background-color: transparent;
@@ -185,7 +189,7 @@ footer{
   border-radius: 4px;
 }
 
-.foot-email{
+.foot-email {
   position: relative;
 }
 
@@ -198,7 +202,7 @@ footer{
   cursor: pointer;
 }
 
-.support{
+.support {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -206,7 +210,7 @@ footer{
   gap: 15px;
 }
 
-.account{
+.account {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -214,21 +218,21 @@ footer{
   gap: 17px;
 }
 
-.account a{
+.account a {
   font-size: 16px;
   font-weight: 370;
   color: white;
 }
 
-.account-content{
+.account-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap:8px
+  gap: 8px;
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,17 +240,17 @@ footer{
   gap: 15px;
 }
 
-.app img{
+.app img {
   width: 100%;
   cursor: pointer;
 }
 
-.app p{
+.app p {
   color: var(--sixth-color);
   font-size: 13px;
 }
 
-.app-content{
+.app-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,26 +258,26 @@ footer{
   gap: 5px;
 }
 
-.app-icons{
+.app-icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
-.app-icons i{
+.app-icons i {
   cursor: pointer;
 }
 
-.app{
+.app {
   width: 205px;
 }
 
 /* sidebar */
-.sidebar{
-  position:fixed;
+.sidebar {
+  position: fixed;
   top: 0;
-  right:0;
+  right: 0;
   height: 100%;
   width: 250px;
   z-index: 999;
@@ -283,100 +287,100 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content:flex-start;
+  justify-content: flex-start;
   gap: 50px;
   padding-top: 10px;
 }
 
-.sidebar-text{
+.sidebar-text {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
 }
 
-.sidebar-text span{
+.sidebar-text span {
   color: var(--main-color);
 }
 
-.sidebar-text i{
+.sidebar-text i {
   margin-top: 14px;
   margin-left: 20px;
   cursor: pointer;
 }
 
-.sidebar li{
+.sidebar li {
   width: 100%;
   margin-left: 60px;
 }
 
-.sidebar a{
+.sidebar a {
   position: relative;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.sidebar li i{
+.sidebar li i {
   margin-right: 20px;
 }
 
 .sidebar li a:hover {
-  transform: translateX(20px); 
+  transform: translateX(20px);
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-@media screen and (max-width: 767px){
-  .navbar .ul1{
-      display: none;
+@media screen and (max-width: 767px) {
+  .navbar .ul1 {
+    display: none;
   }
 
-  .navbar{
-      flex-direction: column;
-      gap: 5px;
+  .navbar {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  .ul2 .ham{
-      display: flex;
+  .ul2 .ham {
+    display: flex;
   }
 
-  .ul2 .ham-icon{
-      margin-right: 20px ;
-      margin-top: 10px;
-      padding: 5px;
+  .ul2 .ham-icon {
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 5px;
   }
 
-  .uls{
-      width: 100%;
+  .uls {
+    width: 100%;
   }
 
-  .ul2{
-      width: 100%;
-      justify-content: space-between;
-      flex-direction: row-reverse;
-  }
-  
-  .ul2-cnt{
-      margin-left: 20px;
-      flex-direction: row-reverse;
+  .ul2 {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 
-  .foot{
-      padding: 40px 15px 50px 15px;
-      gap:50px;
+  .ul2-cnt {
+    margin-left: 20px;
+    flex-direction: row-reverse;
+  }
+
+  .foot {
+    padding: 40px 15px 50px 15px;
+    gap: 50px;
   }
 }
 
-@media screen and (min-width: 767px) and (max-width:1024px){
-  .navbar{
-      flex-direction: column;
-      gap: 15px;
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .foot{
-      gap: 80px
+  .foot {
+    gap: 80px;
   }
 }
 
@@ -575,7 +579,7 @@ footer{
   margin-left: 10px;
   font-weight: 380;
 }
-.headings{
+.headings {
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -585,12 +589,11 @@ footer{
   animation: slideDown 1s ease-out forwards;
   -webkit-animation: slideDown 1s ease-out forwards;
   opacity: 0;
-  
 }
-.main-heading{
+.main-heading {
   font-size: 3rem;
 }
-.sub-heading{
+.sub-heading {
   font-size: 1.2rem;
   color: var(--main-color);
   font-style: oblique;
@@ -607,8 +610,8 @@ footer{
   align-items: center;
   gap: 40px;
   width: 100%;
-  margin: 0 auto; 
-  padding: 10px 20px; 
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 .searching {
   display: flex;
@@ -634,7 +637,7 @@ footer{
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 20px;
-  padding: 6px 36px 6px 12px; 
+  padding: 6px 36px 6px 12px;
   font-size: 20px;
   width: 200px;
 }
@@ -644,10 +647,9 @@ footer{
   justify-content: space-between;
   padding: 10px 20px;
   width: 100%;
-  max-width: 1250px; 
+  max-width: 1250px;
   margin: 0 auto; /* Center align */
 }
-
 
 .sort-dropdown {
   padding: 10px;
@@ -668,7 +670,6 @@ footer{
 }
 
 @media (max-width: 480px) {
-
   .headings {
     font-size: 2rem;
     margin-top: 2rem;
@@ -684,12 +685,16 @@ footer{
     height: auto;
   }
   .sortings {
-  flex-direction: column;}
-
-
+    flex-direction: column;
+  }
+  .filter-item {
+    font-size: 0.5rem;
+  }
 }
-
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .post-filter {
   display: flex;
   justify-content: center;
@@ -711,6 +716,6 @@ footer{
   border-radius: 4px;
 }
 
-h4{
-  color: var(--sixth-color)
+h4 {
+  color: var(--sixth-color);
 }
