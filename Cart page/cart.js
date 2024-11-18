@@ -1,34 +1,36 @@
-//nav and footer js starts
-// NavBar
-let activePage = window.location.pathname.split("/").pop();
-document.querySelectorAll("ul.ul1 li a").forEach((link) => {
-  let linkPage = link.href.split("/").pop();
-  if (linkPage === activePage) {
-    link.classList.add("active");
-  }
-});
-
-// SideBar
-document.querySelector(".ham-icon i").addEventListener("click", function () {
-  document.querySelector(".sidebar").classList.remove("hidden");
-});
-
-document
-  .querySelector(".sidebar-text i")
-  .addEventListener("click", function () {
-    document.querySelector(".sidebar").classList.add("hidden");
-  });
-
-//nav and footer js ends
-
-//product Row starts
-
 /////////////////////////charaf
 
 document.addEventListener("DOMContentLoaded", () => {
+  //nav and footer js starts
+  // NavBar
+  let activePage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("ul.ul1 li a").forEach((link) => {
+    let linkPage = link.href.split("/").pop();
+    if (linkPage === activePage) {
+      link.classList.add("active");
+    }
+  });
+
+  // SideBar
+  document.querySelector(".ham-icon i").addEventListener("click", function () {
+    document.querySelector(".sidebar").classList.remove("hidden");
+  });
+
+  document
+    .querySelector(".sidebar-text i")
+    .addEventListener("click", function () {
+      document.querySelector(".sidebar").classList.add("hidden");
+    });
+
+  //nav and footer js ends
+
+  //product Row starts
   // Get the cart from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let cartContainer = document.querySelector(".cartitems"); // Assume you have a container with id 'cart-container'
+  let cartContainer = document.querySelector(".cartitems");
+  let Total = document.querySelector(".Total .number");
+  let subtotal = document.querySelector(".Subtotal .number");
+  let TotalAdder = 0;
 
   // Function to display the cart items
   function displayCart() {
@@ -75,155 +77,137 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                   </div>
                 </div>
-                <div class="productSubtotal">$<span></span></div>
+                <div class="productSubtotal">$<span>${product.newPrice.replace(
+                  "$",
+                  ""
+                )}</span></div>
                 <button>Delete</button>
               </div>
       
             
       `;
+      TotalAdder += parseInt(product.newPrice.replace("$", ""));
+      subtotal.innerHTML = TotalAdder;
+      Total.innerHTML = subtotal.textContent;
       cartContainer.innerHTML += productHTML;
     });
   }
   displayCart();
+
+  function subtotaladder(productPrice, sign) {
+    if (sign === "+") {
+      TotalAdder += parseInt(productPrice);
+      subtotal.innerHTML = TotalAdder;
+      Total.innerHTML = subtotal.textContent;
+    } else {
+      TotalAdder -= parseInt(productPrice);
+      subtotal.innerHTML = TotalAdder;
+      Total.innerHTML = subtotal.textContent;
+    }
+  }
+  function productPriceRemover(productSubtotal) {
+    TotalAdder -= parseInt(productSubtotal);
+    subtotal.innerHTML = TotalAdder;
+    Total.innerHTML = subtotal.textContent;
+  }
+
+  document.querySelector(".cartitems").addEventListener("click", (event) => {
+    let target = event.target;
+
+    if (target.classList.contains("increment")) {
+      let productRow = target.closest(".productRow");
+      let quantityElement = productRow.querySelector(".productQuantity");
+      let productPriceElement = productRow.querySelector(".productPrice");
+      let productSubtotalElement = productRow.querySelector(
+        ".productSubtotal span"
+      );
+      let quantity = parseInt(quantityElement.textContent);
+      let productPrice = parseFloat(
+        productPriceElement.textContent.replace("$", "")
+      );
+      // Update quantity
+      quantity++;
+      quantityElement.textContent = quantity < 10 ? "0" + quantity : quantity;
+      // Update subtotal
+      let subtotal = productPrice * quantity;
+      productSubtotalElement.textContent = subtotal;
+      subtotaladder(productPrice, "+");
+    }
+
+    if (target.classList.contains("decrement")) {
+      let productRow = target.closest(".productRow");
+      let quantityElement = productRow.querySelector(".productQuantity");
+      let productPriceElement = productRow.querySelector(".productPrice");
+      let productSubtotalElement = productRow.querySelector(
+        ".productSubtotal span"
+      );
+
+      let quantity = parseInt(quantityElement.textContent);
+      let productPrice = parseFloat(
+        productPriceElement.textContent.replace("$", "")
+      );
+
+      if (quantity > 1) {
+        // Update quantity
+        quantity--;
+        quantityElement.textContent = quantity < 10 ? "0" + quantity : quantity;
+
+        // Update subtotal
+        let subtotal = productPrice * quantity;
+        productSubtotalElement.textContent = subtotal;
+        subtotaladder(productPrice, "-");
+      }
+    }
+  });
+
+  document.querySelector(".cartitems").addEventListener("click", (event) => {
+    let target = event.target;
+
+    if (target.classList.contains("removeIcon")) {
+      let productRow = target.closest(".productRow");
+      let deleteButton = productRow.querySelector("button");
+
+      if (deleteButton.classList.contains("activated")) {
+        deleteButton.classList.remove("activated");
+        deleteButton.classList.add("opacityremover");
+        productRow.classList.remove("shiftleft");
+        deleteButton.classList.remove("shiftright");
+      } else {
+        deleteButton.classList.remove("opacityremover");
+        deleteButton.classList.add("activated");
+        productRow.classList.add("shiftleft");
+        deleteButton.classList.add("shiftright");
+      }
+    }
+
+    if (target.tagName === "BUTTON" && target.textContent === "Delete") {
+      let productRow = target.closest(".productRow");
+      productPriceRemover(
+        productRow.querySelector(".productSubtotal span").textContent
+      );
+      productRow.remove();
+    }
+  });
+
+  let updatebtn = document.querySelector(".update-Btn");
+
+  updatebtn.addEventListener("click", () => {
+    let removeIcons = document.querySelectorAll(".removeIcon");
+    let deleteButtons = document.querySelectorAll(".productRow button");
+
+    if (updatebtn.innerHTML === "Update Cart") {
+      updatebtn.innerHTML = "Cancel";
+      removeIcons.forEach((icon) => (icon.style.display = "flex"));
+    } else {
+      updatebtn.innerHTML = "Update Cart";
+      removeIcons.forEach((icon) => (icon.style.display = "none"));
+      deleteButtons.forEach((button) => {
+        button.classList.add("opacityremover");
+        button.closest(".productRow").classList.remove("shiftleft");
+        button.classList.remove("shiftright");
+      });
+    }
+  });
 });
 
 /////////////////////////charaf
-
-//product quantity starts
-let products = document.getElementsByClassName("productRow");
-let productPrice = document.querySelectorAll(".productPrice span");
-let productSubtotal = document.querySelectorAll(".productSubtotal span");
-let decrement = document.querySelectorAll(".decrement");
-let increment = document.querySelectorAll(".increment");
-let quantity = document.querySelectorAll(".productQuantity");
-let subtotal = document.querySelector(".Subtotal .number");
-let Total = document.querySelector(".Total .number");
-let TotalAdder = 0;
-
-let quantity_Counters = Array(products.length).fill(1);
-function subtotalCal(productPrice, quantity) {
-  return productPrice * quantity;
-}
-
-for (let i = 0; i < products.length; i++) {
-  TotalAdder = TotalAdder + parseInt(productSubtotal[i].textContent);
-  console.log(TotalAdder);
-  subtotal.innerHTML = TotalAdder.toString();
-  Total.innerHTML = subtotal.innerHTML;
-  increment[i].addEventListener("click", () => {
-    quantity_Counters[i]++;
-    quantity[i].innerHTML =
-      quantity_Counters[i] < 10
-        ? "0" + quantity_Counters[i]
-        : quantity_Counters[i];
-
-    productSubtotal[i].textContent = subtotalCal(
-      parseInt(productPrice[i].textContent),
-      quantity_Counters[i]
-    ).toString();
-
-    TotalAdder = TotalAdder + parseInt(productPrice[i].textContent);
-    subtotal.innerHTML = TotalAdder.toString();
-    Total.innerHTML = subtotal.innerHTML;
-    console.log(TotalAdder);
-  });
-
-  decrement[i].addEventListener("click", () => {
-    if (quantity_Counters[i] > 1) {
-      quantity_Counters[i]--;
-
-      quantity[i].textContent =
-        quantity_Counters[i] < 10
-          ? "0" + quantity_Counters[i]
-          : quantity_Counters[i];
-      productSubtotal[i].textContent = subtotalCal(
-        parseInt(productPrice[i].textContent),
-        quantity_Counters[i]
-      ).toString();
-
-      TotalAdder = TotalAdder - parseInt(productPrice[i].textContent);
-      subtotal.innerHTML = TotalAdder.toString();
-      Total.innerHTML = subtotal.innerHTML;
-      console.log(TotalAdder);
-    }
-  });
-}
-
-// Select all delete buttons and product rows initially
-// Function to handle the "Remove" icon click
-let removeBtn = document.getElementsByClassName("removeIcon");
-// Function to handle the "Remove" icon click
-function handleRemoveClick() {
-  let deleteButton = this.closest(".productRow").querySelector("button");
-  let productRow = this.closest(".productRow");
-
-  // Toggle a single class to control both shift and opacity effects
-  if (deleteButton.classList.contains("activated")) {
-    deleteButton.classList.remove("activated");
-    deleteButton.classList.add("opacityremover");
-    productRow.classList.remove("shiftleft");
-    deleteButton.classList.remove("shiftright");
-  } else {
-    deleteButton.classList.remove("opacityremover");
-    deleteButton.classList.add("activated");
-    productRow.classList.add("shiftleft");
-    deleteButton.classList.add("shiftright");
-  }
-}
-
-// Attach event listeners to "Remove" icons
-document.querySelectorAll(".removeIcon").forEach((icon) => {
-  icon.addEventListener("click", handleRemoveClick);
-});
-
-// Function to handle the "Delete" button click
-function handleDeleteClick() {
-  let productRow = this.closest(".productRow");
-  let subtotalValue = parseInt(
-    productRow.querySelector(".productSubtotal span").textContent
-  );
-
-  // Update the total amount
-  TotalAdder -= subtotalValue;
-  subtotal.innerHTML = TotalAdder.toString();
-  Total.innerHTML = subtotal.innerHTML;
-
-  // Remove the specific product row
-  productRow.remove();
-}
-
-// Attach event listeners to "Remove" icons and "Delete" buttons
-document.querySelectorAll(".removeIcon").forEach((icon) => {
-  icon.addEventListener("click", handleRemoveClick);
-});
-
-document.querySelectorAll(".productRow button").forEach((button) => {
-  button.addEventListener("click", handleDeleteClick);
-});
-
-//delete btn ends
-//update btn starts
-
-let updatebtn = document.querySelector(".update-Btn");
-
-updatebtn.addEventListener("click", () => {
-  if (updatebtn.innerHTML === "Update Cart") {
-    updatebtn.innerHTML = "Cancel";
-    for (let k = 0; k < products.length; k++) {
-      removeBtn[k].style.display = "flex";
-    }
-  } else {
-    updatebtn.innerHTML = "Update Cart";
-    let DeleteBtn = document.querySelectorAll(".productRow button");
-    for (let k = 0; k < products.length; k++) {
-      removeBtn[k].style.display = "none";
-      DeleteBtn[k].classList.add("opacityremover");
-      products[k].classList.remove("shiftleft");
-      DeleteBtn[k].classList.remove("shiftright");
-    }
-  }
-});
-
-//update btn ends
-
-//product Row ends
