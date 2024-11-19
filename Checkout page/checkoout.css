@@ -446,7 +446,7 @@ footer .exclusive input {
   justify-content: flex-start;
 }
 .imgbox img {
-  width: 100%;
+  width: 85px;
   height: auto;
 }
 .cartTotal {
