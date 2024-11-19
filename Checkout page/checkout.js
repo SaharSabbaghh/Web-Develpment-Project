@@ -71,16 +71,55 @@ cardCode.addEventListener("blur", () => {
 
 //products start
 
-let products = document.getElementsByClassName("product");
-let PTotal = 0;
-let subtotal = document.querySelector(".subtotal span");
-let Total = document.querySelector(".total span");
-let Psubtotal = document.querySelectorAll(".productSubtotal span");
-for (let i = 0; i < products.length; i++) {
-  PTotal = PTotal + parseInt(Psubtotal[i].innerHTML);
+// let products = document.getElementsByClassName("product");
+// let PTotal = 0;
+// let subtotal = document.querySelector(".subtotal span");
+// let Total = document.querySelector(".total span");
+// let Psubtotal = document.querySelectorAll(".productSubtotal span");
+// for (let i = 0; i < products.length; i++) {
+//   PTotal = PTotal + parseInt(Psubtotal[i].innerHTML);
 
-  subtotal.innerHTML = PTotal.toString();
-  Total.innerHTML = subtotal.textContent;
-}
+//   subtotal.innerHTML = PTotal.toString();
+//   Total.innerHTML = subtotal.textContent;
+// }
 
 //products end
+
+document.addEventListener("DOMContentLoaded", () => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let productContainer = document.querySelector(".productsContainer");
+  let Total = document.querySelector(".total p span");
+  let subtotal = document.querySelector(".subtotal p span");
+  let TotalAdder = 0;
+
+  function displayCartProducts() {
+    productContainer.innerHTML = ""; // Clear the cart container before appending new items
+
+    cart.forEach((product) => {
+      let productHTML = `
+     <div class="product">
+              <div class="productInfo">
+                <div class="imgbox">
+                  <img
+                    src="${product.image}"
+                    alt="${product.title}"
+                  />
+                </div>
+                <p>${product.title}</p>
+              </div>
+              <div class="productSubtotal">${product.newPrice}</div>
+            </div>
+            
+      `;
+      TotalAdder += parseInt(product.newPrice.replace("$", ""));
+      subtotal.innerHTML = TotalAdder;
+      Total.innerHTML = subtotal.textContent;
+
+      productContainer.innerHTML += productHTML;
+    });
+  }
+  displayCartProducts();
+
+  console.log(subtotal);
+  console.log(TotalAdder);
+});
