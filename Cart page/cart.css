@@ -701,6 +701,42 @@ border-radius: 5px;
   font-weight: 400 ;
 }
 
+
+
+/*Confirmation msg design starts*/
+.confirmationMSG{
+position: fixed;
+ display: none;
+ background-color: red;
+ top: 50%;
+ left: 38%;
+ flex-direction: column;
+ align-items: center;
+ padding: 15px;
+ border-radius: 12px;
+ background-color: rgba(0, 0, 0, 0.048);
+}
+
+.confirmationMSG .btns{
+  display: flex;
+  gap: 10px;
+}
+
+.confirmationMSG .btns button{
+  background-color: var(--main-color);
+  border: 0;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/*Confirmation msg design ends*/
+
+
+
+
+
 /*product section ends*/
 
 /* Media querries section */

@@ -172,7 +172,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
+  ///////////////////////////remove item starts
+  let confirmationMsg = document.querySelector(".confirmationMSG");
+  let confirmationMsgPara = document.querySelector(".confirmationMSG p");
+  let confirmationMsgConfirm = document.querySelector(
+    ".confirmationMSG .btns #confirm"
+  );
+  let confirmationMsgCancel = document.querySelector(
+    ".confirmationMSG .btns #cancel"
+  );
   document.querySelector(".cartitems").addEventListener("click", (event) => {
     let target = event.target;
 
@@ -195,17 +203,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (target.tagName === "BUTTON" && target.textContent === "Delete") {
       let productRow = target.closest(".productRow");
-      removeItemFromCart(productRow.querySelector(".productName").textContent);
-      productPriceRemover(
-        productRow.querySelector(".productSubtotal span").textContent
-      );
-      productRow.remove();
+      confirmationMsg.style.display = "flex";
+      confirmationMsgPara.innerHTML = `Are You sure You want to delete ${
+        productRow.querySelector(".productName").textContent
+      } ?`;
+
+      confirmationMsgConfirm.addEventListener("click", () => {
+        removeItemFromCart(
+          productRow.querySelector(".productName").textContent
+        );
+        productPriceRemover(
+          productRow.querySelector(".productSubtotal span").textContent
+        );
+        productRow.remove();
+        confirmationMsg.style.display = "none";
+        if (cart.length === 0) {
+          location.reload();
+        }
+      });
+      confirmationMsgCancel.addEventListener("click", () => {
+        confirmationMsg.style.display = "none";
+      });
     }
     if (cart.length === 0) {
       location.reload();
     }
   });
 
+  ///////////////////////remove items ends
   let updatebtn = document.querySelector(".update-Btn");
 
   updatebtn.addEventListener("click", () => {
