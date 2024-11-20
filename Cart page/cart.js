@@ -26,19 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //product Row starts
 
-
-
-// document.querySelector(".return-Btn").addEventListener("click", ()=>{
-
-//  window.location.href = "../Product Page/product.html";
-
-
-// });
-
-
-
-
-
+  document.querySelector(".return-Btn").addEventListener("click", () => {
+    window.location.href = "../Product Page/product.html";
+  });
 
   // Get the cart from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -49,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to display the cart items
   function displayCart() {
-    if (cart.length > 0) {
+    if (JSON.parse(localStorage.getItem("cart")).length > 0) {
       cartContainer.innerHTML = ""; // Clear the cart container before appending new items
 
       cart.forEach((product) => {
@@ -211,9 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       productRow.remove();
     }
-     if (cart.length === 0) {
-       location.reload();
-     }
+    if (cart.length === 0) {
+      location.reload();
+    }
   });
 
   let updatebtn = document.querySelector(".update-Btn");
@@ -221,18 +211,21 @@ document.addEventListener("DOMContentLoaded", () => {
   updatebtn.addEventListener("click", () => {
     let removeIcons = document.querySelectorAll(".removeIcon");
     let deleteButtons = document.querySelectorAll(".productRow button");
-
-    if (updatebtn.innerHTML === "Update Cart") {
-      updatebtn.innerHTML = "Cancel";
-      removeIcons.forEach((icon) => (icon.style.display = "flex"));
+    if (cart.length != 0) {
+      if (updatebtn.innerHTML === "Update Cart") {
+        updatebtn.innerHTML = "Cancel";
+        removeIcons.forEach((icon) => (icon.style.display = "flex"));
+      } else {
+        updatebtn.innerHTML = "Update Cart";
+        removeIcons.forEach((icon) => (icon.style.display = "none"));
+        deleteButtons.forEach((button) => {
+          button.classList.add("opacityremover");
+          button.closest(".productRow").classList.remove("shiftleft");
+          button.classList.remove("shiftright");
+        });
+      }
     } else {
-      updatebtn.innerHTML = "Update Cart";
-      removeIcons.forEach((icon) => (icon.style.display = "none"));
-      deleteButtons.forEach((button) => {
-        button.classList.add("opacityremover");
-        button.closest(".productRow").classList.remove("shiftleft");
-        button.classList.remove("shiftright");
-      });
+      alert("Your Cart is Empty");
     }
   });
 });

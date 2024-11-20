@@ -415,6 +415,19 @@ footer .exclusive input {
   position: relative;
   margin-bottom: 20px;
 }
+.checkoutItemsEmpty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 80%;
+}
+
+.checkoutItemsEmpty p{
+  text-align: center;
+}
+
+
 .product {
   display: flex;
   align-items: center;

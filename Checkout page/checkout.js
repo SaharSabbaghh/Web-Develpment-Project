@@ -75,10 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let TotalAdder = 0;
 
   function displayCartProducts() {
-    productContainer.innerHTML = ""; // Clear the cart container before appending new items
+    if (JSON.parse(localStorage.getItem("cart")).length > 0) {
+      productContainer.innerHTML = ""; // Clear the cart container before appending new items
 
-    cart.forEach((product) => {
-      let productHTML = `
+      cart.forEach((product) => {
+        let productHTML = `
      <div class="product">
               <div class="productInfo">
                 <div class="imgbox">
@@ -93,23 +94,23 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             
       `;
-      TotalAdder += parseInt(product.newPrice.replace("$", ""));
-      subtotal.innerHTML = TotalAdder;
-      Total.innerHTML = subtotal.textContent;
+        TotalAdder += parseInt(product.newPrice.replace("$", ""));
+        subtotal.innerHTML = TotalAdder;
+        Total.innerHTML = subtotal.textContent;
 
-      productContainer.innerHTML += productHTML;
-    });
+        productContainer.innerHTML += productHTML;
+      });
+    }
   }
   displayCartProducts();
   checkoutBtn.addEventListener("click", () => {
-    localStorage.setItem("cart", JSON.stringify([]));
-    subtotal.innerHTML = 0;
-    Total.innerHTML = subtotal.textContent;
-    productContainer.innerHTML = ""; // Clear the cart container before appending new items
-    location.reload();// to refresh the page so that inputs will be resetted 
-
+    if (JSON.parse(localStorage.getItem("cart")).length > 0) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      subtotal.innerHTML = 0;
+      Total.innerHTML = subtotal.textContent;
+      productContainer.innerHTML = ""; // Clear the cart container before appending new items
+      location.reload(); // to refresh the page so that inputs will be resetted
+    }
   });
-  console.log(subtotal);
-  console.log(TotalAdder);
   //main func ends
 });
