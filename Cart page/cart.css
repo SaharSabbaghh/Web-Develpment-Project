@@ -374,6 +374,28 @@ footer {
   gap: 100px;
   flex-direction: column;
 }
+.cartItemsEmpty{
+
+display: flex;
+justify-content: flex-start;
+height: 200px;
+align-items: center;
+flex-direction: column;
+gap: 15px;
+padding: 15px;
+border: 3px solid var(--main-color);
+border-radius: 5px;
+}
+.cartItemsEmpty p{
+  color: var(--third-color);
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
 .cartProducts {
   /* background-color: green; */
   width: 80%;

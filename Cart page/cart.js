@@ -25,6 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
   //nav and footer js ends
 
   //product Row starts
+
+
+
+// document.querySelector(".return-Btn").addEventListener("click", ()=>{
+
+//  window.location.href = "../Product Page/product.html";
+
+
+// });
+
+
+
+
+
+
   // Get the cart from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let cartContainer = document.querySelector(".cartitems");
@@ -34,10 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to display the cart items
   function displayCart() {
-    cartContainer.innerHTML = ""; // Clear the cart container before appending new items
+    if (cart.length > 0) {
+      cartContainer.innerHTML = ""; // Clear the cart container before appending new items
 
-    cart.forEach((product) => {
-      let productHTML = `
+      cart.forEach((product) => {
+        let productHTML = `
 <div class="productRow">
                 <div class="product">
                   <div class="productimgBox">
@@ -86,11 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
       
             
       `;
-      TotalAdder += parseInt(product.newPrice.replace("$", ""));
-      subtotal.innerHTML = TotalAdder;
-      Total.innerHTML = subtotal.textContent;
-      cartContainer.innerHTML += productHTML;
-    });
+        TotalAdder += parseInt(product.newPrice.replace("$", ""));
+        subtotal.innerHTML = TotalAdder;
+        Total.innerHTML = subtotal.textContent;
+        cartContainer.innerHTML += productHTML;
+      });
+    }
   }
   displayCart();
 
@@ -112,9 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   /////////////////remove item from the local storage starts
   function removeItemFromCart(productRemovedName) {
-    let temp = cart.filter((product) => product.title != productRemovedName);
-    localStorage.setItem("cart", JSON.stringify(temp));
-  
+    cart = cart.filter((product) => product.title != productRemovedName);
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
   /////////////////remove item from the local storage ends
 
@@ -195,6 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       productRow.remove();
     }
+     if (cart.length === 0) {
+       location.reload();
+     }
   });
 
   let updatebtn = document.querySelector(".update-Btn");
