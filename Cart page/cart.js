@@ -110,6 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
     subtotal.innerHTML = TotalAdder;
     Total.innerHTML = subtotal.textContent;
   }
+  /////////////////remove item from the local storage starts
+  function removeItemFromCart(productRemovedName) {
+    let temp = cart.filter((product) => product.title != productRemovedName);
+    localStorage.setItem("cart", JSON.stringify(temp));
+  
+  }
+  /////////////////remove item from the local storage ends
 
   document.querySelector(".cartitems").addEventListener("click", (event) => {
     let target = event.target;
@@ -182,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (target.tagName === "BUTTON" && target.textContent === "Delete") {
       let productRow = target.closest(".productRow");
+      removeItemFromCart(productRow.querySelector(".productName").textContent);
       productPriceRemover(
         productRow.querySelector(".productSubtotal span").textContent
       );
