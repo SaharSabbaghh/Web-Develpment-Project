@@ -411,15 +411,12 @@ footer .exclusive input {
   /* background-color: red; */
 }
 .productsContainer {
-  min-height: 30%;
-
+  height: fit-content;
   position: relative;
-
   margin-bottom: 20px;
 }
 .product {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
   width: 80%;
@@ -429,7 +426,6 @@ footer .exclusive input {
   justify-content: flex-start;
   position: relative;
   left: -20px;
-
   align-items: center;
   gap: 2px;
 }
@@ -440,7 +436,6 @@ footer .exclusive input {
 .imgbox {
   height: 75px;
   width: 100px;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;

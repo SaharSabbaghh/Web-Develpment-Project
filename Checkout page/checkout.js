@@ -103,8 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
   displayCartProducts();
   checkoutBtn.addEventListener("click", () => {
     localStorage.setItem("cart", JSON.stringify([]));
+    subtotal.innerHTML = 0;
+    Total.innerHTML = subtotal.textContent;
     productContainer.innerHTML = ""; // Clear the cart container before appending new items
-    
+    location.reload();// to refresh the page so that inputs will be resetted 
+
   });
   console.log(subtotal);
   console.log(TotalAdder);
