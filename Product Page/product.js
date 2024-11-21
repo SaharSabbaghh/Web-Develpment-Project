@@ -243,7 +243,6 @@ function addToCart(product) {
   }
   // Save the updated cart back to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert(`${products.title} added to cart!`);
 }
 // Event listener for Add to Cart buttons
 $(document).on("click", ".Add-to-Cart", function () {

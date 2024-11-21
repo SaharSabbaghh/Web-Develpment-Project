@@ -415,7 +415,7 @@ footer .exclusive input {
   position: relative;
   margin-bottom: 20px;
 }
-.checkoutItemsEmpty{
+.checkoutItemsEmpty {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -423,10 +423,9 @@ footer .exclusive input {
   width: 80%;
 }
 
-.checkoutItemsEmpty p{
+.checkoutItemsEmpty p {
   text-align: center;
 }
-
 
 .product {
   display: flex;
@@ -705,6 +704,9 @@ input[type="radio"]:checked::after {
   #placeOrder {
     width: 100%;
   }
+  .checkoutItemsEmpty {
+    width: 100%;
+  }
 }
 
 /*testing start*/
@@ -751,7 +753,7 @@ input[type="radio"]:checked::after {
     text-align: center;
   }
   .customerinfoContainer .customerinfo div input[type="text"],
-  input[type="email"] {
+  .customerinfo input[type="email"] {
     min-width: 97%;
     max-width: 98%;
   }
@@ -779,6 +781,9 @@ input[type="radio"]:checked::after {
   .foot {
     padding: 40px 15px 50px 15px;
     gap: 50px;
+  }
+  #saveinfo {
+    max-width: 100%;
   }
 }
 

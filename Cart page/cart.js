@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updatebtn.innerHTML = "Cancel";
         removeIcons.forEach((icon) => (icon.style.display = "flex"));
       } else {
+        confirmationMsg.style.display = "none";
         updatebtn.innerHTML = "Update Cart";
         removeIcons.forEach((icon) => (icon.style.display = "none"));
         deleteButtons.forEach((button) => {
