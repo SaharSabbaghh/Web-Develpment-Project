@@ -16,125 +16,24 @@ document.querySelector(".sidebar-text i").addEventListener("click", function () 
     document.querySelector(".sidebar").classList.add("hidden");
 });
 
-// Product Data
-const products = [
-  {
-    "title": "Logitech ",
-    "filter": "Laptops",
-    "newPrice": "$120",
-    "oldPrice": "$150",
-    "sale": "-20%",
-    "rating": "90",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "Iphone 15 Pro",
-    "filter": "Phones",
-    "newPrice": "$350",
-    "oldPrice": "$500",
-    "sale": "-30%",
-    "rating": "95",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "Sony Noise Cancelling",
-    "filter": "Headphones",
-    "newPrice": "$250",
-    "oldPrice": "$350",
-    "sale": "-29%",
-    "rating": "88",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "BlackWidow V3 ",
-    "filter": "Smartwatch",
-    "newPrice": "$180",
-    "oldPrice": "$230",
-    "sale": "-22%",
-    "rating": "85",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "Apple AirPods Pro ",
-    "filter": "Airpods",
-    "newPrice": "$199",
-    "oldPrice": "$249",
-    "sale": "-20%",
-    "rating": "92",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "Anker PowerCore ",
-    "filter": "Laptops",
-    "newPrice": "$60",
-    "oldPrice": "$80",
-    "sale": "-25%",
-    "rating": "87",
-    "image": "images/ps.png"
-  },
-  {
-    "title": " Echo Dot ",
-    "filter": "Laptops",
-    "newPrice": "$40",
-    "oldPrice": "$60",
-    "sale": "-33%",
-    "rating": "90",
-    "image": "images/ps.png"
-  },
-  {
-    "title": "Ipad Pro",
-    "filter": "Ipads",
-    "newPrice": "$600",
-    "oldPrice": "$750",
-    "sale": "-20%",
-    "rating": "93",
-    "image": "images/ps.png"
-  }
-];
-
-// Search Functionality
+// Fetch Product Data
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search");
-
-    function performSearch(event) {
-        event.preventDefault();
-        const searchQuery = searchInput.value.trim().toLowerCase();
-        const cards = document.querySelectorAll(".cardBox");
-
-        let matchCount = 0;
-
-        cards.forEach((card) => {
-            const productNameElement = card.querySelector(".Product-Name-Related");
-
-            if (!productNameElement) return;
-
-            const productName = productNameElement.textContent.toLowerCase();
-
-            if (searchQuery === "" || productName.includes(searchQuery)) {
-                card.style.display = "flex";
-                matchCount++;
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-        if (matchCount === 0 && searchQuery !== "") {
-            alert("No products found matching your search.");
-        }
-    }
-
-    searchButton.addEventListener("click", performSearch);
-    searchInput.addEventListener("input", performSearch);
-});
-
-// jQuery Code
-$(document).ready(function () {
-    const selectedCategory = localStorage.getItem("selectedCategory") || "all";
     const cardsContainer = $("#cards");
     const sortDropdown = $("#sort-dropdown");
 
-    console.log("Selected category from localStorage:", selectedCategory);
+    let products = []; 
+
+    // Fetch the JSON file
+    fetch('products.json') 
+        .then(response => response.json())
+        .then(data => {
+            products = data; 
+            generateProductCards(products); 
+            filterProducts(localStorage.getItem("selectedCategory") || "all");
+        })
+        .catch(error => console.error("Error fetching product data:", error));
 
     function generateProductCards(productsList) {
         cardsContainer.html("");
@@ -208,8 +107,36 @@ $(document).ready(function () {
         filterProducts($(".active-filter").data("filter"));
     }
 
-    generateProductCards(products);
-    filterProducts(selectedCategory);
+    // Search Functionality
+    function performSearch(event) {
+        event.preventDefault();
+        const searchQuery = searchInput.value.trim().toLowerCase();
+        const cards = document.querySelectorAll(".cardBox");
+
+        let matchCount = 0;
+
+        cards.forEach((card) => {
+            const productNameElement = card.querySelector(".Product-Name-Related");
+
+            if (!productNameElement) return;
+
+            const productName = productNameElement.textContent.toLowerCase();
+
+            if (searchQuery === "" || productName.includes(searchQuery)) {
+                card.style.display = "flex";
+                matchCount++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        if (matchCount === 0 && searchQuery !== "") {
+            alert("No products found matching your search.");
+        }
+    }
+
+    searchButton.addEventListener("click", performSearch);
+    searchInput.addEventListener("input", performSearch);
 
     $(".filter-item").on("click", function () {
         const filter = $(this).data("filter");
@@ -225,39 +152,31 @@ $(document).ready(function () {
             sortHighToLow();
         }
     });
+
+    $(document).on("click", ".Add-to-Cart", function () {
+        let cardBox = $(this).closest(".cardBox");
+        let productTitle = cardBox.find(".Product-Name-Related").text();
+        let productNewPrice = cardBox.find(".newPrice").text();
+        let productImage = cardBox.find("img").attr("src");
+        let product = {
+            title: productTitle,
+            newPrice: productNewPrice,
+            image: productImage,
+        };
+        addToCart(product);
+    });
+
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingProductIndex = cart.findIndex((item) => item.title === product.title);
+
+        if (existingProductIndex !== -1) {
+            cart[existingProductIndex].quantity += 1;
+        } else {
+            product.quantity = 1;
+            cart.push(product);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${product.title} added to cart!`);
+    }
 });
-//////////////////charaf
-function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Get cart from localStorage or initialize as empty array
-  // Check if product already exists in the cart
-  let existingProductIndex = cart.findIndex(
-    (item) => item.title === product.title
-  );
-  if (existingProductIndex !== -1) {
-    // If the product is already in the cart, update quantity
-    cart[existingProductIndex].quantity += 1;
-  } else {
-    // Add the product with quantity of 1
-    product.quantity = 1;
-    cart.push(product);
-  }
-  // Save the updated cart back to localStorage
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert(`${products.title} added to cart!`);
-}
-// Event listener for Add to Cart buttons
-$(document).on("click", ".Add-to-Cart", function () {
-  let cardBox = $(this).closest(".cardBox");
-  let productTitle = cardBox.find(".Product-Name-Related").text();
-  let productNewPrice = cardBox.find(".newPrice").text();
-  let productImage = cardBox.find("img").attr("src");
-  // Find the clicked product details
-  let product = {
-    title: productTitle,
-    newPrice: productNewPrice,
-    image: productImage,
-  };
-  // Add the product to the cart
-  addToCart(product);
-});
-//////////////////charaf
