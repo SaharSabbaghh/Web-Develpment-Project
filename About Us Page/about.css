@@ -626,6 +626,15 @@ footer{
     .foot{
         gap: 80px
     }
+    /* Charaf */
+  .categ-text-content{
+        width: 100%;
+    }
+    .radio-btns{
+        width: 40%;
+    }
+    /* Charaf */
+  
 }
 
 /* ScrollBar */
