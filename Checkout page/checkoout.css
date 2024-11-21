@@ -411,15 +411,24 @@ footer .exclusive input {
   /* background-color: red; */
 }
 .productsContainer {
-  min-height: 30%;
-
+  height: fit-content;
   position: relative;
-
   margin-bottom: 20px;
 }
+.checkoutItemsEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 80%;
+}
+
+.checkoutItemsEmpty p {
+  text-align: center;
+}
+
 .product {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
   width: 80%;
@@ -429,7 +438,6 @@ footer .exclusive input {
   justify-content: flex-start;
   position: relative;
   left: -20px;
-
   align-items: center;
   gap: 2px;
 }
@@ -440,13 +448,12 @@ footer .exclusive input {
 .imgbox {
   height: 75px;
   width: 100px;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 .imgbox img {
-  width: 100%;
+  width: 85px;
   height: auto;
 }
 .cartTotal {
@@ -697,6 +704,9 @@ input[type="radio"]:checked::after {
   #placeOrder {
     width: 100%;
   }
+  .checkoutItemsEmpty {
+    width: 100%;
+  }
 }
 
 /*testing start*/
@@ -743,7 +753,7 @@ input[type="radio"]:checked::after {
     text-align: center;
   }
   .customerinfoContainer .customerinfo div input[type="text"],
-  input[type="email"] {
+  .customerinfo input[type="email"] {
     min-width: 97%;
     max-width: 98%;
   }
@@ -771,6 +781,9 @@ input[type="radio"]:checked::after {
   .foot {
     padding: 40px 15px 50px 15px;
     gap: 50px;
+  }
+  #saveinfo {
+    max-width: 100%;
   }
 }
 

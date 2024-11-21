@@ -374,6 +374,22 @@ footer {
   gap: 100px;
   flex-direction: column;
 }
+.cartItemsEmpty {
+  display: flex;
+  justify-content: flex-start;
+  height: 200px;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  border: 3px solid var(--main-color);
+  border-radius: 5px;
+}
+.cartItemsEmpty p {
+  color: var(--third-color);
+  font-size: 1.2rem;
+}
+
 .cartProducts {
   /* background-color: green; */
   width: 80%;
@@ -422,7 +438,7 @@ footer {
   background-color: white;
   transition: all 0.7s ease-in-out;
 }
-.cartitems{
+.cartitems {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -674,10 +690,51 @@ footer {
   border-radius: 4px;
 }
 
-.cartTotal button a{
+.cartTotal button a {
   color: white;
-  font-weight: 400 ;
+  font-weight: 400;
 }
+
+/*Confirmation msg design starts*/
+
+.confirmationMSG {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  top: 50%;
+  /* left: 38%; */
+  flex-direction: column;
+  align-items: center;
+}
+.confirmationMSG #confBox {
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.048);
+}
+
+#confBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmationMSG .btns {
+  display: flex;
+  gap: 10px;
+}
+
+.confirmationMSG .btns button {
+  background-color: var(--main-color);
+  border: 0;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/*Confirmation msg design ends*/
 
 /*product section ends*/
 
@@ -711,6 +768,21 @@ footer {
     opacity: 1;
     transform: translateX(120%);
     transition: all 0.6s;
+  }
+  .productRow button {
+    position: absolute;
+    right: 18px;
+    height: 100%;
+    width: 12%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: red;
+    color: white;
+    border: 0;
+    border-radius: 0 30px 30px 0;
+    z-index: -5;
+    cursor: pointer;
+    transition: all 0.45s ease-in-out;
   }
 }
 
@@ -828,6 +900,7 @@ footer {
     bottom: 0;
     height: 30%;
     width: 100%;
+      right: 0;
     font-size: 1.1rem;
     font-weight: 600;
     background-color: red;
@@ -849,10 +922,18 @@ footer {
     transform: translateY(105%);
     transition: all 0.6s;
   }
+  .confirmationMSG #confBox {
+    top: 50%;
+    left: 0%;
+    width: 65%;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 
   /* body media querry ends========================= */
-  .foot{
+  .foot {
     padding: 40px 15px 50px 15px;
-    gap:50px;
-}
+    gap: 50px;
+  }
 }

@@ -6,7 +6,7 @@
     <title>NovaTech</title>
     <script src="cart.js" defer></script>
     <script
-      src="https://kit.fontawesome.com/1d547ca294.js"
+      src="https://kit.fontawesome.com/e4580308de.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="cart.css" />
@@ -82,7 +82,13 @@
           <li>
             <a href="../Contact Page/contact.css"
               ><i class="fa-solid fa-address-book" style="font-size: 20px"></i
-              >CONTACT US</a
+              >CONTACT</a
+            >
+          </li>
+          <li>
+            <a href="../Blog Page/blog.html"
+              ><i class="fa-solid fa-newspaper" style="font-size: 20px"></i
+              >BLOG</a
             >
           </li>
         </ul>
@@ -123,133 +129,18 @@
             </div>
             <!-- Products rows======================== -->
             <div class="cartitems">
-              <div class="productRow">
-                <div class="product">
-                  <div class="productimgBox">
-                    <img
-                      class="removeIcon"
-                      src="./images/remove.png"
-                      alt="remove icon"
-                    />
+              <div class="cartItemsEmpty">
+                <img
+                  src="images/AddToCart.png"
+                  alt="empty cart"
+                  style="height: auto; width: 70px"
+                />
 
-                    <img
-                      class="productImg"
-                      src="./images/ps5_controller-removebg-preview.png"
-                      alt="productImg"
-                    />
-                  </div>
-                  <div class="productName">Ps5 Controller</div>
-                </div>
-
-                <div class="productPrice">$<span>150</span></div>
-
-                <div class="productQuanityBox">
-                  <div class="productquantitySBox">
-                    <p class="productQuantity">01</p>
-                    <div class="quantityArrows">
-                      <img
-                        class="increment"
-                        src="./images/next_prev/arrowUP.png"
-                        alt="arrowUp"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                      <img
-                        class="decrement"
-                        src="./images/next_prev/arrowDown .png"
-                        alt="arrowDown"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="productSubtotal">$<span>150</span></div>
-                <button>Delete</button>
-              </div>
-
-              <!-- Products adition starts -->
-              <div class="productRow">
-                <div class="product">
-                  <div class="productimgBox">
-                    <img
-                      class="removeIcon"
-                      src="./images/remove.png"
-                      alt="remove icon"
-                    />
-
-                    <img
-                      class="productImg"
-                      src="./images/ps5_controller-removebg-preview.png"
-                      alt="productImg"
-                    />
-                  </div>
-                  <div class="productName">Ps5 Controller</div>
-                </div>
-
-                <div class="productPrice">$<span>150</span></div>
-
-                <div class="productQuanityBox">
-                  <div class="productquantitySBox">
-                    <p class="productQuantity">01</p>
-                    <div class="quantityArrows">
-                      <img
-                        class="increment"
-                        src="./images/next_prev/arrowUP.png"
-                        alt="arrowUp"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                      <img
-                        class="decrement"
-                        src="./images/next_prev/arrowDown .png"
-                        alt="arrowDown"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="productSubtotal">$<span>150</span></div>
-                <button>Delete</button>
-              </div>
-              <div class="productRow">
-                <div class="product">
-                  <div class="productimgBox">
-                    <img
-                      class="removeIcon"
-                      src="./images/remove.png"
-                      alt="remove icon"
-                    />
-
-                    <img
-                      class="productImg"
-                      src="./images/ps5_controller-removebg-preview.png"
-                      alt="productImg"
-                    />
-                  </div>
-                  <div class="productName">Ps5 Controller</div>
-                </div>
-
-                <div class="productPrice">$<span>150</span></div>
-
-                <div class="productQuanityBox">
-                  <div class="productquantitySBox">
-                    <p class="productQuantity">01</p>
-                    <div class="quantityArrows">
-                      <img
-                        class="increment"
-                        src="./images/next_prev/arrowUP.png"
-                        alt="arrowUp"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                      <img
-                        class="decrement"
-                        src="./images/next_prev/arrowDown .png"
-                        alt="arrowDown"
-                        style="width: 14px; height: auto; cursor: pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="productSubtotal">$<span>150</span></div>
-                <button>Delete</button>
+                <p>
+                  Don't miss out—add your
+                  <span style="color: var(--main-color)">favorite items</span>
+                  to your cart now!
+                </p>
               </div>
             </div>
             <!-- Products adition ends -->
@@ -269,17 +160,26 @@
           <div class="cartTotal">
             <h3 class="cartTotalHeader">Cart Total</h3>
             <p class="Subtotal">
-              Subtotal: <span>$<span class="number">150</span></span>
+              Subtotal: <span>$<span class="number">0</span></span>
             </p>
             <span class="Total-line"></span>
             <p class="Shipping">Shipping: <span>Free</span></p>
             <span class="Total-line"></span>
             <p class="Total">
-              Total: <span>$<span class="number">150</span></span>
+              Total: <span>$<span class="number">0</span></span>
             </p>
             <button>
               <a href="../Checkout page/checkout.html">Proceed to checkout</a>
             </button>
+          </div>
+        </div>
+      </div>
+      <div class="confirmationMSG">
+        <div id="confBox">
+          <p></p>
+          <div class="btns">
+            <button id="cancel">cancel</button>
+            <button id="confirm">Confirm</button>
           </div>
         </div>
       </div>

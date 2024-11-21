@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //nav and footer js ends
 
   //product Row starts
+
+  document.querySelector(".return-Btn").addEventListener("click", () => {
+    window.location.href = "../Product Page/product.html";
+  });
+
   // Get the cart from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let cartContainer = document.querySelector(".cartitems");
@@ -34,10 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to display the cart items
   function displayCart() {
-    cartContainer.innerHTML = ""; // Clear the cart container before appending new items
+    if (JSON.parse(localStorage.getItem("cart")).length > 0) {
+      cartContainer.innerHTML = ""; // Clear the cart container before appending new items
 
-    cart.forEach((product) => {
-      let productHTML = `
+      cart.forEach((product) => {
+        let productHTML = `
 <div class="productRow">
                 <div class="product">
                   <div class="productimgBox">
@@ -86,11 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
       
             
       `;
-      TotalAdder += parseInt(product.newPrice.replace("$", ""));
-      subtotal.innerHTML = TotalAdder;
-      Total.innerHTML = subtotal.textContent;
-      cartContainer.innerHTML += productHTML;
-    });
+        TotalAdder += parseInt(product.newPrice.replace("$", ""));
+        subtotal.innerHTML = TotalAdder;
+        Total.innerHTML = subtotal.textContent;
+        cartContainer.innerHTML += productHTML;
+      });
+    }
   }
   displayCart();
 
@@ -110,6 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
     subtotal.innerHTML = TotalAdder;
     Total.innerHTML = subtotal.textContent;
   }
+  /////////////////remove item from the local storage starts
+  function removeItemFromCart(productRemovedName) {
+    cart = cart.filter((product) => product.title != productRemovedName);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  /////////////////remove item from the local storage ends
 
   document.querySelector(".cartitems").addEventListener("click", (event) => {
     let target = event.target;
@@ -159,7 +172,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-
+  ///////////////////////////remove item starts
+  let confirmationMsg = document.querySelector(".confirmationMSG");
+  let confirmationMsgPara = document.querySelector(".confirmationMSG p");
+  let confirmationMsgConfirm = document.querySelector(
+    ".confirmationMSG .btns #confirm"
+  );
+  let confirmationMsgCancel = document.querySelector(
+    ".confirmationMSG .btns #cancel"
+  );
   document.querySelector(".cartitems").addEventListener("click", (event) => {
     let target = event.target;
 
@@ -182,30 +203,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (target.tagName === "BUTTON" && target.textContent === "Delete") {
       let productRow = target.closest(".productRow");
-      productPriceRemover(
-        productRow.querySelector(".productSubtotal span").textContent
-      );
-      productRow.remove();
+      confirmationMsg.style.display = "flex";
+      confirmationMsgPara.innerHTML = `Are You sure You want to delete ${
+        productRow.querySelector(".productName").textContent
+      } ?`;
+
+      confirmationMsgConfirm.addEventListener("click", () => {
+        removeItemFromCart(
+          productRow.querySelector(".productName").textContent
+        );
+        productPriceRemover(
+          productRow.querySelector(".productSubtotal span").textContent
+        );
+        productRow.remove();
+        confirmationMsg.style.display = "none";
+        if (cart.length === 0) {
+          location.reload();
+        }
+      });
+      confirmationMsgCancel.addEventListener("click", () => {
+        confirmationMsg.style.display = "none";
+      });
+    }
+    if (cart.length === 0) {
+      location.reload();
     }
   });
 
+  ///////////////////////remove items ends
   let updatebtn = document.querySelector(".update-Btn");
 
   updatebtn.addEventListener("click", () => {
     let removeIcons = document.querySelectorAll(".removeIcon");
     let deleteButtons = document.querySelectorAll(".productRow button");
-
-    if (updatebtn.innerHTML === "Update Cart") {
-      updatebtn.innerHTML = "Cancel";
-      removeIcons.forEach((icon) => (icon.style.display = "flex"));
+    if (cart.length != 0) {
+      if (updatebtn.innerHTML === "Update Cart") {
+        updatebtn.innerHTML = "Cancel";
+        removeIcons.forEach((icon) => (icon.style.display = "flex"));
+      } else {
+        confirmationMsg.style.display = "none";
+        updatebtn.innerHTML = "Update Cart";
+        removeIcons.forEach((icon) => (icon.style.display = "none"));
+        deleteButtons.forEach((button) => {
+          button.classList.add("opacityremover");
+          button.closest(".productRow").classList.remove("shiftleft");
+          button.classList.remove("shiftright");
+        });
+      }
     } else {
-      updatebtn.innerHTML = "Update Cart";
-      removeIcons.forEach((icon) => (icon.style.display = "none"));
-      deleteButtons.forEach((button) => {
-        button.classList.add("opacityremover");
-        button.closest(".productRow").classList.remove("shiftleft");
-        button.classList.remove("shiftright");
-      });
+      alert("Your Cart is Empty");
     }
   });
 });

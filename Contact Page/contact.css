@@ -518,3 +518,8 @@ form {
       gap: 80px
   }
 }
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  display: none; 
+}
