@@ -106,5 +106,41 @@
     "sale": "-20%",
     "rating": "93",
     "image": "../images/Ipads/Galaxy tab S8.png"
+  },
+  {
+    "title": "Galaxy Tab S8",
+    "filter": "Phones",
+    "newPrice": "$440",
+    "oldPrice": "$550",
+    "sale": "-20%",
+    "rating": "93",
+    "image": ""
+  },
+  {
+    "title": "Galaxy Tab S8",
+    "filter": "Headphones",
+    "newPrice": "$440",
+    "oldPrice": "$550",
+    "sale": "-20%",
+    "rating": "93",
+    "image": ""
+  },
+  {
+    "title": "Galaxy Tab S8",
+    "filter": "Airpods",
+    "newPrice": "$440",
+    "oldPrice": "$550",
+    "sale": "-20%",
+    "rating": "93",
+    "image": ""
+  },
+  {
+    "title": "Galaxy Tab S8",
+    "filter": "Smartwatch",
+    "newPrice": "$440",
+    "oldPrice": "$550",
+    "sale": "-20%",
+    "rating": "93",
+    "image": ""
   }
 ]
