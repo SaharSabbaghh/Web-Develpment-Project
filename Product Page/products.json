@@ -1,74 +1,110 @@
 [
-    {
-      "title": "Logitech G Pro Wireless Gaming Mouse",
-      "filter": "Laptops",
-      "newPrice": "$120",
-      "oldPrice": "$150",
-      "sale": "-20%",
-      "rating": "90",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Sony WH-1000XM5 Noise Cancelling Headphones",
-      "filter": "Phones",
-      "newPrice": "$350",
-      "oldPrice": "$500",
-      "sale": "-30%",
-      "rating": "95",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Samsung 27-inch Curved Monitor",
-      "filter": "Headphones",
-      "newPrice": "$250",
-      "oldPrice": "$350",
-      "sale": "-29%",
-      "rating": "88",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Razer BlackWidow V3 Mechanical Keyboard",
-      "filter": "Smartwatch",
-      "newPrice": "$180",
-      "oldPrice": "$230",
-      "sale": "-22%",
-      "rating": "85",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Apple AirPods Pro (2nd Gen)",
-      "filter": "Airpods",
-      "newPrice": "$199",
-      "oldPrice": "$249",
-      "sale": "-20%",
-      "rating": "92",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Anker PowerCore 20000mAh Power Bank",
-      "filter": "Laptops",
-      "newPrice": "$60",
-      "oldPrice": "$80",
-      "sale": "-25%",
-      "rating": "87",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Amazon Echo Dot (5th Gen)",
-      "filter": "Laptops",
-      "newPrice": "$40",
-      "oldPrice": "$60",
-      "sale": "-33%",
-      "rating": "90",
-      "image": "images/ps.png"
-    },
-    {
-      "title": "Canon EOS M50 Mirrorless Camera",
-      "filter": "Ipads",
-      "newPrice": "$600",
-      "oldPrice": "$750",
-      "sale": "-20%",
-      "rating": "93",
-      "image": "images/ps.png"
-    }
-  ]
+  {
+    "title": "MacBook Air",
+    "filter": "Laptops",
+    "newPrice": "$799",
+    "oldPrice": "$999",
+    "sale": "-20%",
+    "rating": "90",
+    "image": "../images/Laptops/macbook air.png"
+  },
+  {
+    "title": "MacBook Pro",
+    "filter": "Laptops",
+    "newPrice": "$1199",
+    "oldPrice": "$1599",
+    "sale": "-25%",
+    "rating": "87",
+    "image": "../images/Laptops/macbook pro.png"
+  },
+  {
+    "title": "ASUS VivoBook S15",
+    "filter": "Laptops",
+    "newPrice": "$880",
+    "oldPrice": "$1100",
+    "sale": "-20%",
+    "rating": "90",
+    "image": "../images/Laptops/ASUS Vivobook S15.png"
+  },
+  {
+    "title": "Ipad Pro",
+    "filter": "Ipads",
+    "newPrice": "$760",
+    "oldPrice": "$950",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Ipads/Ipad Pro.png"
+  },
+  {
+    "title": "ASUS TUF A16",
+    "filter": "Laptops",
+    "newPrice": "$1040",
+    "oldPrice": "$1300",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Laptops/ASUS TUF A16.png"
+  },
+  {
+    "title": "ASUS Zenbook Pro 16X",
+    "filter": "Laptops",
+    "newPrice": "$1350",
+    "oldPrice": "$1800",
+    "sale": "-25%",
+    "rating": "93",
+    "image": "../images/Laptops/ASUS zenbook.png"
+  },
+  {
+    "title": "ASUS ExpertBook CX54",
+    "filter": "Laptops",
+    "newPrice": "$600",
+    "oldPrice": "$750",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Laptops/ASUS ExpertBook CX54.png"
+  },
+  {
+    "title": "Ipad Air",
+    "filter": "Ipads",
+    "newPrice": "$480",
+    "oldPrice": "$600",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Ipads/Ipad Air.png"
+  },
+  {
+    "title": "Ipad X",
+    "filter": "Ipads",
+    "newPrice": "$280",
+    "oldPrice": "$350",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Ipads/Ipad X.png"
+  },
+  {
+    "title": "Ipad Mini",
+    "filter": "Ipads",
+    "newPrice": "$375",
+    "oldPrice": "$500",
+    "sale": "-25%",
+    "rating": "93",
+    "image": "../images/Ipads/Ipad Mini.png"
+  },
+  {
+    "title": "Galaxy Tab S10 Plus",
+    "filter": "Ipads",
+    "newPrice": "$750",
+    "oldPrice": "$999",
+    "sale": "-25%",
+    "rating": "93",
+    "image": "../images/Ipads/Galaxy Tab S10 Plus.png"
+  },
+  {
+    "title": "Galaxy Tab S8",
+    "filter": "Ipads",
+    "newPrice": "$440",
+    "oldPrice": "$550",
+    "sale": "-20%",
+    "rating": "93",
+    "image": "../images/Ipads/Galaxy tab S8.png"
+  }
+]
