@@ -165,10 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
       newPrice: productNewPrice,
       image: productImage,
     };
-    banner.style.display = "flex";
-    setTimeout(() => {
-      banner.style.display = "none";
-    }, 2000);
 
     addToCart(product);
   });
@@ -180,12 +176,20 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (existingProductIndex !== -1) {
-      cart[existingProductIndex].quantity += 1;
+      banner.innerHTML = "The item is already exists !";
+      banner.style.display = "flex";
+      setTimeout(() => {
+        banner.style.display = "none";
+      }, 2000);
     } else {
       product.quantity = 1;
       cart.push(product);
+      banner.innerHTML = "The item is added Succesfully !";
+      banner.style.display = "flex";
+      setTimeout(() => {
+        banner.style.display = "none";
+      }, 2000);
     }
     localStorage.setItem("cart", JSON.stringify(cart));
-    // alert(`${product.title} added to cart!`);
   }
 });
