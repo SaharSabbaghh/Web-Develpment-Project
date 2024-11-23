@@ -667,18 +667,27 @@ footer {
   border-color: var(--forthColor);
   outline: none;
 }
-.banner{
+.banner {
   position: fixed;
   display: none;
   top: 20%;
   z-index: 55;
   left: 0;
   background-color: lightgray;
-  width: 20%;
   padding: 10px;
   color: white;
   border-radius: 0 7px 7px 0;
-
+  animation: fadeleft 0.2s ease-in;
+  overflow: hidden;
+  height: 38px;
+}
+@keyframes fadeleft {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
 }
 
 @media (max-width: 480px) {

@@ -109,15 +109,6 @@
   },
   {
     "title": "Galaxy Tab S8",
-    "filter": "Phones",
-    "newPrice": "$440",
-    "oldPrice": "$550",
-    "sale": "-20%",
-    "rating": "93",
-    "image": ""
-  },
-  {
-    "title": "Galaxy Tab S8",
     "filter": "Headphones",
     "newPrice": "$440",
     "oldPrice": "$550",
@@ -135,12 +126,111 @@
     "image": ""
   },
   {
-    "title": "Galaxy Tab S8",
+    "title": "Apple Watch SE (2nd Gen) – GPS, Sport Band",
     "filter": "Smartwatch",
-    "newPrice": "$440",
-    "oldPrice": "$550",
+    "newPrice": "$215",
+    "oldPrice": "$250",
+    "sale": "-14%",
+    "rating": "95",
+    "image": "../images/smartWatches/SE.png"
+  },
+  {
+    "title": "Venu® Sq 2",
+    "filter": "Smartwatch",
+    "newPrice": "$149",
+    "oldPrice": "$249",
+    "sale": "-40.16%",
+    "rating": "88",
+    "image": "../images/smartWatches/Venuu.png"
+  },
+  {
+    "title": "Withings ScanWatch Light",
+    "filter": "Smartwatch",
+    "newPrice": "$200",
+    "oldPrice": "$250",
     "sale": "-20%",
+    "rating": "88",
+    "image": "../images/smartWatches/withingss.png"
+  },
+  {
+    "title": "Fitbit Versa 4",
+    "filter": "Smartwatch",
+    "newPrice": "$119",
+    "oldPrice": "$199",
+    "sale": "-40.20%",
+    "rating": "85",
+    "image": "../images/smartWatches/Fitbit.png"
+  },
+  {
+    "title": "Pixel Watch 3",
+    "filter": "Smartwatch",
+    "newPrice": "$279",
+    "oldPrice": "$349",
+    "sale": "-20.08%",
+    "rating": "92",
+    "image": "../images/smartWatches/googlePixel.png"
+  },
+  {
+    "title": "Samsung Galaxy Watch 7",
+    "filter": "Smartwatch",
+    "newPrice": "$215",
+    "oldPrice": "$240",
+    "sale": "-10.42%",
+    "rating": "87",
+    "image": "../images/smartWatches/SAmsungGalaxyWatch7.png"
+  },
+  {
+    "title": "iPhone 16 Pro",
+    "filter": "Phones",
+    "newPrice": "$1325",
+    "oldPrice": "$1450",
+    "sale": "-8.62%",
+    "rating": "90",
+    "image": "../images/phones/IPHONE16Pro.png"
+  },
+  {
+    "title": "iPhone 16",
+    "filter": "Phones",
+    "newPrice": "$850",
+    "oldPrice": "$899",
+    "sale": "-5.45%",
     "rating": "93",
-    "image": ""
+    "image": "../images/phones/IPHONE16.png"
+  },
+  {
+    "title": "iPhone 15",
+    "filter": "Phones",
+    "newPrice": "$799",
+    "oldPrice": "$820",
+    "sale": "-2.56%",
+    "rating": "93",
+    "image": "../images/phones/IPHONE15.png"
+  },
+  {
+    "title": "Google Pixel 9 Pro",
+    "filter": "Phones",
+    "newPrice": "$989",
+    "oldPrice": "$1349",
+    "sale": "-26.67%",
+    "rating": "93",
+    "image": "../images/phones/goog.png"
+  },
+  {
+    "title": "Samsung Galaxy S24 Ultra",
+    "filter": "Phones",
+    "newPrice": "$1400",
+    "oldPrice": "$1419",
+    "sale": "-1.34%",
+    "rating": "93",
+    "image": "../images/phones/gx.png"
+  },
+  {
+    "title": "Galaxy Z Fold6",
+    "filter": "Phones",
+    "newPrice": "$1840",
+    "oldPrice": "$1899",
+    "sale": "-3.11%",
+    "rating": "93",
+    "image": "../images/phones/Zfold.png"
   }
 ]
