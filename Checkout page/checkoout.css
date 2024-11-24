@@ -636,6 +636,30 @@ input[type="radio"]:checked::after {
   border-radius: 4px;
 }
 
+.banner {
+  position: fixed;
+  display: none;
+  top: 20%;
+  z-index: 55;
+  left: 0;
+  background-color: lightgray;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 0 7px 7px 0;
+  animation: fadeleft 0.2s ease-in;
+  overflow: hidden;
+  height: 54px;
+}
+@keyframes fadeleft {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+
 /*checkout section ends*/
 
 /* Media querries section */

@@ -982,7 +982,7 @@ footer {
 
   .mainImg {
     width: 100%;
-    height: 400px;
+    height: auto;
   }
 
   .minorImgs {
@@ -995,6 +995,8 @@ footer {
     min-width: auto;
     height: 70px;
     padding: 10px;
+    background-color: #00ff66;
+    overflow: hidden;
   }
   .minorImgs img {
     min-width: 10px;

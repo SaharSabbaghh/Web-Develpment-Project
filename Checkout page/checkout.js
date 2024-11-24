@@ -103,13 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   displayCartProducts();
+  let banner = document.querySelector(".banner");
   checkoutBtn.addEventListener("click", () => {
     if (JSON.parse(localStorage.getItem("cart")).length > 0) {
       localStorage.setItem("cart", JSON.stringify([]));
+
+      banner.style.display = "flex";
+      setTimeout(() => {
+        banner.style.display = "none";
+      }, 3000);
       subtotal.innerHTML = 0;
       Total.innerHTML = subtotal.textContent;
       productContainer.innerHTML = ""; // Clear the cart container before appending new items
-      location.reload(); // to refresh the page so that inputs will be resetted
+      setTimeout(() => {
+        location.reload(); // to refresh the page so that inputs will be resetted
+      }, 3000);
     }
   });
   //main func ends
