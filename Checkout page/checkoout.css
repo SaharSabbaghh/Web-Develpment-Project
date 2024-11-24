@@ -622,6 +622,7 @@ input[type="radio"]:checked::after {
   width: 150px;
   font-size: 0.9rem;
   border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 #placeOrder {
@@ -634,6 +635,11 @@ input[type="radio"]:checked::after {
   font-size: 0.9rem;
   width: 150px;
   border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#placeOrder:hover, .productsinfo .couponds button:hover{
+  background-color: #92C7CF;
 }
 
 .banner {

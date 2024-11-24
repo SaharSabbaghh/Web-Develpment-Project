@@ -30,14 +30,14 @@ body{
 .error-message {
     margin-bottom: 10px;
     font-size: 0.9em;
-    height: 1em; /* Reserve space to prevent layout shifting */
+    height: 1em; 
     display: none;
     align-items: center;
-    color: red; /* Default color for error messages */
+    color: red; 
 }
 
 .success-message {
-    color: green; /* Green color for success messages */
+    color: green;
 }
 
 .wrapper span{
@@ -315,6 +315,14 @@ body{
         transform: translateY(-800px) rotate(360deg);
         opacity: 0;
     }
+}
+
+button{
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: #92C7CF;
 }
 
 @media screen and (max-width: 1023px){

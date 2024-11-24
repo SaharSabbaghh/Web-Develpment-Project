@@ -595,12 +595,11 @@ footer {
   border-radius: 8px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, transform 0.5s;
+  transition: background-color 0.3s;
 }
 
 .Buy-btn:hover {
-  background-color: var(--SecondColor);
-  transform: scale(1.01);
+  background-color: #92C7CF;
 }
 
 .whichList {
@@ -995,7 +994,6 @@ footer {
     min-width: auto;
     height: 70px;
     padding: 10px;
-    background-color: #00ff66;
     overflow: hidden;
   }
   .minorImgs img {

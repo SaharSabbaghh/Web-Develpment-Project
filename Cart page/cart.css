@@ -734,6 +734,14 @@ footer {
   border-radius: 10px;
 }
 
+button{
+  transition: background-color 0.3s;
+}
+
+button:hover{
+  background-color: #92C7CF;
+}
+
 /*Confirmation msg design ends*/
 
 /*product section ends*/
