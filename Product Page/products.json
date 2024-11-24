@@ -107,24 +107,7 @@
     "rating": "93",
     "image": "../images/Ipads/Galaxy tab S8.png"
   },
-  {
-    "title": "Galaxy Tab S8",
-    "filter": "Headphones",
-    "newPrice": "$440",
-    "oldPrice": "$550",
-    "sale": "-20%",
-    "rating": "93",
-    "image": ""
-  },
-  {
-    "title": "Galaxy Tab S8",
-    "filter": "Airpods",
-    "newPrice": "$440",
-    "oldPrice": "$550",
-    "sale": "-20%",
-    "rating": "93",
-    "image": ""
-  },
+
   {
     "title": "Apple Watch SE (2nd Gen) – GPS, Sport Band",
     "filter": "Smartwatch",
@@ -232,5 +215,68 @@
     "sale": "-3.11%",
     "rating": "93",
     "image": "../images/phones/Zfold.png"
-  }
-]
+  },
+  {
+    "title": "BOSE QC35 II",
+    "filter": "Headphones",
+    "newPrice": "$1400",
+    "oldPrice": "$1419",
+    "sale": "-1.34%",
+    "rating": "93",
+    "image": "../images/headphones/h2.webp"
+  },
+    {
+      "title": "Sony WH-1000XM5",
+      "filter": "Headphones",
+      "newPrice": "$350",
+      "oldPrice": "$420",
+      "sale": "-15%",
+      "rating": "95",
+      "image": "../images/headphones/h1.png"
+    },
+    {
+      "title": "Bose QuietComfort 45",
+      "filter": "Headphones",
+      "newPrice": "$329",
+      "oldPrice": "$399",
+      "sale": "-18%",
+      "rating": "90",
+      "image": "../images/headphones/h3.png"
+    },
+    {
+      "title": "Apple AirPods Max",
+      "filter": "Headphones",
+      "newPrice": "$499",
+      "oldPrice": "$549",
+      "sale": "-9%",
+      "rating": "92",
+      "image": "../images/headphones/h4.webp"
+    },
+    {
+      "title": "Sennheiser Momentum 4",
+      "filter": "Headphones",
+      "newPrice": "$379",
+      "oldPrice": "$450",
+      "sale": "-16%",
+      "rating": "91",
+      "image": "../images/headphones/h5.png"
+    },
+    {
+      "title": "JBL Tour One M2",
+      "filter": "Headphones",
+      "newPrice": "$279",
+      "oldPrice": "$329",
+      "sale": "-15%",
+      "rating": "89",
+      "image": "../images/headphones/h6.png"
+    },
+    {
+      "title": "Apple AirPods ",
+      "filter": "Airpods",
+      "newPrice": "$279",
+      "oldPrice": "$329",
+      "sale": "-15%",
+      "rating": "89",
+      "image": "../images/airpods/a1.png"
+    }
+  ]

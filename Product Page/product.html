@@ -5,148 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="product.css" />
     <title>NovaTech</title>
-    <script src="https://kit.fontawesome.com/e4580308de.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e4580308de.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="product.js" defer></script>
-    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
   </head>
 
   <body>
     <header>
       <!-- Navbar -->
       <div class="navbar">
-          <img src="./images/logo.png" alt="Nova Tech Logo" class="logo">
-          <div class="uls">
+        <img src="./images/logo.png" alt="Nova Tech Logo" class="logo" />
+        <div class="uls">
           <ul class="ul1">
-              <li><a href="../Home Page/HomePage.html">HOME</a></li>
-              <li><a href="../About Us Page/about.html">ABOUT</a></li>
-              <li><a href="product.html">SHOP</a></li>
-              <li><a href="../Contact Page/contact.html">CONTACT</a></li>
-              <li><a href="../Blog Page/blog.html">BLOG</a></li>
+            <li><a href="../Home Page/HomePage.html">HOME</a></li>
+            <li><a href="../About Us Page/about.html">ABOUT</a></li>
+            <li><a href="product.html">SHOP</a></li>
+            <li><a href="../Contact Page/contact.html">CONTACT</a></li>
+            <li><a href="../Blog Page/blog.html">BLOG</a></li>
           </ul>
           <ul class="ul2">
-              <div class="ham-icon">
-                  <li><i class="fa-solid fa-bars ham this" style="color: #686D76; font-size: 20px ;"></i></li>
-              </div>
-              <div class="ul2-cnt">
+            <div class="ham-icon">
+              <li>
+                <i
+                  class="fa-solid fa-bars ham this"
+                  style="color: #686d76; font-size: 20px"
+                ></i>
+              </li>
+            </div>
+            <div class="ul2-cnt">
               <li><a href="../Login Page/login.html">LOGIN</a></li>
               <div class="cart-icon">
-              <li><a href="../Cart page/cart.html"><i class="fa-solid fa-cart-shopping" style="color:white; font-size: 17px;"></i></a></li>
+                <li>
+                  <a href="../Cart page/cart.html"
+                    ><i
+                      class="fa-solid fa-cart-shopping"
+                      style="color: white; font-size: 17px"
+                    ></i
+                  ></a>
+                </li>
               </div>
-              </div>
+            </div>
           </ul>
+        </div>
+
+        <!-- Sidebar -->
+        <ul class="sidebar hidden">
+          <div class="sidebar-text">
+            <h1>Nova<span>Tech</span></h1>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: #000000; font-size: 25px"
+            ></i>
           </div>
-
-          <!-- Sidebar -->
-          <ul class="sidebar hidden">
-              <div class="sidebar-text">
-                  <h1>Nova<span>Tech</span></h1>
-                  <i class="fa-regular fa-circle-xmark" style="color: #000000; font-size: 25px;"></i>
-              </div>
-              <li><a href="../Home Page/HomePage.html"><i class="fa-solid fa-house" style="font-size: 20px;"></i>HOME</a></li>
-              <li><a href="../About Us Page/about.html"><i class="fa-solid fa-address-card" style="font-size: 20px;"></i>ABOUT</a></li>
-              <li><a href="product.html"><i class="fa-solid fa-basket-shopping" style="font-size: 20px;"></i>SHOP</a></li>
-              <li><a href="../Contact Page/contact.html"><i class="fa-solid fa-address-book" style=" font-size: 20px;"></i>CONTACT</a></li>
-              <li><a href="../Blog Page/blog.html"><i class="fa-solid fa-newspaper" style=" font-size: 20px;"></i>BLOG</a></li>
-          </ul>
+          <li>
+            <a href="../Home Page/HomePage.html"
+              ><i class="fa-solid fa-house" style="font-size: 20px"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="../About Us Page/about.html"
+              ><i class="fa-solid fa-address-card" style="font-size: 20px"></i
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a href="product.html"
+              ><i
+                class="fa-solid fa-basket-shopping"
+                style="font-size: 20px"
+              ></i
+              >SHOP</a
+            >
+          </li>
+          <li>
+            <a href="../Contact Page/contact.html"
+              ><i class="fa-solid fa-address-book" style="font-size: 20px"></i
+              >CONTACT</a
+            >
+          </li>
+          <li>
+            <a href="../Blog Page/blog.html"
+              ><i class="fa-solid fa-newspaper" style="font-size: 20px"></i
+              >BLOG</a
+            >
+          </li>
+        </ul>
       </div>
-  </header>
+    </header>
 
- <main>
-    <div class="headings">
-      <p class="main-heading">
-        OUR FEATURED PRODUCTS
-      </p>
-      <p class="sub-heading">#1 Ecommerce Shop Specialized in Tech Products in the region.</p>
-    </div>
-    <div class="post-filter container">
-      <span class="filter-item active-filter" data-filter="all">All</span>
-      <span class="filter-item" data-filter="Laptops">Laptops</span>
-      <span class="filter-item" data-filter="Phones">Phones</span>
-      <span class="filter-item" data-filter="Headphones">Headphones</span>
-      <span class="filter-item" data-filter="Airpods">Airpods</span>
-      <span class="filter-item" data-filter="Ipads">Ipads</span>
-      <span class="filter-item" data-filter="Smartwatch">Smartwatch</span>
-    </div>
-
-    <div class="sortings">
-      <div class="filtering">
-        <select id="sort-dropdown" class="sort-dropdown">
-          <option value="">Sort by Price</option>
-          <option value="low-to-high">Low to High</option>
-          <option value="high-to-low">High to Low</option>
-        </select>
+    <main>
+      <div class="headings">
+        <p class="main-heading">OUR FEATURED PRODUCTS</p>
+        <p class="sub-heading">
+          #1 Ecommerce Shop Specialized in Tech Products in the region.
+        </p>
+      </div>
+      <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="Laptops">Laptops</span>
+        <span class="filter-item" data-filter="Phones">Phones</span>
+        <span class="filter-item" data-filter="Headphones">Headphones</span>
+        <span class="filter-item" data-filter="Airpods">Airpods</span>
+        <span class="filter-item" data-filter="Ipads">Ipads</span>
+        <span class="filter-item" data-filter="Smartwatch">Smartwatch</span>
       </div>
 
-      <div class="searching">
-        <form id="search-form">
-          <input type="text" id="search-input" placeholder="Search..." />
-          <button id="search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
+      <div class="sortings">
+        <div class="filtering">
+          <select id="sort-dropdown" class="sort-dropdown">
+            <option value="">Sort by Price</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+          </select>
+        </div>
+
+        <div class="searching">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search..." />
+            <button id="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-    <div id="cards"></div>
-    <div class="banner">
-      <p>The item is added Succesfully !</p>
-    </div>
- </main>
+      <div id="cards"></div>
+      <div class="banner">
+        <p>The item is added Succesfully !</p>
+      </div>
+    </main>
 
     <footer>
       <div class="foot">
-          <div class="exclusive">
-              <h2>Exclusive</h2>
-              <h3>Subscribe</h3>
-              <p>Get 10% off your first order</p>
-              <div class="foot-email">
-                  <input type="email" placeholder="Enter your email">
-                  <i class="fa fa-paper-plane"></i>
-              </div>
+        <div class="exclusive">
+          <h2>Exclusive</h2>
+          <h3>Subscribe</h3>
+          <p>Get 10% off your first order</p>
+          <div class="foot-email">
+            <input type="email" placeholder="Enter your email" />
+            <i class="fa fa-paper-plane"></i>
           </div>
+        </div>
 
-          <div class="support">
-              <h3>Support</h3>
-              <p>Bliss Street, Hamra, <br> Beirut, Lebanon</p>
-              <p>novatech@gmail.com</p>
-              <p>+961 3 456 789</p>
-          </div>
+        <div class="support">
+          <h3>Support</h3>
+          <p>
+            Bliss Street, Hamra, <br />
+            Beirut, Lebanon
+          </p>
+          <p>novatech@gmail.com</p>
+          <p>+961 3 456 789</p>
+        </div>
 
-          <div class="account">
-              <h3>Account</h3>
+        <div class="account">
+          <h3>Account</h3>
           <div class="account-content">
-              <a href="../Login Page/login.html">My Account</a>
-              <a href="../Login Page/login.html">Login/Register</a>
-              <a href="../Cart page/cart.html">Cart</a>
-              <a href="product.html">Shop</a>
+            <a href="../Login Page/login.html">My Account</a>
+            <a href="../Login Page/login.html">Login/Register</a>
+            <a href="../Cart page/cart.html">Cart</a>
+            <a href="product.html">Shop</a>
           </div>
-          </div>
+        </div>
 
-          <div class="account">
-              <h3>Quik Link</h3>
-              <div class="account-content">
-                  <a href="../Home Page/HomePage.html">Home</a>
-                  <a href="../About Us Page/about.html">About</a>
-                  <a href="../Contact Page/contact.html">Contact</a>
-                  <a href="../Blog Page/blog.html">Blog</a>
-              </div>
+        <div class="account">
+          <h3>Quik Link</h3>
+          <div class="account-content">
+            <a href="../Home Page/HomePage.html">Home</a>
+            <a href="../About Us Page/about.html">About</a>
+            <a href="../Contact Page/contact.html">Contact</a>
+            <a href="../Blog Page/blog.html">Blog</a>
           </div>
+        </div>
 
-          <div class="app">
-              <h3>Download App</h3>
-              <div class="app-content">
-                  <p>Save $3 with App New User Only</p>
-                  <img src="./images/app.png" alt="App store">
-              </div>
-              <div class="app-icons">
-                  <i class="fa-brands fa-facebook-f" style="font-size:20px"></i>
-                  <i class="fa-brands fa-instagram" style="font-size:20px"></i>
-                  <i class="fa-brands fa-twitter" style="font-size:20px"></i>
-                  <i class="fa-brands fa-linkedin-in" style="font-size:20px"></i>
-              </div>
+        <div class="app">
+          <h3>Download App</h3>
+          <div class="app-content">
+            <p>Save $3 with App New User Only</p>
+            <img src="./images/app.png" alt="App store" />
           </div>
+          <div class="app-icons">
+            <i class="fa-brands fa-facebook-f" style="font-size: 20px"></i>
+            <i class="fa-brands fa-instagram" style="font-size: 20px"></i>
+            <i class="fa-brands fa-twitter" style="font-size: 20px"></i>
+            <i class="fa-brands fa-linkedin-in" style="font-size: 20px"></i>
+          </div>
+        </div>
       </div>
-  </footer>
+    </footer>
   </body>
 </html>

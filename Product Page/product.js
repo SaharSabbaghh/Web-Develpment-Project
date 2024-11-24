@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.getElementById("search");
   const cardsContainer = $("#cards");
   const sortDropdown = $("#sort-dropdown");
+  const banner = document.querySelector(".banner");
 
   let products = [];
 
@@ -40,50 +41,61 @@ document.addEventListener("DOMContentLoaded", () => {
   function generateProductCards(productsList) {
     cardsContainer.html("");
 
-    productsList.forEach((product) => {
-      const cardHTML = `
-                <div class="cardBox ${product.filter}">
-                    <div class="imgBox">
-                        <div class="productSpecifications">
-                            <span class="sale-Product-related">${product.sale}</span>
-                            <div class="productSpecifications-icons">
-                                <span id="productSpecifications-Whishlist">
-                                    <i class="fa-regular fa-heart"></i>
-                                </span>
-                                <span id="productSpecifications-View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <img src="${product.image}" alt="product image" />
-                        <div class="Add-to-Cart">Add To Cart</div>
-                    </div>
-                    <div class="CardInfo">
-                        <h4 class="filter">${product.filter}</h4>
-                        <h3 class="Product-Name-Related">${product.title}</h3>
-                        <p class="Product-Price-related">
-                            <span class="newPrice">${product.newPrice}</span>
-                            <span class="old-Price">${product.oldPrice}</span>
-                        </p>
-                        <p class="product-raiting-related">
-                            <img src="images/raitings/4starsRaiting-removebg-preview.png" />
-                            <span>(${product.rating})</span>
-                        </p>
-                    </div>
+    if (productsList.length === 0) {
+      const noResultsMessage = `
+          <div id="no-results-message">
+            No products found matching your search.
+          </div>
+        `;
+      cardsContainer.append(noResultsMessage);
+    } else {
+      productsList.forEach((product) => {
+        const cardHTML = `
+            <div class="cardBox ${product.filter}">
+              <div class="imgBox">
+                <div class="productSpecifications">
+                  <span class="sale-Product-related">${product.sale}</span>
+                  <div class="productSpecifications-icons">
+                    <span id="productSpecifications-Whishlist">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="productSpecifications-View">
+                      <i class="fa-regular fa-eye"></i>
+                    </span>
+                  </div>
                 </div>
-            `;
-      cardsContainer.append(cardHTML);
-    });
+                <img src="${product.image}" alt="product image" />
+                <div class="Add-to-Cart">Add To Cart</div>
+              </div>
+              <div class="CardInfo">
+                <h4 class="filter">${product.filter}</h4>
+                <h3 class="Product-Name-Related">${product.title}</h3>
+                <p class="Product-Price-related">
+                  <span class="newPrice">${product.newPrice}</span>
+                  <span class="old-Price">${product.oldPrice}</span>
+                </p>
+                <p class="product-raiting-related">
+                  <img src="images/raitings/4starsRaiting-removebg-preview.png" />
+                  <span>(${product.rating})</span>
+                </p>
+              </div>
+            </div>
+          `;
+        cardsContainer.append(cardHTML);
+      });
+    }
   }
 
   function filterProducts(filter) {
-    console.log("Filtering by:", filter);
+    const cards = document.querySelectorAll(".cardBox");
 
-    if (filter === "all") {
-      $(".cardBox").show(600);
-    } else {
-      $(".cardBox").hide(600).filter(`.${filter}`).show(600);
-    }
+    cards.forEach((card) => {
+      if (filter === "all" || card.classList.contains(filter)) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
 
     $(".filter-item").removeClass("active-filter");
     $(`.filter-item[data-filter="${filter}"]`).addClass("active-filter");
@@ -117,6 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let matchCount = 0;
 
+    // Check if "No Products Found" message already exists
+    let noResultsMessage = document.getElementById("no-results-message");
+
     cards.forEach((card) => {
       const productNameElement = card.querySelector(".Product-Name-Related");
 
@@ -125,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const productName = productNameElement.textContent.toLowerCase();
 
       if (searchQuery === "" || productName.includes(searchQuery)) {
-        card.style.display = "flex";
+        card.style.display = "";
         matchCount++;
       } else {
         card.style.display = "none";
@@ -133,7 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (matchCount === 0 && searchQuery !== "") {
-      alert("No products found matching your search.");
+      if (!noResultsMessage) {
+        noResultsMessage = document.createElement("div");
+        noResultsMessage.id = "no-results-message";
+        noResultsMessage.textContent =
+          "No products found matching your search.";
+        cardsContainer.append(noResultsMessage);
+      }
+    } else if (noResultsMessage) {
+      noResultsMessage.remove();
     }
   }
 
@@ -154,13 +177,13 @@ document.addEventListener("DOMContentLoaded", () => {
       sortHighToLow();
     }
   });
-  let banner = document.querySelector(".banner");
+
   $(document).on("click", ".Add-to-Cart", function () {
-    let cardBox = $(this).closest(".cardBox");
-    let productTitle = cardBox.find(".Product-Name-Related").text();
-    let productNewPrice = cardBox.find(".newPrice").text();
-    let productImage = cardBox.find("img").attr("src");
-    let product = {
+    const cardBox = $(this).closest(".cardBox");
+    const productTitle = cardBox.find(".Product-Name-Related").text();
+    const productNewPrice = cardBox.find(".newPrice").text();
+    const productImage = cardBox.find("img").attr("src");
+    const product = {
       title: productTitle,
       newPrice: productNewPrice,
       image: productImage,
@@ -170,13 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let existingProductIndex = cart.findIndex(
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = cart.findIndex(
       (item) => item.title === product.title
     );
 
     if (existingProductIndex !== -1) {
-      banner.innerHTML = "The item is already exists !";
+      banner.innerHTML = "The item already exists!";
       banner.style.display = "flex";
       setTimeout(() => {
         banner.style.display = "none";
@@ -184,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       product.quantity = 1;
       cart.push(product);
-      banner.innerHTML = "The item is added Succesfully !";
+      banner.innerHTML = "Item added successfully!";
       banner.style.display = "flex";
       setTimeout(() => {
         banner.style.display = "none";

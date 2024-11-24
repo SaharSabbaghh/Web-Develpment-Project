@@ -14,6 +14,7 @@
   --fifth-color: #f9fbfc;
   --sixth-color: #686d76;
 }
+
 body {
   min-height: 100vh;
   background-color: var(--fifth-color);
@@ -31,6 +32,7 @@ main {
   margin-left: 90px;
   margin-right: 90px;
 }
+
 /* Navbar */
 header {
   display: flex;
@@ -390,6 +392,7 @@ footer {
   overflow: hidden;
   width: 270px;
 }
+
 .imgBox {
   width: 100%;
   background-color: #f5f5f5;
@@ -407,6 +410,7 @@ footer {
   width: 100%;
   height: auto;
 }
+
 .Add-to-Cart {
   position: absolute;
   bottom: -50px;
@@ -419,34 +423,41 @@ footer {
   /* opacity: 0.65; */
   opacity: 0;
 }
+
 .imgBox:hover .Add-to-Cart {
   cursor: pointer;
   user-select: none;
   animation: slideUp 0.66s forwards;
 }
+
 .imgBox:hover img {
   animation: PopUp 0.4s forwards;
 }
+
 @keyframes PopUp {
   0% {
     scale: 1;
     opacity: 0.65;
   }
+
   100% {
     scale: 1.15;
     opacity: 1;
   }
 }
+
 @keyframes slideUp {
   0% {
     bottom: -50px;
     opacity: 0;
   }
+
   100% {
     bottom: 0;
     opacity: 0.65;
   }
 }
+
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
@@ -458,6 +469,7 @@ footer {
     opacity: 1;
   }
 }
+
 .CardInfo {
   /* background-color: yellow; */
   width: 100%;
@@ -491,6 +503,7 @@ footer {
 .product-raiting-related img {
   width: 90px;
 }
+
 /* 
 .productSpecifications {
   background-color: #00ff66; 
@@ -514,6 +527,7 @@ footer {
 
   /* background-color: red; */
 }
+
 .sale-Product-related {
   background-color: var(--main-color);
   color: white;
@@ -529,6 +543,7 @@ footer {
   top: 9px;
   left: 0px;
 }
+
 .productSpecifications-icons span {
   background-color: white;
   display: flex;
@@ -543,11 +558,13 @@ footer {
   z-index: 7;
   transition: background-color 0.3s ease-in-out;
 }
+
 #productSpecifications-Whishlist:hover,
 #productSpecifications-View:hover {
   background-color: lightgrey;
   cursor: pointer;
 }
+
 /* body {
   background-color: black;
 } */
@@ -561,23 +578,28 @@ footer {
   user-select: none;
   transition: opacity 0.3s ease-in-out;
 }
+
 .prev_btn {
   left: 15px;
 }
+
 .next_btn {
   right: 15px;
 }
+
 .prev_btn:hover,
 .next_btn:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+
 .old-Price {
   text-decoration: 1.5px line-through grey;
   color: grey;
   margin-left: 10px;
   font-weight: 380;
 }
+
 .headings {
   text-align: center;
   margin-top: 3rem;
@@ -589,19 +611,23 @@ footer {
   -webkit-animation: slideDown 1s ease-out forwards;
   opacity: 0;
 }
+
 .main-heading {
   font-size: 3rem;
 }
+
 .sub-heading {
   font-size: 1.2rem;
   color: var(--main-color);
   font-style: oblique;
 }
+
 .review-Number {
   color: grey;
   font-weight: 380;
   font-size: 0.99rem;
 }
+
 #cards {
   display: flex;
   flex-wrap: wrap;
@@ -612,10 +638,12 @@ footer {
   margin: 0 auto;
   padding: 10px 20px;
 }
+
 .searching {
   display: flex;
   justify-content: flex-end;
 }
+
 #search {
   position: absolute;
   right: 10px;
@@ -626,6 +654,7 @@ footer {
   background: transparent;
   border: none;
 }
+
 #search-form {
   display: flex;
   position: relative;
@@ -640,6 +669,7 @@ footer {
   font-size: 20px;
   width: 200px;
 }
+
 .sortings {
   display: flex;
   align-items: center;
@@ -647,7 +677,8 @@ footer {
   padding: 10px 20px;
   width: 100%;
   max-width: 1250px;
-  margin: 0 auto; /* Center align */
+  margin: 0 auto;
+  /* Center align */
 }
 
 .sort-dropdown {
@@ -667,6 +698,7 @@ footer {
   border-color: var(--forthColor);
   outline: none;
 }
+
 .banner {
   position: fixed;
   display: none;
@@ -681,10 +713,12 @@ footer {
   overflow: hidden;
   height: 38px;
 }
+
 @keyframes fadeleft {
   0% {
     width: 0%;
   }
+
   100% {
     width: 20%;
   }
@@ -705,17 +739,21 @@ footer {
     width: 90%;
     height: auto;
   }
+
   .sortings {
     flex-direction: column;
   }
+
   .filter-item {
     font-size: 0.5rem;
   }
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
 }
+
 .post-filter {
   display: flex;
   justify-content: center;
@@ -739,6 +777,28 @@ footer {
 
 h4 {
   color: var(--sixth-color);
+}
+
+#no-results-message {
+  font-size: 18px;
+  text-align: center;
+  color: #888;
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #no-results-message {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #no-results-message {
+    font-size: 14px;
+  }
 }
 
 /* ScrollBar */
