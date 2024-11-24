@@ -403,6 +403,7 @@ a {
 }
 
 .about .imgBx {
+  padding-top: 4.5rem;
   position: relative;
   min-width: 50%;
   width: 50%;
