@@ -128,7 +128,9 @@ a {
   display: inline-block;
 }
 
-.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover, .cart-icon:hover, .ham-icon i:hover{
+.ul2 .ul2-cnt a[href="../Login Page/login.html"]:hover,
+.cart-icon:hover,
+.ham-icon i:hover {
   transform: scale(1.1);
 }
 
@@ -478,7 +480,7 @@ footer {
 .SizePara {
   width: 50px;
   font-size: 1.3rem;
-  padding-right: 55px;
+  padding-right: 80px;
 }
 .SizeSelection input[type="radio"] {
   display: none;
@@ -599,7 +601,7 @@ footer {
 }
 
 .Buy-btn:hover {
-  background-color: #92C7CF;
+  background-color: #92c7cf;
 }
 
 .whichList {
