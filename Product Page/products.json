@@ -41,7 +41,7 @@
     "newPrice": "$1040",
     "oldPrice": "$1300",
     "sale": "-20%",
-    "rating": "93",
+    "rating": "92",
     "image": "../images/Laptops/ASUS TUF A16.png"
   },
   {
@@ -50,7 +50,7 @@
     "newPrice": "$1350",
     "oldPrice": "$1800",
     "sale": "-25%",
-    "rating": "93",
+    "rating": "91",
     "image": "../images/Laptops/ASUS zenbook.png"
   },
   {
@@ -68,7 +68,7 @@
     "newPrice": "$480",
     "oldPrice": "$600",
     "sale": "-20%",
-    "rating": "93",
+    "rating": "90",
     "image": "../images/Ipads/Ipad Air.png"
   },
   {
@@ -77,7 +77,7 @@
     "newPrice": "$280",
     "oldPrice": "$350",
     "sale": "-20%",
-    "rating": "93",
+    "rating": "91",
     "image": "../images/Ipads/Ipad X.png"
   },
   {
@@ -86,7 +86,7 @@
     "newPrice": "$375",
     "oldPrice": "$500",
     "sale": "-25%",
-    "rating": "93",
+    "rating": "90",
     "image": "../images/Ipads/Ipad Mini.png"
   },
   {
@@ -95,7 +95,7 @@
     "newPrice": "$750",
     "oldPrice": "$999",
     "sale": "-25%",
-    "rating": "93",
+    "rating": "94",
     "image": "../images/Ipads/Galaxy Tab S10 Plus.png"
   },
   {
@@ -104,7 +104,7 @@
     "newPrice": "$440",
     "oldPrice": "$550",
     "sale": "-20%",
-    "rating": "93",
+    "rating": "91",
     "image": "../images/Ipads/Galaxy tab S8.png"
   },
 
@@ -186,7 +186,7 @@
     "newPrice": "$799",
     "oldPrice": "$820",
     "sale": "-2.56%",
-    "rating": "93",
+    "rating": "87",
     "image": "../images/phones/IPHONE15.png"
   },
   {
@@ -204,7 +204,7 @@
     "newPrice": "$1400",
     "oldPrice": "$1419",
     "sale": "-1.34%",
-    "rating": "93",
+    "rating": "90",
     "image": "../images/phones/gx.png"
   },
   {
@@ -213,7 +213,7 @@
     "newPrice": "$1840",
     "oldPrice": "$1899",
     "sale": "-3.11%",
-    "rating": "93",
+    "rating": "92",
     "image": "../images/phones/Zfold.png"
   },
   {
@@ -231,7 +231,7 @@
       "newPrice": "$350",
       "oldPrice": "$420",
       "sale": "-15%",
-      "rating": "95",
+      "rating": "85",
       "image": "../images/headphones/h2.png"
     },
     {
@@ -276,7 +276,7 @@
       "newPrice": "$279",
       "oldPrice": "$329",
       "sale": "-15%",
-      "rating": "89",
+      "rating": "90",
       "image": "../images/airpods/a1.png"
     },
     {
@@ -285,7 +285,43 @@
       "newPrice": "$129",
       "oldPrice": "$152",
       "sale": "-15%",
-      "rating": "89",
+      "rating": "93",
       "image": "../images/airpods/airpods 4.png"
+    },
+    {
+      "title": "Galaxy Buds Pro",
+      "filter": "Airpods",
+      "newPrice": "$189",
+      "oldPrice": "$227",
+      "sale": "-20%",
+      "rating": "89",
+      "image": "../images/airpods/galaxy buds.png"
+    },
+    {
+      "title": "Galaxy Buds Pro",
+      "filter": "Airpods",
+      "newPrice": "$140",
+      "oldPrice": "$161",
+      "sale": "-15%",
+      "rating": "91",
+      "image": "../images/airpods/galaxy buds 3.png"
+    },
+    {
+      "title": "Sony WF 1000XM5",
+      "filter": "Airpods",
+      "newPrice": "$340",
+      "oldPrice": "$161",
+      "sale": "-15%",
+      "rating": "90",
+      "image": "../images/airpods/sony buds.png"
+    },
+    {
+      "title": "Huawei FreeBuds 5",
+      "filter": "Airpods",
+      "newPrice": "$130",
+      "oldPrice": "$143",
+      "sale": "-10%",
+      "rating": "85",
+      "image": "../images/airpods/huawei buds.png"
     }
   ]
