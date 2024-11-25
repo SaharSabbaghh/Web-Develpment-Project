@@ -536,9 +536,9 @@ footer {
   position: absolute;
   width: 13px;
   height: auto;
-  top: 8px;
+  top: 3px;
   cursor: pointer;
-  left: 0px;
+  left: -7px;
   display: none;
   animation: shiftbtn 0.3s ease-in-out;
 }
@@ -734,12 +734,12 @@ footer {
   border-radius: 10px;
 }
 
-button{
+button {
   transition: background-color 0.3s;
 }
 
-button:hover{
-  background-color: #92C7CF;
+button:hover {
+  background-color: #92c7cf;
 }
 
 /*Confirmation msg design ends*/
@@ -908,7 +908,7 @@ button:hover{
     bottom: 0;
     height: 30%;
     width: 100%;
-      right: 0;
+    right: 0;
     font-size: 1.1rem;
     font-weight: 600;
     background-color: red;
