@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".filter-item").on("click", function () {
-        const value = $(this).data("filter");
+        let value = $(this).data("filter");
 
         if (value === "all") {
             $(".post-box").show(600); 

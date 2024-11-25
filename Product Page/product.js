@@ -20,11 +20,11 @@ document
 
 // Fetch Product Data
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search-input");
-  const searchButton = document.getElementById("search");
-  const cardsContainer = $("#cards");
-  const sortDropdown = $("#sort-dropdown");
-  const banner = document.querySelector(".banner");
+  let searchInput = document.getElementById("search-input");
+  let searchButton = document.getElementById("search");
+  let cardsContainer = $("#cards");
+  let sortDropdown = $("#sort-dropdown");
+  let banner = document.querySelector(".banner");
 
   let products = [];
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsContainer.html("");
 
     if (productsList.length === 0) {
-      const noResultsMessage = `
+      let noResultsMessage = `
           <div id="no-results-message">
             No products found matching your search.
           </div>
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsContainer.append(noResultsMessage);
     } else {
       productsList.forEach((product) => {
-        const cardHTML = `
+        let cardHTML = `
             <div class="cardBox ${product.filter}">
               <div class="imgBox">
                 <div class="productSpecifications">
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function filterProducts(filter) {
-    const cards = document.querySelectorAll(".cardBox");
+    let cards = document.querySelectorAll(".cardBox");
 
     cards.forEach((card) => {
       if (filter === "all" || card.classList.contains(filter)) {
@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function sortLowToHigh() {
-    const sortedProducts = products.slice().sort((a, b) => {
-      const priceA = parseFloat(a.newPrice.replace("$", ""));
-      const priceB = parseFloat(b.newPrice.replace("$", ""));
+    let sortedProducts = products.slice().sort((a, b) => {
+      let priceA = parseFloat(a.newPrice.replace("$", ""));
+      let priceB = parseFloat(b.newPrice.replace("$", ""));
       return priceA - priceB;
     });
     generateProductCards(sortedProducts);
@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function sortHighToLow() {
-    const sortedProducts = products.slice().sort((a, b) => {
-      const priceA = parseFloat(a.newPrice.replace("$", ""));
-      const priceB = parseFloat(b.newPrice.replace("$", ""));
+    let sortedProducts = products.slice().sort((a, b) => {
+      let priceA = parseFloat(a.newPrice.replace("$", ""));
+      let priceB = parseFloat(b.newPrice.replace("$", ""));
       return priceB - priceA;
     });
     generateProductCards(sortedProducts);
@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Search Functionality
   function performSearch(event) {
     event.preventDefault();
-    const searchQuery = searchInput.value.trim().toLowerCase();
-    const cards = document.querySelectorAll(".cardBox");
+    let searchQuery = searchInput.value.trim().toLowerCase();
+    let cards = document.querySelectorAll(".cardBox");
 
     let matchCount = 0;
 
@@ -133,11 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let noResultsMessage = document.getElementById("no-results-message");
 
     cards.forEach((card) => {
-      const productNameElement = card.querySelector(".Product-Name-Related");
+      let productNameElement = card.querySelector(".Product-Name-Related");
 
       if (!productNameElement) return;
 
-      const productName = productNameElement.textContent.toLowerCase();
+      let productName = productNameElement.textContent.toLowerCase();
 
       if (searchQuery === "" || productName.includes(searchQuery)) {
         card.style.display = "";
@@ -164,12 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", performSearch);
 
   $(".filter-item").on("click", function () {
-    const filter = $(this).data("filter");
+    let filter = $(this).data("filter");
     filterProducts(filter);
   });
 
   sortDropdown.on("change", function () {
-    const selectedOption = $(this).val();
+    let selectedOption = $(this).val();
 
     if (selectedOption === "low-to-high") {
       sortLowToHigh();
@@ -179,11 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   $(document).on("click", ".Add-to-Cart", function () {
-    const cardBox = $(this).closest(".cardBox");
-    const productTitle = cardBox.find(".Product-Name-Related").text();
-    const productNewPrice = cardBox.find(".newPrice").text();
-    const productImage = cardBox.find("img").attr("src");
-    const product = {
+    let cardBox = $(this).closest(".cardBox");
+    let productTitle = cardBox.find(".Product-Name-Related").text();
+    let productNewPrice = cardBox.find(".newPrice").text();
+    let productImage = cardBox.find("img").attr("src");
+    let product = {
       title: productTitle,
       newPrice: productNewPrice,
       image: productImage,
@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function addToCart(product) {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProductIndex = cart.findIndex(
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existingProductIndex = cart.findIndex(
       (item) => item.title === product.title
     );
 
