@@ -94,23 +94,4 @@ document
     document.querySelector(".sidebar").classList.add("hidden");
   });
 
-// footer
-document
-  .querySelector(".subscribe-btn button")
-  .addEventListener("click", function () {
-    let emailInput = document.querySelector(".subscribe-input input");
-    let errorMessage = document.querySelector(".errorMessage");
-
-    if (emailInput.value === "") {
-      errorMessage.textContent = "Please enter your email address.";
-      errorMessage.style.display = "block";
-    } else if (!emailInput.value.includes("@")) {
-      errorMessage.textContent = "Please enter a valid email address.";
-      errorMessage.style.display = "block";
-    } else {
-      errorMessage.style.display = "none";
-      emailInput.value = "";
-    }
-  });
-
 //nav and footer js ends

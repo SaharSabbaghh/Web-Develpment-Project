@@ -980,6 +980,12 @@ footer {
     justify-content: center;
     gap: 10px;
   }
+  .cardBox {
+    min-width: 250px;
+  }
+  .review {
+    width: 100%;
+  }
 
   .mainImg {
     width: 100%;
@@ -1007,32 +1013,18 @@ footer {
   }
 }
 
-/*testing end*/
-/*
-@media (max-width: 750px) {
-  .imgsBox {
-    height: auto;
-    flex-direction: column-reverse;
-    gap: 10px;
+@media screen and (max-width: 350px) {
+  .SizeSelection {
+    justify-content: center;
   }
 
-  .mainImg {
-    width: 100%;
-    height: 400px;
+  .quantityBuy {
+    width: 96%;
+    margin-left: 15px;
   }
 
-  .minorImgs {
-    flex-direction: row;
-    gap: 6px;
-    height: auto;
+  .relatedItemsHeaderBox {
     width: 100%;
+    left: 2px;
   }
-  .minor {
-    min-width: auto;
-    height: 70px;
-    padding: 10px;
-  }
-  .minorImgs img {
-    min-width: 10px;
-  }
-}*/
+}
