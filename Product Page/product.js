@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       products = data;
       generateProductCards(products);
       filterProducts(localStorage.getItem("selectedCategory") || "all");
+      localStorage.setItem("selectedCategory", "all");
     })
     .catch((error) => console.error("Error fetching product data:", error));
 
