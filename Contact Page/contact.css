@@ -357,6 +357,9 @@ section {
   display: grid;
   gap: 3em;
 }
+textarea{
+  font-family: "Roboto", serif;
+}
 
 form {
   width: 100%;
