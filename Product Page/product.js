@@ -85,11 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-  document.addEventListener("click", function (event) {
-    if (event.target.closest("#productSpecifications-View")) {
-      window.location.href = "../ProductDetails Page/ProductDetails.html";
-    }
-  });
 
   function filterProducts(filter) {
     let cards = document.querySelectorAll(".cardBox");
