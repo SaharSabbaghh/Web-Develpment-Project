@@ -694,7 +694,9 @@ footer {
   color: white;
   font-weight: 400;
 }
-
+.productRow button:hover {
+  background-color: rgb(199, 45, 45);
+}
 /*Confirmation msg design starts*/
 
 .confirmationMSG {
