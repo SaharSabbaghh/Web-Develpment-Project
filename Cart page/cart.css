@@ -712,7 +712,8 @@ footer {
 .confirmationMSG #confBox {
   padding: 15px;
   border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.048);
+  background-color: white;
+  border: 1px solid var(--main-color);
 }
 
 #confBox {
@@ -942,8 +943,8 @@ button:hover {
     left: 0%;
     width: 65%;
     padding: 20px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    border: 1px solid var(--main-color);
   }
 
   /* body media querry ends========================= */

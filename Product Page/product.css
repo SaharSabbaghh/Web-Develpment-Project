@@ -441,7 +441,7 @@ footer {
   }
 
   100% {
-    scale: 1.15;
+    scale: .88;
     opacity: 1;
   }
 }
