@@ -332,6 +332,16 @@ footer .exclusive input {
 /*nav and footer ends*/
 
 /*checkout section starts*/
+
+.error-message {
+  margin-top: 10px;
+  font-size: 0.9em;
+  height: 1em;
+  display: none;
+  align-items: center;
+  color: red;
+}
+
 .mainContainer {
   margin: 10px 200px;
   display: flex;
@@ -638,8 +648,9 @@ input[type="radio"]:checked::after {
   transition: background-color 0.3s;
 }
 
-#placeOrder:hover, .productsinfo .couponds button:hover{
-  background-color: #92C7CF;
+#placeOrder:hover,
+.productsinfo .couponds button:hover {
+  background-color: #92c7cf;
 }
 
 .banner {

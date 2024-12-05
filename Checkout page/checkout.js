@@ -103,22 +103,106 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   displayCartProducts();
+  function checkInputs() {
+    let areAllFilled = false;
+
+    while (!areAllFilled) {
+      areAllFilled = true; // Assume all inputs are filled initially
+
+      for (let i = 0; i < reqInputs.length; i++) {
+        if (reqInputs[i].value.trim() === "") {
+          // Check if the input is empty
+          reqMsg.style.display = "flex"; // Show the message
+          areAllFilled = false; // Set the flag to false because one input is empty
+          break; // Exit the loop since we found an empty input
+        }
+      }
+    }
+    return areAllFilled;
+  }
+
   let banner = document.querySelector(".banner");
+  let reqMsg = document.querySelector(".error-message");
+  let reqInputs = document.querySelectorAll(
+    ".customerinfoContainer .customerinfo input[required]"
+  );
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   checkoutBtn.addEventListener("click", () => {
     if (JSON.parse(localStorage.getItem("cart")).length > 0) {
-      localStorage.setItem("cart", JSON.stringify([]));
+      let allInputsFilled = true; // Assume all inputs are filled initially
 
-      banner.style.display = "flex";
-      setTimeout(() => {
-        banner.style.display = "none";
-      }, 3000);
-      subtotal.innerHTML = 0;
-      Total.innerHTML = subtotal.textContent;
-      productContainer.innerHTML = ""; // Clear the cart container before appending new items
-      setTimeout(() => {
-        location.reload(); // to refresh the page so that inputs will be resetted
-      }, 3000);
+      // Check if all required inputs are filled
+      for (let i = 0; i < reqInputs.length; i++) {
+        if (reqInputs[i].value.trim() === "") {
+          reqMsg.style.display = "flex";
+          reqMsg.innerHTML = "Please fill out all required fields!"; // Error message for empty fields
+          allInputsFilled = false;
+          break;
+        }
+      }
+
+      // Verify email input
+      let emailInput = reqInputs[reqInputs.length - 1]; // Assuming the last required input is the email
+      let phoneInput = reqInputs[reqInputs.length - 2]; // Assuming the last required input is the email
+      let PhoneRegex = /^(?:\+961|00961|0)(?:3\d{6}|7[0-9]\d{6}|[1-9]\d{6})$/;
+      // Proceed only if all inputs are filled and the email is valid
+      if (allInputsFilled) {
+        if (!PhoneRegex.test(phoneInput.value.trim())) {
+          reqMsg.style.display = "flex";
+          reqMsg.innerHTML = "Please enter a valid phone number!"; // Error message for invalid email
+          allInputsFilled = false;
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+          reqMsg.style.display = "flex";
+          reqMsg.innerHTML = "Please enter a valid email address!"; // Error message for invalid email
+          allInputsFilled = false;
+        } else {
+          reqMsg.style.display = "none"; // Hide the error message if inputs are valid
+
+          if (JSON.parse(localStorage.getItem("cart")).length > 0) {
+            localStorage.setItem("cart", JSON.stringify([])); // Clear the cart
+
+            banner.style.display = "flex";
+            setTimeout(() => {
+              banner.style.display = "none";
+            }, 3000);
+
+            subtotal.innerHTML = 0;
+            Total.innerHTML = subtotal.textContent;
+            productContainer.innerHTML = ""; // Clear the cart container
+
+            setTimeout(() => {
+              location.reload(); // Refresh the page to reset inputs
+            }, 3000);
+          }
+        }
+      }
     }
   });
+
+  // checkoutBtn.addEventListener("click", () => {
+
+  //   for(i=0;i<reqInputs.length;i++){
+  //     if(reqInputs.innerHTML ===" "){
+  //       reqMsg.style.display="flex";
+  //     }
+
+  //   }
+
+  //   if (JSON.parse(localStorage.getItem("cart")).length > 0) {
+  //     localStorage.setItem("cart", JSON.stringify([]));
+
+  //     banner.style.display = "flex";
+  //     setTimeout(() => {
+  //       banner.style.display = "none";
+  //     }, 3000);
+  //     subtotal.innerHTML = 0;
+  //     Total.innerHTML = subtotal.textContent;
+  //     productContainer.innerHTML = ""; // Clear the cart container before appending new items
+  //     setTimeout(() => {
+  //       location.reload(); // to refresh the page so that inputs will be resetted
+  //     }, 3000);
+  //   }
+  // });
   //main func ends
 });
