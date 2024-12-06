@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   displayCartProducts();
-  function checkInputs() {
+  /* function checkInputs() {
     let areAllFilled = false;
 
     while (!areAllFilled) {
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     return areAllFilled;
-  }
+  }*/
 
   let banner = document.querySelector(".banner");
   let reqMsg = document.querySelector(".error-message");
@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".customerinfoContainer .customerinfo input[required]"
   );
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let codeCheck = /^\d{4} \d{4} \d{4} \d{4}$/;
 
   checkoutBtn.addEventListener("click", () => {
     if (JSON.parse(localStorage.getItem("cart")).length > 0) {
@@ -156,6 +157,18 @@ document.addEventListener("DOMContentLoaded", () => {
           reqMsg.style.display = "flex";
           reqMsg.innerHTML = "Please enter a valid email address!"; // Error message for invalid email
           allInputsFilled = false;
+        } else if (!bankradio.checked && !cashradio.checked) {
+          reqMsg.style.display = "flex";
+          reqMsg.innerHTML = "Please Choose a Way to Pay!";
+          allInputsFilled = false;
+        } else if (bankradio.checked) {
+          let trimmedCardCode = cardCode.value.trim().replace(/\s+/g, " ");
+          if (!codeCheck.test(trimmedCardCode)) {
+            reqMsg.style.display = "flex";
+            reqMsg.innerHTML =
+              "Invalid Card Code format! Please use XXXX XXXX XXXX XXXX.";
+            allInputsFilled = false;
+          }
         } else {
           reqMsg.style.display = "none"; // Hide the error message if inputs are valid
 
