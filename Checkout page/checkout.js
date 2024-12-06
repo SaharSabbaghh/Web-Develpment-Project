@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let emailInput = reqInputs[reqInputs.length - 1]; // Assuming the last required input is the email
       let phoneInput = reqInputs[reqInputs.length - 2]; // Assuming the last required input is the email
       let PhoneRegex = /^(?:\+961|00961|0)(?:3\d{6}|7[0-9]\d{6}|[1-9]\d{6})$/;
+      let trimmedCardCode = cardCode.value.trim().replace(/\s+/g, " ");
       // Proceed only if all inputs are filled and the email is valid
       if (allInputsFilled) {
         if (!PhoneRegex.test(phoneInput.value.trim())) {
@@ -161,14 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
           reqMsg.style.display = "flex";
           reqMsg.innerHTML = "Please Choose a Way to Pay!";
           allInputsFilled = false;
-        } else if (bankradio.checked) {
-          let trimmedCardCode = cardCode.value.trim().replace(/\s+/g, " ");
-          if (!codeCheck.test(trimmedCardCode)) {
-            reqMsg.style.display = "flex";
-            reqMsg.innerHTML =
-              "Invalid Card Code format! Please use XXXX XXXX XXXX XXXX.";
-            allInputsFilled = false;
-          }
+        } else if (bankradio.checked && !codeCheck.test(trimmedCardCode)) {
+          reqMsg.style.display = "flex";
+          reqMsg.innerHTML =
+            "Invalid Card Code format! Please use XXXX XXXX XXXX XXXX.";
+          allInputsFilled = false;
         } else {
           reqMsg.style.display = "none"; // Hide the error message if inputs are valid
 
